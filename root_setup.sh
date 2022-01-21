@@ -81,7 +81,7 @@ printf "CHECKPOINT (BOOTABLE)?"; read
 # https://wiki.archlinux.org/title/Xorg#Installation for graphic driver instructions, no graphic driver causes tear when scrolling
 # android-tools for adb connection through usb
 # xorg-xrandr for monitor
-pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany alsa-utils redshift fakeroot git openssh nano android-tools xorg-xrandr sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg
+pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany redshift fakeroot git openssh nano android-tools xorg-xrandr sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg
 
 pacman -Rns sudo --noconfirm
 
