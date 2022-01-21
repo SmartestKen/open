@@ -29,9 +29,8 @@ umount /mnt
 mkfs.fat -F32 /dev/$dname$bid
 
 # cryptsetup benchmark if wish to try custom ones
-printf "Create cryptpasswd:"; read temp
-printf "%s\n" $temp $temp | cryptsetup -y luksFormat /dev/$dname$sid
-printf "%s\n" $temp | cryptsetup open /dev/$dname$sid croot
+cryptsetup -y luksFormat /dev/$dname$sid
+cryptsetup open /dev/$dname$sid croot
 mkfs.ext4 /dev/mapper/croot
 mount /dev/mapper/croot /mnt
 # mkfs.ext4 /dev/$dname$sid
