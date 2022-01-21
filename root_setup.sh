@@ -46,11 +46,11 @@ rmdir /efi
 
 
 
-pacman -Syy
+pacman -Syy 
 # pacman -S grub
 # grub-install --efi-directory=/efi /dev/$dname
 # grub-mkconfig -o /boot/grub/grub.cfg
-pacman -S efibootmgr
+pacman -S efibootmgr --noconfirm
 efibootmgr -B -b 0000 -q
 # disble check and log, 
 efibootmgr -d /dev/$dname -p ${bid: -1} -c -L "arch" -l /vmlinuz-linux -u "cryptdevice=UUID=`blkid -s UUID -o value /dev/$dname$sid`:croot root=UUID=`blkid -s UUID -o value /dev/mapper/croot` rw initrd=\initramfs-linux.img vconsole.font=solar24x32 quiet"
@@ -83,7 +83,7 @@ printf "CHECKPOINT (BOOTABLE)?"; read
 # xorg-xrandr for monitor
 pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany alsa-utils redshift fakeroot git openssh nano android-tools xorg-xrandr sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg
 
-pacman -Rns sudo
+pacman -Rns sudo --noconfirm
 
 su ken -c "
 git clone --depth=1 https://aur.archlinux.org/brave-bin.git /home/ken/brave-bin
