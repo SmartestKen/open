@@ -6,9 +6,11 @@
 sync_repo() {
     cd $1
 
+
+	echo "checking $1"
     if git fetch origin master -q 2>/dev/null
     then
-
+		echo "updating $1"
         # first add (but do not commit) to compare with origin/master, add a placemholder to prevent useless commit        
         ignore_files=`find . -type f -size +75M -not -path '*/\.git/*'`
         if [[ $ignore_files != "" ]]
