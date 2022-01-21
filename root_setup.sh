@@ -116,7 +116,7 @@ printf "How many lines to remove from .xinitrc?"; read N
 echo "$(head -n -$N /home/ken/.xinitrc)" >/home/ken/.xinitrc
 # leave qt5ct variable there for qt5 font support
 echo "redshift -O 3000K &
-/home/ken/private/sync.sh &
+/home/ken/open/sync.sh &
 export QT_QPA_PLATFORMTHEME=qt5ct
 XDG_SESSION_TYPE=x11 plank &
 geany -i /home/ken/open/index.* &
@@ -244,7 +244,7 @@ git fetch origin master
 git reset --hard origin/master
 
 cp -r /home/ken/private/.config /home/ken/
-chmod 744 /home/ken/private/sync.sh"
+chmod 744 /home/ken/open/sync.sh"
 
 printf "CHECKPOINT (PERSONAL DEKSTOP)?"; read
 
