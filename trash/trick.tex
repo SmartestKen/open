@@ -1,0 +1,395 @@
+\section*{holomorphic tricks}
+1. polynomial tricks
+	any bound is bounded, and we can always use cauchy's estimate.
+	if the bound itself goes to 0, then the entire function is identically 0
+
+	lower bound
+		>= |z|^N ----> polynomial
+		
+
+	
+	
+	
+	sequence + zeros ---> hurwitz
+	
+
+2. rational tricks
+
+3. general holomorphic tricks
+
+	identity theorem
+	
+	proving k = k' is the key to k = ce^z
+
+
+16,15,14,13,12,
+
+\section*{sequences trick}
+	Montel
+	
+	Hurwitz, when dealing with 0
+	
+	\epsilon-\delta argument, uniformly continuity, when dealing with inverse
+	
+	Weierstrass theorem
+
+\section*{proving bdd tricks}
+	pointwise bdd for e/sin/cos
+
+\section*{using bdd tricks}
+	to reverse the bound, try 1/f or -f. 
+		if we do 1/f, we can consider multiply a polynomial that cancel all of f's root. BUt to do that, we need to ensure f does not have zero sequence that goes to infinity (i.e. number of zeros in a bounded set must be finite, otherwise use identity theorem)
+
+
+
+	
+
+
+\section*{mapping, classify, existence}
+	open mapping theorem 
+	preimage argument
+
+
+
+
+\section*{harmonic tricks}
+1. locally (i.e. an open neighborhood) construct and use holomorphic related results
+
+2. MVP and its disk integral version
+	2.1 green theorem: turn line integral into disk integral by adding derivative (and vice versa)
+
+3. u_xx + u_yy = 0
+
+4. maximum modulus principle
+
+5. cauchy estimate 
+	we must have
+	1. a bound 
+	2. a radius such that the corresponding disk is inside the applicable area of that bound (hence it does not have to be the maximum radius)
+
+lowest term of series decided by lowest terms from component. 
+Given a series, we can always suppose the lowest non-zero term is blabla...
+
+!!! (key trick) nonconstant entire function dense image
+
+nowhere zero except for finitely many puncture -> nowhere zero
+(1-i)f
+e^f
+
+FA20 P4
+
+FA17 P8 does that mean we have to deveop the machinery
+FA17 p6
+220A 11 --> bdd
+
+omit values -> oomit special values
+rational manipulation does not change order
+entire, non-zero , then e^h for some other entire h
+hadamard contradiction ---> the function we apply hamadard is zero. (i.e. DO NOT JUST CONCLUDE AT HADAMARD CONTRADICTION)
+
+!!! cauchy estimate can ONLY be applied when the function is holomorphic everywhere in the disk (and circle). If there is a pole/unknown point, deal with it first, DO NOT JUST CLAIM that it is a polynomial.
+
+rational verion of cauchy??? fill in things there?
+
+
+
+convert an meromorphic to entire
+	1. use to omitted value to prevent blow
+	2. assign 0 at the original poles
+
+hence picard tells us for entire to be constant, we need 2 omission. for meromorphic to be cosntant, we need 3 omission
+
+value at the set*measure at the set = integral
+1/g automatically omit 0 for any entire g.
+exp automatically omit 0
+
+whenever possibility of rational or negative power, convert it into a positive power and 
+	1. removable singularity
+	2. cauchy estimate
+
+
+1/f(z) zero-> pole, pole->removable singulairty (0), location does not change
+f(1/z) zero/pole property does not change, but location swap
+
+(key property) entire f(z) with removable singularity/pole at \infty is a polynomial
+hence entire f(1/z) with removable singularity/pole at 0 is a polynomial
+hence entire, nonpolynomial f(1/z) must have essential singularity at 0
+entire, nonpolynomial f(z) must have essential singularity at \infty
+
+Hence great picard, any entire, non-polynomial (e.g. exp^{anything other than constant}) must take any value, with one exception, infinitely many times.
+
+hence entire + omit one value + attain another value finitely many times -> that entire funciton must be a polynomial
+	!!! hence if that function is non-constant of the form exp(...), then contradiction.
+entire +omit two value -> that entire function is a constant
+meromorphic +omit 3 value -> constant
+
+g no fix point, then g(z)-z omit 0, g(g(z)) - g(z) omit 0 and so on.
+if f has fix point, then f \circ f has fix point
+(i.e. any $\neq$ can be converted into an omission)
+
+if we want to deal with omission of f and the equation we have only have (f+c)*..=,..., then we might as well call h = f+c and analyze h instead. Now if we get two omission from h, it will be the same as we get two omission from f.
+in fact, any property we obtain from (f-a)/b transfer exactly back to f
+
+!!! f' \circ f (or any composition) never attain what f' cannot attain
+
+
+
+
+
+
+
+
+
+
+
+if omit and finite exception appear at the same time, then try to split tehm up????
+
+!!! ce^{non-constant} = polynomial ,then c = 0
+
+that one exception can be taken on finitely many times, e.g. (1-z)e^{1/z} can attain 0 once.
+
+
+1. prove eachpartial sum subharmonic
+2. prove convergence
+then target is subharmonic (as limit commute with mvp)
+
+!!! DO NOT DIRECTLY SWAP the infinite sum with the integral, use the argument (each finite partial sum subharmonic + convergence) above
+
+in general, when proving infinite sum harmo/holo, always argue on finite partial sum, then push limit (through convergence theorem, eg.. weierstrass, the one for harmo and subharmo)
+
+type of bound:
+	bound involving integral
+	bound invovling derivative
+	bound involving negative power
+	bound involving log
+	bound involving polynomial
+	constant bound
+	reverse bound (i.e. \geq rather than \leq)
+
+
+
+
+
+!! one way is to use zf(z), as z->0, limzf(z) = 0, hence fill in 0 at there.
+the other (completely equivalent) way is to directly use statement of removable singularity theorem, limzf(z) = 0 MEANS f(z) (rather tahn zf(z)) has a removable singlarity. Cauhcy still useable as negative power does not infleucne as R -> \infty
+
+!!! E(...), whatever inside the bracket multiply its probability
+!!! E(..|..), whatever on the left side of bracket, multiply its conditional probability.
+
+
+
+
+hadamard helps determine the form on the exponent. without that it is hard to argue h/log(R) \infty for some random non-constant h. (i.e. we can only derive order when we completely confirm the exact expression of our entire function)
+
+
+e^{polynoial} --> order= degree of poly
+polynomial --> order= 0 
+e^e^{poly}} ---> order = \infty
+
+submvp: non-integral side \leq integral side (hence given any condition of the form, start with non-integral side, reverse the equation if neeeded)
+mvp, integrating counterclockwise/clockwise does not matter
+
+learn the odd bound residue details??
+bounded everywhere except for those singularities -> those singularities must be removable singularity, fill them in and we get a constant function
+!!! OMT/MMP can only be used to argue that f can either map to interior or a cosntant (on the boundary). Yet if the question require us to prove that f must map to the interior, OMT/MMP alone does not help.
+
+finish first pass, then second pass make hierarchy (summary) node
+
+\section*{to reverse the bound, try 1/f} 
+if we do 1/f, we can consider multiply a polynomial that cancel all of f's root. BUt to do that, we need to ensure f does not have zero sequence that goes to infinity (i.e. number of zeros in a bounded set must be finite, otherwise use identity theorem)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{harmonic}
+1. MVP (basic and disk version).  (220C HW1.3)
+	!!! commute with taking derivative and limit
+	!! Green's theorem connect disk integral of partial derivative with line integral of itself.
+
+	1.1 cauchy estimate/Liouville (harmonic version)
+
+2. also given bdd from above (220C HW1.4)
+	use e^f (which automatically provide the bound from below)
+	!!! if given bdd from below, consider -u
+
+
+3. \Delta u = u_{xx} + u_{yy} = 0		(220C HW2.1, HW2.2)
+	
+	3.1 punctured disk at center, h(r) = alog(r)+b = MVP integral for some constant a and b.
+	
+	3.2 removable singularity fillable (proven using 3.1 and CONTINUITY)
+
+4. e.g. (and the only e.g.) log|z| (220C HW2.3)
+	e.g. i(2\pi)\theta   (220C HW2.4)
+
+
+5. reflection principle (220C HW2.5)
+	proven using 3, note that du(x,-y)/dy = -u(x,-y) by chain rule
+
+
+
+
+\section*{harmo-holo connection}
+1. transfer to holomorphic (prove property and transfer back) (220C HW1.1, HW1.2)		
+	1. locally if the domain is open
+	2. globally if domain is simply connected
+	
+	!!! we can also explicitly construct holo to SHOW harmo
+
+	1.1 composition rule
+		!!! can be used to show that log|h(z)| is harmonic
+	1.2 Opem mapping theorem (harmonic version)
+
+
+
+2. admit conjugate (and therefore admit a corresponding holomorphic) (220C HW1.5)
+if and only if every nowhere-zero holomorphic can be expressed a e^h 
+if and only if simply connected
+
+
+
+3. if two corresponding holomorphic, then up to an imaginary constant. (220A HW2.3)
+	!!! conversely, if we obtain a holomorphic from 3, we can always adjust by an imaginary constant and it is still a corresponding holomorphic
+
+
+
+
+
+
+
+
+\section*{show constant}
+1. show modulus is a constant, then use OMT (especially when domain is the entire complex plane) or MMP Iwhen the domain is bounded)
+
+2. find a bound, and use cauchy estimate/Liouville. We need to note about neighborhood of infinity is covered if we construct that bound ourselves.
+
+\section*{use/prove simply connected}
+1. (if and only if) given any non-zero holomorphic h, h can be written as e^g
+	!!! to construct consider showing |he^-g| = 1
+
+
+
+
+\section*{cauchy estimate}
+1. To use it
+	1. find a bound
+	2. find a disk covered by the bound's applicable area (use MMP if you do not choose the maximal disk)
+
+\section*{bound}
+1. polynomial/log(polynomial) bound
+	just use cauchy estimate (applicable to both harmonic and holomorphic)
+
+
+\section*{exist function}
+1. Weierstrass
+	log derivative can become a solution to ML
+2. ML
+ 	!!! note that this gives more control on construction than Weierstrass. Use ML whnever possible (e.g. f,g entire, f/g meromorphic)
+3. combinging weierstrass with zero of order m and ML (with m terms)
+	1. the product is entire
+	2. we can decide the first m terms (that is, up z^{m-1}) of its taylor series
+
+
+
+
+
+2. logarithmic derivative of Weierstrass (220B.3.3)
+
+
+\section*{show/use normal}
+1. Montel theorem (to jump from/to locally uniformly bdd)
+
+
+\section*{prove construction equality}
+1. show that both side have the same zeros
+2. log derivative (by adding e^h to one side) and use special value to show h=0
+or
+2. use special property along the boundary (e.g. blaschke), and MMP (f/g, g/f)
+
+\section*{use conformal mapping/biholomorphism}
+basic property
+1. EACH generalized circle (that is LINE or CIRCLE) in src boundary mapped to one of generalized circle in target boundary, 1 extra point to decide mapped to inside or outside
+2. preserve the intersection angle of generalized circles
+
+
+
+!!! Remember e_strip_log_slit
+
+To prove mapping works:		(220C HW2.3)
+	1. for boundary to boundary, use conformal mapping (pick 3 points and show generalized circle -> generalized circle)
+	2. for interior to interior, suppose interior to boundary and then OMT. Or in case we cannot determine which side of target boundary (use extra pt or MMP)
+
+
+\section*{int/deriv tricks}
+(220C HW2.1, HW2.2)
+
+dxdy = rdrd\theta
+\Delta u 
+= u_{xx} + u_{yy} 
+= u_{rr} + u_r/r + u_{\theta\theta}/r^2
+= ((r(d/dr))^2 + d^2/d\theta^2)u/r^2
+
+!!! close loop + fundamental theorem (primitive exists) -> 0 result. (Now note that the primitive of u_{\theta\theta} is EXACTLY u_{\theta} when inetgrating with respect to d\theta)
+
+
+!!! derivative non-negative --> self non-decreasing
+derivative 0 -> self constant
+
+!!! d/dz = d/dx - id/dy
+d/d\bar{z} = d/dx + id/dy ---> which is why df/d\bar{z} = 0 for any holomorphic f
+d/d\bar{z}d/dz|f|^2 = |f'|^2 (by product rule)
+
+
+!!! u_x = v_y (left, left, right, right)
+
+\section*{int technique}
+
+\section*{subharmonic}
+1.(if and only if) \Delta u \geq 0
+	
+2. (if and only if) subMVP (with range)
+
+
+
+
+
+
+\section*{220B HW1, HW2, HW3}
+\section*{220A HW1, HW2, }
+\section*{220C HW1, }
+
+
+!!! the only time write is the NEW understanding flush
+
+\section*{schwarz reflection}
+!! harmonic version can directly proven, no need to jump back to holo version (unlike OMT)
+
+!!! DO NOT directly try to prove MVP, as it has to be any radius and we are to prove harmonic not to use harmonic.
+
+
+!! converge locally uniformly -> converge uniformly on compact -> integral (which is contained inside that compact set) converges -> therefore inequality passes to there.
+
+
+\section*{OMT/MMP expand}
+interior point cannot be mapped to boundary
+modulus bound for boundary is bound for interior
+
+src open cannot map to boudnary (not open)
+open domain cannot be mapped to closed domain (e.g. circle of fixed modulus)
+
+
+!! bounded from below
+	1. inverse both side to get \leq
+	2. use the fact that entire \to \infty (i.e. with a pole at \infty) must be polynomial

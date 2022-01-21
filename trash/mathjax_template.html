@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>template</title>
+<!----use the following when there is no internet, make sure mathjax is in the root_setup.sh
+<script type = "text/javascript" id="MathJax-script" async
+	src="/usr/share/mathjax/tex-chtml.js?config=TeX-AMS_SVG">
+</script>
+---->
+<style>
+    body { white-space: pre-wrap; }
+</style>
+<script>
+window.onload = function () {
+    //Add a header
+    tocHeader = document.createElement("h3");
+    tocHeader.innerText="Table of contents";
+    
+    // Create a list for the ToC entries
+    tocList = document.createElement("ul");  
+    tocList.setAttribute("style","list-style-type:none;");  
+    
+    // Get the h3 tags - ToC entries
+    headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6")
+    // For each h3
+    for (i = 0; i < headers.length; i++){
+     
+      // Create an id for anchor
+      headers[i].id=i;
+     
+      // a list item for the entry
+      tocListItem = document.createElement("li");
+
+      // a link for the h3
+      tocEntry = document.createElement("a");
+      tocEntry.setAttribute("href","#"+i);
+      tocEntry.innerText=headers[i].innerText;
+     
+      tocListItem.appendChild(tocEntry);
+      tocList.appendChild(tocListItem);
+    }
+    
+    
+    document.body.prepend(tocList);  
+    document.body.prepend(tocHeader);  
+};
+
+
+
+
+
+MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+        fontCache: 'global'
+    }
+};
+</script>
+<script type="text/javascript" 
+	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+</head>
+<body>
+<!----this note is meant to be a second-level note, DO NOT attempt to use this as first-level
+---->
+<h1>Hello</h1>
+<h2>structure demo</h2>
+<h3>content</h3>
+
+</body>
+</html>

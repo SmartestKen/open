@@ -1,0 +1,144 @@
+
+
+
+
+
+old 220 notes object may be absorbed
+
+
+
+
+
+SP21.1 $2^3*7$
+FA20.2 $2^k*m$
+SP18.1 $p^2*q$
+FA17.1 $3*7*11$
+SP17.2 $2^3*3*7$
+SP16.1 $3*13$
+SP15.1 $p^2q^2$
+SP13.1 $3*11*61$
+SP12.1 $2^2*503$
+SP11.1 $3^2*13$
+FA11.1 $2^2*3*5$
+SP10.2 $2*3*5*67$
+FA09.2 $2^n*p$
+SP09.2 $3*5*7$
+
+
+
+FA20.1 contour integral
+FA20.2 solution
+FA20.3 holomorphic sequence convergence
+FA20.4 holo functions with given zeros/poles/values
+FA20.5 normal family
+FA20.6 infinite sum/infinite product equality
+FA20.7 harmonic functions with given zeros/poles/values
+SP20.1 solution
+SP20.2 holo functions with given zeros/poles/values
+SP20.3 mobius transformation
+SP20.4 fixed point
+SP20.5 automorphism
+SP20.6 holo functions with given zeros/poles/values
+SP20.7 harmonic sequence convergence
+FA17.1 contour integral
+FA17.2 value bound
+FA17.3 automorphism
+FA17.4 value bound
+FA17.5 simply connected
+FA17.6 harmonic function
+FA17.7 holo functions with given zeros/poles/values
+FA17.8 polynomial
+SP17.1 contour integral
+SP17.2 polynomial
+SP17.3 constant
+SP17.4 holo functions with given zeros/poles/values
+SP17.5 normal family
+SP17.6 solution
+SP17.7 order/rank/genus
+SP17.8 harmonic, constant
+FA16.1 polynomial
+FA16.2 infinite sum/infinite product equality
+FA16.3 contour integral
+FA16.4 constant
+FA16.5 holomorphic sequence convergence
+FA16.6(a) holomorphic sequence convergence
+FA16.6(b) holo functions with given zeros/poles/values
+FA16.7 ???
+FA16.8 harmonic, constant
+
+
+
+SP15.2(i) harmonic function, accumulation point
+SP15.2(ii) constant/nonconstant, holomorphic, plane with slit
+SP15.2(iii) polynomial approximation, uniform convergence, annulus
+SP15.2(iv) entire, dense image, constant/nonconstant
+SP15.3 polynomial root, annulus
+SP15.4 contour integral, residue theorem
+SP15.5 meromorphic equality (series on one side)
+SP15.6 periodic function, zeros/poles
+FA15.2(i) entire, real/imaginary part. constant/non-constant
+FA15.2(ii) entire, zero/pole, surjective
+FA15.2(iii) conformal map, infinite strip, unit disk
+FA15.2(iv) polynomial approximation, uniform convergence, annulus
+FA15.3 polynomial root, unit disk
+FA15.4 contour integral, residue theorem
+FA15.5 harmonic function, bounded image, harmonic extension
+FA15.6 meromorphic function, period
+FA15.6(b) bounded region
+FA16.1 entire, zero/pole, polynomial
+FA16.2 holomorphic, unit disk, zeros/poles, infinite sum convergence
+FA16.3 contour integral, residue theorem
+FA16.4 unit disk, holomorphic, zero/pole
+FA16.5 connected open region, sequence of holomorphic function, unit disk, zeros/poles, subsequence, uniform convergence on compact
+FA16.6 unit disk, infinite product, 
+FA16.6(a) uniform convergence on compact
+FA16.6(b) holomorphic extension
+FA16.7 holomorphic continuation, path
+FA16.8 constant/non-constant, harmonic, double integral
+
+
+SP21.1 $2^3*7$
+FA20.2 $2^k*m$
+SP18.1 $p^2*q$
+FA17.1 $3*7*11$
+SP17.2 $2^3*3*7$
+SP16.1 $3*13$ 
+SP15.1 $p^2q^2$
+SP13.1 $3*11*61$
+SP12.1 $2^2*503$
+SP11.1 $3^2*13$
+FA11.1 $2^2*3*5$
+SP10.2 $2*3*5*67$
+FA09.2 $2^n*p$
+SP09.2 $3*5*7$
+
+
+
+
+
+
+SP20.1 cyclic/abelian
+SP20.2 characteristic subgroup
+SP20.3 UFD
+
+
+
+
+table of content
+# TODO, disable higglight keyboard in BIOS
+
+SP09.1 Free group, presentation
+SP09.2(a) normal, abelian, Sylow
+SP09.2(b) non-abelian, semidirect product, solvable, nilpotent
+SP09.3 finite field, subfield
+SP09.4 minimal polynomial, splitting field, galois group
+SP09.5 isomorphic field, conjugate subgroup, galois group
+SP09.6(a) local, finitely generated modules, structural theorem of modules over PID
+SP09.6(b) local, finitely generated modules, torsion, module homomorphism
+SP09.7(a) Noetherian, domain, irreducible elements
+SP09.7(b) UFD, integrally closed, field of fractions
+SP09.7(c) Noetherian domain, UFD
+SP09.8 radical, intersection of prime ideals
+FA09.1 semidirect product, presentation
+FA09.2 normal, sylow, semidirect product, abelian, centralizer
+FA09.3 finite field, field extension

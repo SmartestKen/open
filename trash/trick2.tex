@@ -1,0 +1,190 @@
+
+
+
+\section*{entire facts
+	pole at \infty iff polynomial (this further implies infinitely many times through PIcard theorem)
+	after proving constant/poly, check if the bound implies values at special point (e.g. origin), this may further constain the form
+	dense image
+	essential singularity prevent injective, and the only injective polynomial is linear 
+	removable singularity also prevent injective through Liouville
+	
+\section*{holomorphic facts
+	e^f, (1+i)f
+	inversion trick (1/f, 1/(f(z)-w))
+	divide zero trick
+	multiply pole trick
+	subtract zero/pole trick
+	no zeros, 
+		must equal to e^h
+		with equality bdd -> constant
+	1/z transform 
+		preserve injectivity
+		zero, pole location change, property does not change
+	1/f
+		zero, pole locaiton does not change, property change
+	
+	
+\section*{harmonic facts
+	constant shift
+\section*{derivative tricks
+	integral and residue theorem
+	cauch estimate
+	special FTC integral z\int_0^1f'(tz)
+	weierstrass second part
+	order equality
+	derivative value of \phi_a/schwarz
+	fe^{-F}, where F=f'/f+...
+\section*{integral tricks
+	FTC
+	MVP (can used for bdd, applicable to both harmonic/holomorphic)
+\section*{automorphism trick
+	exp strip log slit
+	5 pt map
+	sin/cos/tan
+\section*{bounded
+	removable singualrity (if bdd near singu as well)
+	/Jensen's formula, especially about zero distribution/division trick, cauchy estimate
+	blaschke product
+	1/z and z^n multiply/division trick does not change bound on unit circle
+	pointwise bound (of sin/cos/exp)
+	schwarz/biholomorphisms
+	order (derivative/integral bdd)
+	
+\section*{reverse bounded
+	rouche's
+	cauchy estimate: If M(r) \geq ..., then there exists |f| \geq ..
+	m-test
+	mmp (with inverse trick)
+	entire lower bdd by poly must be poly (as \to \infty pole)
+	
+\section*{meromorphic facts
+	related to rational, multiply a polynomial containing all poles then entire function, (and if pole at \infty, then polynomial)
+	discrete pole, hence for any pole, there is a holomorphic neighborhood
+	
+\section*{polynomial
+	finitely many roots, pole at infinity
+	
+\section*{convergence/sequence trick
+	M-test/root test/geomtric R<1/power >1
+	hurwitz/\epsilon-\delta proof
+	weierstrass
+	Montel
+	integral, residue theorem
+
+\section*{order trick (check if universal)
+	if order \lambda, then (equivalently)
+		1. for any \epsilon, there exists R big enough such that |f| \leq e^{R^{\lambda+\epsilon}}, plug this in and later argue \epsilon arbitary
+		2. for any \epsilon, there exists R big enough such that logM(R) \leq R^{\lambda+\epsilon}, plug this in and later argue \epsilon arbitary
+	
+	sum/product \leq max order (need proof)
+	primitive/derivative same order
+	identity theorem of some sort can be achieved thorugh hadamard (rank order conflict)
+	weierstrass form constraint
+	
+	
+	
+	
+\section*{====various theorem
+\section*{cauchy integral formula/MVP/cauchy estimate/Jensen --> holomorphic on both interior and trajectory (boundary)
+	!!! if not, prove/make those points are removable singularity first
+	!!! ML inrquality reached iff integrand constant
+	
+\section*{residue theorem --> holomorphic on curve, finitely many pole in interior
+\section*{simply connected -> open/connected
+\section*{M-test uniformly and absolutely (within the set we apply, but we usually need a compact set to find bound....)
+
+
+
+
+
+\section*{rst/casorati/picard ---> punctured neighborhood
+ftc --> integrand holomorphic in an neighborhood of the curve (so that its integrand is well defined)
+
+
+\section*{convergence
+converge uniformly in the entire domain (limsup)--->
+converge locally uniformly (i.e. uniformly in each open neighborhood) 
+= converge on compact (i.e. on each compact, usually can be bounded by radius R)
+---> integral within the set converges (through ML argument)
+	!!! after proving, need to justify why interior to interior (OMT/MMP) and why not a constant
+	!!! all the harmo/hol/subharmo uses l.u.
+conversely integral not converge
+---> not l.u/u_compact/uniform approximation
+	
+\section*{MMP/OMT --> always usable, if contradict, the function will be constant (may not be the end of argument, may be given an extra value to show that such constant cannot even exist)
+
+
+
+
+\section*{rouche's theorem ---> 
+1. holomorphic on both interior and boundary
+2. strict inequality on boundary 
+3. curve no self-intersection
+
+\section*{hurwitz theorem ---> 	
+1. holomorphic
+2. locally uniformly convergence
+3. compact subset (completely inside domain)
+4. target no zero on the boundary of that compact subset
+
+\section*{weierstrass theorem ---> holomorphic + locally uniformly convergence
+	!!! does not determine the image of target function, need to use OMT/MMP to ensure interior to interior
+
+\section*{identity theorem ---> holomorphic in an open set that contain the equality sequence INCLUDING its accumulation pt
+
+\section*{infinite product converges locally uniformly (and absolutely)--> sum converges locally uniformly (and absolutely)
+	!!! M-test exactly provides that
+
+\section*{Montel ---> locally converges iff locally bdd
+	need to argue neighborhood of 0/\infty
+
+
+
+\section*{schwarz lemma --> 3 stage
+condition stage 1: D->D holomorphic, f(0)=0
+condition stage 2: automorphism 
+condition stage 3: one point value other than origin known
+
+\section*{schwarz reflection
+1. holomorphic in sided interior
+2. continuous, real value on real line (or modulus 1 on circle)
+
+	real line: inner conjugate, outer conjugate
+	circle: inner inverse conjugate, outer inverse conjugate
+	when inductive reflect, fix one side and keep merging
+
+\section*{RMT --> non-empty, simply connected set
+
+\section*{Runge
+1. compact
+2. holomorphic on that compact (i.e. an open set containing that compact)
+3. AT LEAST one point from each bounded hole
+
+(then uniform appx on that compact)
+
+1. open
+2. holomorphic on that open
+3. AT LEAST one point from each bounded hole
+
+(then locally uniform appx on that open)
+
+	1. does not care disjoint or not, still one approximation for all
+	2. if two funcitons are the same on a set, then approximation for one is an approimation for another
+	
+	
+move special bbd trick???	
+	
+\section*{simply connected --> open/connected
+
+
+
+\section*{weierstrass/ML --> always usable (entire only)
+\section*{hadamard ---> non-zero (entire only), if contradiciton, then constant (may not be the end of proof)
+\section*{little picard ---> basic version: entire
+---> special version: meromorphic
+\section*{great picard ---> basic version: entire with singularity
+---> special version: entire non-polynomial
+---> both assume non-constant, hence if contradiction, then constant
+
+\section*{blaschke product --> defined on both interior and boundary
+

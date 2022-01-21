@@ -1,0 +1,317 @@
+220A HW1
+    
+220A HW2
+	P1, P2, P3(d31), P4(d, computational temp skip), P5(d31), P6(d31), P7(d31)
+220A HW3
+	P1(d31), P2(d31), P3(d31), P4 (d31), P5(d31), P6, P7
+220A HW4
+	P1(d31), P2(d31), P3(d31), P4(d31), P5(d31), P6(d31), P7, P8(i, ii d31)
+
+220A HW5
+	P1 (d31), P2 (d31) P3(d31), P4(d31), P5(d31), P7(d31)
+220A HW6
+    P1(d31), P2(d31), P3(d31), P4(d31), P5, P6 (d), P7
+
+        
+220A HW7
+	P1(d, ii pending computation), P2(d), P3(d), P4(d), P5(d), P6(d), P7(d)
+
+220A Midterm16
+220A Final16
+220A Midterm20
+220A Final20
+
+220B HW1
+220B HW2
+220B HW3
+220B HW4
+220B HW5
+	P1, P2, P3, P4 (d31), P5(d31), P6(d31)
+220B HW6
+220B HW7 (d)
+	P1 (d31), P2(d31), P3(d31), P4(d31)
+    
+
+220B Midterm21
+220B Final21
+
+220C HW1(d)
+	P1 (d31), P2 (d31), P3(d31), P4(d31), P5(d31)
+220C HW2
+220C HW3
+220C HW4
+	P1 (d31), P2 (d31), P3 (d31), P4, P5, P6
+220C HW5
+220C HW6
+
+(End at (including) lecture 15)
+
+
+220 FA16 (Fall 2015: 220A)
+	P1, P2, P3, P4, P5, 
+    P6 --> flaw on infinite zero, 
+    P7, 
+    P8(b) harmonic flaw 
+220 SP17 (Fall 2016: 220A)
+	P1, P2 ---> flaw in holomorphic, P3, P4 --> weierstrass factorization review, P5 holomorphic function bdd, P6, P7 ---> order genus review, 
+220 FA17 (Fall 2016: 220A)
+	P1, P2 ---> flaw in holomorphic,  P3, P4, P7
+220 SP20 (Spring 2020: 220C)
+	P6 (infinite zero, unfamiliar, order?), P7 (harmonic function to holomorphic bdd?)
+220 FA20 (Spring 2020: 220C)
+	P7 ---> big flaw on harmonic/poisson/dirichlet
+220 SP21 (all)
+	P1 (d31), P2(d31), P3 (d31), P4(d31), P5(d31), P6(d31), P7(surjective part failure)
+
+given sequence of $a_n$, find $p_n$ (usually a single constant rather than a varying sequence) such that $(a_n)^{p_n+1}$ has power greater than 1 (as $\sum_n 1/n does not covnerge)
+
+
+if only presscribe pole, then it is sufficient to get a weistrass factorization and use 1/f to convert all zero into poles
+but if presribe both pole AND laurent sereis, then
+
+
+
+
+
+
+
+
+\subsubsection*{weierstrass computation}
+
+1. find seuqne ce {p_n} (in easy case it can just be constant sequence), such that $(r/|a_n|)^{p_n+1} converges for any r. NOTICE THE EXPONENT IS p_n+1, NOT p_n
+(e.g. if a_n = n, make sure that p_n > 1. r does not matter)
+
+then z^ke^h\sum_n E_{p_n}(z/a_n) 
+E_p(z) (1-z)exp^{\sum_{n=1}^p z^n/n) (if p=0, \sum part does not exist)
+
+any two entire function with same zero differs e^h for some entire h
+
+\susubsection*{Mittag Leffler computation}
+
+1. exclude laurent at 0, select h_n based on g_n (prescribed laurent series of a_n)'s geometric series expansion (constant term or constant+first term)
+2. now use original expression of g_n (not the power series one in the previous step), and select |z| < r_n < |a_n| and simplify |g_n-h_n| through triangular inequality to an expression c_n
+
+3. when nothing more to simplify, push n \to \infty in c_n, and therefore the only terms  reamin in numerator and denominator are domainant terms (in terms of power of n), and check what the expression looks like, call it d_n and make sure it satisfies 2 below. If d_n cannot converge, go back to h_n and add more terms from the power seris. 
+
+4. officialyy for step 3, you will write as the convergence test
+    1. lim (c_n/d_n) < \infty
+    2. lim d_n converges (note that sum 1/n^k converges if and only if k>1. For lattice 1/(\lambda)^k convergence, k>2.
+hence lim c_n converges
+5. final product (laurent series at 0 + \sum (g_n - h_n))
+?? converging condition???
+
+to confirm the existence of subfield of some order, you can alternatively find a subgroup of that index in galois group (if not galois given, take closure)
+
+y orbit under G action = irreducible polynomial containg y = min polynomial of y
+
+inner bar outer bar
+inner inverse bar outer inverse bar
+(inner meant to shift domain, outer meant to keep the function holomorphic (i.e. if only inner, the function is NOT holomorphic)
+
+
+domain transfer of mobius transform
+C->C
+R->cricle
+upper->inner disk 
+lower->outer disk
+qudrant -> half disk
+
+
+
+1. redirect into upper by inner-composing
+2. inner-outer conjugate (by schwarz principle) while maintaing holomorphic
+3. jump back into original doamin by inner composing the inverse
+4. use mobius property \bar{\phi} = \phi(1/\bar{z})
+
+
+
+
+coposition of automorphism is an automorphism
+but product of automorphism MAY NOT be one.
+
+why all function uniformly bdd by that convergence reuslt???
+
+root test, each term a_n and test on limsup(|a_n|)^1/n
+
+taylor series congergence, if used bounding test with |z|<r, also implies f is bounded on any compact set (as any compact set has a maximum |z|).
+
+
+schwarz principle condition:
+    1. f holomorphic is upper (or lower is the same) and extend continuously over \mathbb{R}
+    2. f(\mathbb{R} \in \mathbb{R}
+
+
+MVP, when r=0 it is a trivial equation \phi(a) = \phi(a). Hence if we can show that as r increases, the value of integral DOES NOT DECREASE, then we prove the funciton to be subharmonic (similarly if we can show that as increases, the integral remains the same, then we prove the function to be harmonic)
+
+
+1. why vanish --> integrating $\int_0^2\pi \phi_\theta\theta d\theta$ vanishes as the $\theta$ term in $\phi$ is $re^{i\theta}$
+2. why (rh_r)' >=0 implies h_r >= 0  $rh_r >= 0h_0 = 0$ hence $rh_r >=0$
+3. When harmonic only in the PUNCTURED DISK, MVP on that puncutre does not hold. Conside $\triangle \phi = 0$ (cauchy-Riemann eqn) isntead.
+
+how to explain add a limit
+
+in a pumncutred disk, integral still produces value alog(r)+b, hence all we do is to use continuity conditoon insude the integral and consequecnetly decide a and b (i.e. force a to be 0 in the case of removalbe singualrity)
+given continuity |u(z)-u(0)| < \epsilon, we want to prove MVP??
+
+!!! it does not amke sense to compose f \circ g, where f is holomorphic and g harmonic as g's codomain must be \mathbb{R}
+!!! when want to maintain limiting properties while changing domain, inner compose transoformation (!!! DO NOT outer compose)
+
+multi-simultaneous coverge, never do linear
+
+When reflect, the derivative along refleting direction switch sign (e.g. y in upper/lower and r in circular) and the other (orthogonal direction) directive remains the same. The same directive both remain the same (as negative twice gives identity)
+
+poisson bumping: fill a circle through dirichlet but with subharmonic boundary
+
+
+
+??? 1. why does normal has that characterization
+??? 2, why normal prodct into normal???
+
+schwarz reflection harmonic -> use MVP
+    (i.e. we are trying to start from right hand side and end up in left hand side by jumping through MVP of the original function)
+
+
+
+harmonic
+    (iff) CR eqn =0; Lagrangian = 0
+subharmonic
+    (iff) CR eqn >=0; Lagrangian \leq 0 (notice the different inequality signs)
+
+
+
+Hence to transfer one reflection (M, M') to another (L, L'), 
+1. prepare a shifting function k: M -> L, M' -> L'
+2. for any function f: L -> \mathbb{C}, inner compose (shift back) f(k(z)) M ->\mathbb}{C}
+3. now use apply the reflection knowledge on M on f(k(z)). (e.g. inner outer conjugate if M is the upper half plane, call the function we end up with g(z): M' \to \mathbb{C}
+4. inner compose (shift back) g(k^{-1}(z)) M' \to \mathbb{C}. 
+5. now reflection knowledge in 3 guarantee holomorphic, but it does not necesarily guarantee the consistency over our current reflection boundary. Hence now restrict us on the boundary (i.e. everything inside f in the final expression equals to f(z). let f = a+ib or re^{i\theta} and determine the amount of changes produced by outer conjugate. Compensate that back to f(z).`
+
+linearly independet, can always extend to a basis
+any equation in terms of vetor space elements, can always reduce to non-trivial basis relation???  
+sum shifting in tensor product and innerprodcut
+
+not inejctive (something onzero map to 0)
+
+
+
+-------map 2 punctured point to one punctured point is not injective homomorphism
+for puncture disk to puncture disk, 
+    1. find a nbr of 0 and an nbr of a such that f(a) = f_extended(0) = k and two nbr disjoint. 
+    2, Now the intersection of the two nbr is a non-trivial nbr around k.
+    3. Now find k_2 in that nbr and map back. Disjoint now requires two different values in the punctured disk to correspond to k_2, which contradict f's injectivity (implied from bijectivity)
+
+1. Hence must be a rotation
+
+!! also note that removable singualrity can be mapped to the boundary (as it can be chosen as a limit value). But Open mapping theorem prevents it.
+
+--------------------------------
+
+
+
+
+
+    1. f holomorphic on outer disk
+    2. f(circle) \in circle
+
+
+
+
+
+
+
+
+
+
+
+inner conjugate + outer conjugate to reflect
+inner inverse conjugate + outer 
+
+!!! conjugate commute with sum/product and quotient
+
+
+
+1/z reflect both mangitude and angle, open map}
+ 
+\bar{z} only reflect angle, open map
+(they are the same on unit circle)
+
+
+entire function that is injective -> az+b through \infty analysis
+when two subgroups, if we want a bigger one that contains both, consider product (require one of them to be normal). If we want a smaller one that is contained in both (or either), then consider intersection
+
+
+
+continuous
+    (definition) preimage of open is open
+    (definition) preimage of closed is closed
+    ??? inverse of continuous is necessarily continuous???? OMT/?????
+    
+    
+    find desirable field
+    1. find an irreducible polynomial and extend it
+        1. char 0, every irreducible has to be 
+        2, char p>0, and Frobenius map not surjective (but always injective(, can extract an element such that x^p-a is irreducible
+        
+        3. extend any root of an irreducible gives a degree extension equal to order of that polynomial (regardless whether polynomial separable or not)
+        3. wat a second, a_ix^ip can do as well?
+    2. go to galois closure, then go down from galois group
+    
+    
+    connected to connected (this proves circle to crcle, elminate the case of circle to multiple chunk of circle)
+    simply connected to simply connected (this proves circle to entire circle, eliminating case of circle to part of circle)
+    
+given the roots of a polynomial, how many basis do you need
+
+1. each basis, min polynomial, then list all roots of this min polynomial. Every gal auto will permute transitively these roots
+(i.e. if we need only one basis (being one of the root that can express every other roots), then list and we are done. Otherwise if we have 2, then we have to consider the min polynomial of the second basis (which may has NOTHING to do, NO RELATION AT ALL, with our given polynomial) and do the same thing.
+
+i.e. we keep extending till we reach the splitting field (i.e. covering all the roots we start with). The extension in the middle (i.e. after the first one) may nothing to do with the original polynomial/roots
+
+NOw automorphism table (just like what we did in semidirect product). Decide order of each entry and formulate the group
+
+
+isomorphism of top permute root of f over irreducible factors of f over F
+isomorphism of E permute root of f from one irreducible over E to another over E, but since it sextends to an automorphism, we know that both roots are included
+
+isomorphism from bottom
+isomorphism from self, permute 
+isomorphism from top
+
+slash the fix component (Gal(K/E)), we get those that preserve but does not fix E Gal(E/F)
+
+
+swap (if non-normal)
+preserve
+fix
+
+
+
+
+
+subgroup of Gal(K/F) is Gal(K/E)
+only normal subgroup will receive GaL(E/F) as quotient
+
+
+e^{kz} maximum e^k (right most) and minimum e^{-k} leftmost (i.e. 1/max = min at opposite of circle)
+
+
+normal, invairnat under conjugation
+any can extend/restriction -> transfer from group to subgroup???
+
+
+minimal 
+    if and only if irreducible 
+    if and only if every eval to 0 is divisible by it
+
+f' eval to 0 means f|f'. But this only happens if $f' = 0$. But to let $f' = 0$ (without letting $f=0$), we have to be in finite characteristic and therefore f is of the form $a_ix^{pi}$
+
+
+inseparable polynomial can only be min polynomial in above situation
+
+inseparable -> frobenus not surjective ---> we can always pick an element in the extended field such that its min polynomial is inseparable
+    
+KL is the smallest field that contains both K and L. Hence its subgroup must be the biggest that is contained in both K's group and L's group. (i.e. the intersection)
+
+two roots connected by an isomorphism must be in the same irreducible 
+ 
+    

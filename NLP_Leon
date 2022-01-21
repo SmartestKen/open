@@ -1,0 +1,25 @@
+What is an ablation study?
+
+1. source of data
+2. any evidence ---> future prices
+3. what NLP method
+	long context pre-trained: longformer, reformer, performer, transformer XL
+	
+	arxiv.org ---> wiki ---> (embedding) sequence short ---> memory retrival
+	vector search ---> 
+	attention is all method ---> reading ---> experimentation 
+	gnn --> processing method ----> ..
+reddit/machine_learning, taylor, --> seminar
+	
+https://arxiv.org/pdf/2112.04426.pdf	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+

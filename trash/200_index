@@ -1,0 +1,820 @@
+200A HW1
+200A HW2
+200A HW3
+200A HW4
+200A HW5
+200A HW6
+200A HW7
+    P1(d31), P2(d31), P3(d31), P4 (d31), P5, P6, P7
+200A HW8
+200A Midterm
+200A Final
+
+200B HW1
+200B HW2
+200B HW3
+	P1 (d31), P2 (d31), P3 (d31), P4 (d31), P5(d31), P6 (cc)
+200B HW4
+200B HW5
+    P1(d31), P2, P3(d31), P4
+200B HW6
+	P1, P2, P3, P4, P5, P6
+200B HW7
+	P1, P2, P3, P4, P5, P6
+200B HW8
+	P1, P2, P3, P4
+200B Midterm
+200B Final
+
+200C HW1
+200C HW2
+200C HW3
+200C HW4
+200C HW5
+200C HW6
+	P1 (d31), P2
+
+200 SP09, FA09 (fall 2008, spring 2009 200a/b) 
+200 SP11, FA11 (winter 2011: 200b)
+200 SP12 (fall 2011/winter 2012: 200a/b)
+200 SP13 (fall 2012, 200a)
+200 SP15 (fall 2014, winter 2015 200a/b)
+	P1,P2(b)---> field basics, P3, P4 (free module/PID/structural), P6(d), P7, P8 --> galois theory field extension part.
+	
+	
+
+	
+
+	
+	
+	
+--------------200C hw6 p1, PID iff every submodule of free module is free	
+every ideal is a submodule of the free module R by definition. principal ideal (exclude 0 ideal) is isomorphic to the module R itself by multiplication map.
+
+Ideal cannot contain more than 1 linearly indepdent generator, hence it can never contain a submodule of R \oplus R.
+
+
+
+-------------Qual FA20 P6, tensor product, sum rules, field
+basis are linearly indepedent, linearly independent can be extended into a basis
+Whenever we are in a vector space, we always PICK a basis. If we are given some l.i. set, then we EXTEND it into a basis. (Then possibly using tensor sum rules)
+
+
+
+-------------------
+\psi \to \psi^2 automorphism need not to have order 3 (i.e. it need not to be the "2" in the cyclic group of automorphism. automorphim order can only be known through powering test
+
+e,g. in 7th primitive 
+1. \sigma -> \sigma^2 has order 3 as 2^3 mod 7  = 1
+2. \sigma -> \sigma^3 has order 6 as 3^6 mod 7 = 2^3 mod 7 = 1
+
+
+
+the element $\sum_{g \in G} g(\gamma)$ is an element fixed by any $g \in G$. Hence now just prove this element have 
+    1.  satisfy polynomial of index order
+    2. that polynomial is irreducible (and hence is the minimal polynomial)
+    
+then the group corresponding field is $F(\sum_{g \in G} g(\gamma))$ (also normal to normal, can be verified through splitting fields of the min polynomial)
+
+
+
+
+
+
+-------------------------
+If we drop down the top field, min polynomial does not change. If we lift up the base field, the min polynomial may become reducible and thus the new min polynomial is an irreducible factor of it.
+
+each divisor has a unique cyclic subgroup (hence collect \phi(d) generators), now sum them all up must equal to total number of elements (i.e. n). THere \sum_{d|n} \phi(d) = n
+
+splitting field 
+     equal to base field exten all roots of the polynomial
+     if of an irreducible, then normal extension
+
+finite field
+    cyclic group structure, if the base extend the gneerator of it (which will satisfy a min polynomial of roder $n$), then it will extend to the super field
+    galois fundamental + cylic group structure -> implication about subfield structure/irreducible factor of x^{p^n}-x
+    uniqueness and spltting field of x^{p^n}-x
+    
+    
+
+i.e. extesion degree = min polynomial degree = (in finite field) the exponent in number of element
+
+-------------------
+compositum, primitive element theorem, may relate to the quotient F[x]/(f)
+isomorphic (as K-vector space) if and only if same degree. BUt isomorphic as rings (K-algebra) or field, you may need to consider CRT. Think about Q[SQRT(2)] and Q[Sqrt{3}]
+
+
+hence irreducible polynomial also related to F[x]/(irreducible) iff field and CRT (which requires separable??? or as long as it is irreducible factors??)
+
+
+F[x]/(f) \cong \prod_i F[x]/(f_i)
+where each f_i is a irreducible factor of f in $F[x]$ (hence expression derived from crt (i.e. the one on the right hand side) can change when we change F. (The more we lift F, the more split and in splitting field, everything beceoms singleton)
+
+compositum always require super field (or automatically by algebraic closore if both are algebraic
+
+
+------------------------------
+
+
+    
+
+
+
+------------------------chinese remainder theorem, minimal polynomials
+coprime if and only if gcd=1 (which is satisfied for any two pair of irreducible)
+
+note that we are always in PID as our coefficient set is a field, min polynomial is exactly defined as the generaotor of the ideal {p | p(a) = 0}. Hence if there are two, one must be in the ideal of another. (Can also argue through euclidean algorithm)
+
+
+--------------------dirichlet related formulas overview
+take sequence limit/derivative both inside and outside MVP still gives equality
+
+construct interior given boundary -> poisson kernel/dirichlet
+construct back the entire holomorphic (not just the harmonic) in the interior as well -> schwarz
+bound value by center -> harnack inequality
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------220B montel homework related
+
+taylor series term/bound construction -> consider using cauchy estimate
+
+--------------------
+
+
+composite field (only if shared super field), related to tensor product
+    composite of E[a] and E[b] is E[ab]
+
+
+
+----------residue theorems on C \cup \infty
+residue on riemann sphere sum to 0. Hence when \infty is included in the domain (i.e. riemann sphere), outer sum residue equals to inner sum residue for any contour.
+
+Alternatively, Res(f(z)dz, \infty) = Res(-f(1/z)(1/z^2)dz, 0) eqn
+https://en.wikipedia.org/wiki/Residue_at_infinity
+allow us to directly compute out of contour residue and get in contour residue indirectly
+
+residue at some point is always assocaited with a circle around it small enough such that it is the only pole in the circle.
+
+
+
+
+
+-----------tensor
+tensor isomorphisms proof
+tensor commute with direct sum
+gcd(0,p) = p
+
+
+----------------
+char can only add exponent ...
+prime primitive root min polynomial always have order $p-1$ i.e. x^{p-1} + x^{p-2}+...+1
+when cyclotiomic itself, include the basis generator IS including everything (as those can be wrjtten as power of generator)
+[prove cyclotomic polynomial is irreducible? obviously not rational root and eisenstein, nor order \leq 3]
+
+
+
+
+-----------------
+
+
+
+
+
+finite field 
+    special order division stuff
+char p field (in general) != finite field
+
+field -element -polynomial - subgroup relation
+field -> characterisrtic/closure/perfect
+element - finitely generated/min polynomial
+polynomial -> irreducible/factors
+subgroup -> galois
+    
+ring homomorphism, kernel is an ideal. (just like kernel is normal in group theory)
+field
+    the only ideal is (0) and itself, simple ring
+    homomorphism, kernel is either 0 (injective) or the entire thing as 1 is always included in the kernel (trivial map).
+    commutative addition AND multiplication
+    ring homomorphism inverse is mapped to inverse (i.e. 1 is mapped to 1)
+
+
+((a-b)^p = a^p - b^p in finite field. Hence anything of the form x^p-a
+
+F^p \subseteq F always
+F \subseteq F^p means any b can be expressed as a^p, which in turn means frobenius auto is surjective
+
+---now check what is char p doing?, then use fundamental theorem.
+
+
+
+ 
+
+tensor product
+    1. universal property 
+        1. prove bilinear (and coeff multiplcaition) map (NOT a homomorphism !!!) -> induce MODULE homomorphism from tensor module to target module. (i.e. if algebra homomorphism needed, prove f(tensor_1tensor_2) = f(tensor_1)f(tensor_2))
+    2. isomorphism (coonstruct inverse map)
+    3. relation to K \times L, KL
+    4. basis multiply basis forms a basis
+    5. \sum_J (\sum_{i} r_{i,j}k_i) \otimes b_j 
+       = \sum_{i,j} r_{ij}(k_i \otimes b_j)
+       
+       = \sum_i k_i \otimes (\sum_j r_{ij} b_j)
+       
+       i.e. sum across rows, then sum column
+       = sum all entries
+       = sum across columns, then sum row
+
+1. surjective guaranteed, show injective (bijective isomorphism transfer all properties icluding being a field)
+2. expand to basis
+
+
+        this is how linearly independence of each transfer through tensor product
+        (e.g.Hence given linearly i
+
+field extension: can pick a basis. if we alwready have l.i set, can extend to a basis
+
+any k[x] is an PID, hence irreducible generate maximal ideal, hence quotient out by it gives a field
+irreducible
+if reducible, can find irreducible factor with a strictly smaller degree (and hence extend to that degree by taking a root of that factor). Note any irreducible factor still have coefficient (in particular, constant coefficient) in the base field (by definition)
+
+    note c^n = z^p, where z is the constant coeff because
+        1. !!! constant coeff is the product of all root
+        2. each root to the pth power is c (and there are a total of n of them in this irreducible factor)
+ (given irreducible factor has n roots)
+
+https://math.stackexchange.com/questions/403924/xp-c-has-no-root-in-a-field-f-if-and-only-if-xp-c-is-irreducible
+
+hence constant coeff has two properties
+1. product of roots
+2. in base field
+
+free -> proj -> flat -> torsion free
+|F_{q^n}:F_q| = n (i.e. n dimensional vector space, hence extend any root of irreducible factor of order n is sufficient.
+the actual value of \phi is computable (i.e. \prod_i (p_i)^{k-1}(p_i-1
+https://en.wikipedia.org/wiki/Euler%27s_totient_function#Computing_Euler's_totient_function
+
+it is USELESS to prove subsequence convergence when we want the full sequence convergence. Hence to prove a sequence converges, suppose it does not and reach, therefore its has a subsequence that deviate from target, then reach a contradiction from there.
+
+locally uniformly bdd implies pointwise bdd
+
+
+min polynomial -> 
+    irreducible
+    root in extension
+    coefficient in base (i.e. \in F[x]
+if something apply to any element in the super, then it applies to all elements in the intermediate field as well (as it is just a subset). (i.e. min polynomial does not change if we restrict to an intermediate field, but it may become reducible if we LIFT the base)
+
+reducible -> find irreducible factor
+
+every subfield and divisor of polynmial in (finite???)
+
+?? do index every time but everything is linear
+    1, need to keep writing duplicate index
+    2. write fast, never need to switch
+2. having existing index structure, every time find it and add to it?
+    1. almost no duplicate, easily see assocation (and will rarely write duplicate), easily refine
+    2. every time need to find where it is
+    
+    
+rather than progress-object, do obj-progress?
+write fast as cache, then move into
+
+
+1. any ivides it
+2. it is product of them (separabilitity)
+-> it is product of all of them
+
+
+frattini always usable
+when doing sylow argument, in each case, we have an n_p (guess), then we will always know size of normalizer N_G(P) = |G|/
+
+normalizer -> 
+any center element in normalizer
+any center element in centralizer
+N_G/C_G
+group action list conjugate on self, on normal subgroup, on a set of conjugated groups (sylow)
+(also possible left multiplication action on set of coset, on itself --> embedding)
+    kernel
+    orbit
+    stabilizer
+    
+    kernel size related info
+    orbit-stabilizer theorem
+find out all other relations
+
+
+!!!! we have exact form for \phi, If we have |\phi \circ f(z)| \leq |z|, we simply expand it into |(1-f(z))/(1+f(z))|!!!!
+
+reverse to get the opposite inequality direction
+
+
+write down the key understanding, rather than solution. then frequently review it
+
+think about embedding when having to deal with altenating group
+we can always create normal (index 2 subgroup) by intersecting with A (unless the embedded group is a subgroup of A, in which case we get back itself)
+size argument
+
+shrink to key pt, then frequenctly review it. ifor grand obj patterns/summary (not deails but just general connections), extend the index and write them there. (there will be only a few)
+
+|a-b| \geq |a| - |b|
+|a-b| \geq |b|-|a|
+thsi two can create different downstream inequality
+
+
+
+proving max/min
+    show inequality, then show equality can be achieved
+    
+    
+E_p(1) = 0
+convergence statement neede
+
+cancel the constant part, the function may not converge
+cancel the function part, constant part deduct still converges. Hence cancel the function part FIRST. DO NOT cancel the constant part until function part is cancelled. Do not pull out function/constant from the sum (in fact cancellation by comparison is enough)
+
+
+auto with singualrity
+1. omt to prevent map to boundary
+2. multiple map to one (pick disjoint set and image intersection has empty preimage argument)
+schwarz +biholomorphic argument (|f(z)|=|z|, rotation, fixed pt)
+
+cache --> objectify key point + index (linear)
+disk ---> move index into its category + conflict resolve (no duplciate)
+
+write whatever down, frequent review...?
+
+exam I know this, but I forgot the details
+i do not know this, what can I try?
+what is useful to be written down???
+
+
+
+
+
+
+
+
+we only have control on the first term exponenet for weierstrass
+but we have contrl for the entire principal part for Mittag, hence it is preferred to construct using ML and then convert it (through addition and multiplication) back into an entire
+
+does product constant implies all the holomorphic factor constant?
+
+1. prove that poset nontrivial
+2. given a chain, find a maximum and show that it is in THE POSET (e.g. union of everything in chain and prove that it is in the poset by
+    1. prove it is an ideal
+    2. prove it is not the whole ring)
+!!! union of ideal in general is NOT an ideal. But since we are in a chain, x \in I_1, y \in I_2, but either I_1 \subseteq I_2 or vice versa and hence union is an ideal here.
+
+
+rM { \sum_i r_im_i}
+finite generated -> pick a generating set k_i
+Hence rM = M rtesults in k_1 = \sum_i r_ik_i, or (1-r_1)k_1 = \sum rest
+maximal ideal 1+m, 1-m, m-1 are all units
+
+
+
+
+
+------copy------
+
+primitive element theorem (so that we deal with root instead of entire field, if you transform hte root to anywhere, then )
+field automorphisms reduces to root automorphism (and vice versa) through primitive element theorem. (i.e. given field automorphism f: F[a] -> F[f(a)], if there is another auto $g(a)=f(a)$ that fix F. then f=g
+
+
+??? F(a) -> F(b) how do we know that f(a) is a primitve element though?
+
+once we choose a->a', we can restrict it to an isomorphism F[a]-> F[a']
+the isomorphism sending a->a' is unique (i.e. once we define a and a', the isomorphism is fully determiend), by there exists, we can find an automorphism such that retricting it to src field gives exactly this isomophism
+
+isomorphism ---> F[a] -> F[f(a)]
+F[a] -> F[b] ---> unique isomorphism such that f(a) = b
+
+passing through polynomial to show that they are conjugate root. 
+Then by the same isomorphism extension theorem
+
+
+E -> E'
+1 fix upper
+2. pick f from $F[x]$ that split in $K$
+
+
+
+!!!! can always shift the function by a constant, can always shift its real/imaginary by a cosntant, the function laways remain holomorphic
+
+!!! need to state mmp when want to use boundary bound to imply itnerior bound
+
+!!! get rid of extra term in computing order (e.g. constant term or polynomial terms)
+
+suppose k = lim loglog(M)/log(R)
+then lim R^k = lim logM
+hence there exists an \epsilon such that logM \leq R^{k +\epsilon}
+now plug back
+if we have 
+k
+\leq lim loglog(M+R^a)/logR 
+\leq lim log(logR + R^{k +\epsilon})/logR 
+\leq log(R^{k +2\epsilon})/logR 
+= k +2\epsilon
+now psuh \epsilon \to 0
+!!! note that there always exists R large enough such that LogR \leq R^{\epsilon} from then on
+
+!!! special integral that back relate, check if it had appeared in 220B final p6
+|f(z)-f(0)| = z\int_0^1 f'(tz)dt
+to prove it, substitute RHS x=tz and note that z is a constant with respect to the integral, we will end up in the fundamental theorem of calculus form
+
+    if no guarantee on f(0), think about whether we can shift f(0) to 0 (unless codmain has restriction, this can work while preserving holomorphi)
+    once we do that, |f(z)| can be bounded by |z||f'(tz)|, compact set helps bound |z|, |f'(tz)| is the values on the line from  0 to z and hence can be bounded by boundary + mmp or uniformly bounded from montel
+    
+    guarantee holomorphic/order/primitive/harmo-holo connection (imaginary constant)
+    any r+a will do the trick, but in this case a=1 is better or order computation
+    
+    order of derivative equal to self order (hence order of primitive equal to self order)
+    
+    
+    f \leq g for all z, then ord(f) \leq ord(g) (whether g is an entire fucntion or bound does not matre, an inequality on function f always produce an inequality on ord(f))
+    
+    rank implies we have a constant sequence to hold that condition, for stuff like log(n), we CAN have a weierstrass factorization, but its rank in \infty
+    
+    review 1. log derivative argument 2. weierstrass factorization for sin/cos
+    
+    !!! we acan reverse use, once we decide the order (if easy to do), we can know that rank \leq order, hence weierstrass factorization condition must be satisfied when we plug in order as rank (as anything than rank plug in will converge)
+    
+    connect it to refine of subnormal series
+    to split and refine CENTRAL SERIES and prove nontrivial center, transfer to the commutator notation (as it allows middle group transfer through subgroup relation)
+    
+    
+    cauchy: element of order $p$ exists, hence any group, any prime divisor of the group emits a cyclic group of that order
+    
+    p^n sylow group always exists (sylow theorem)
+    hence 
+    1. using the fact that p group has non trivial center, we can repeat cauchy and therefore get a p^k subgroup for any k \leq n
+    2. using this fact and 1, we backprove cauchy
+    
+     
+     
+     
+     quotient of abelian is always abelian, hence given G_i/G_{i-1} abelian
+     any normal intermediate group is G_i/K is G_i/G_{i-1}})/(K/G_{i-1}).and therefore is also abelian, allowing us to continue the series
+     hence we can choose whatever factor we want, as long as we keep normality
+        e.g. when we choose the entire, we basically prove that abelian implies nilpotent
+        e.g. when we choose cylic factor, we have a supersolvabe series
+     now pull back
+    [G, G_i] \leq G_{i-1} \leq H
+    and transfer back
+    
+    ??? check correctness.
+    
+    why can we reduce to the generator CONJUGATE notation bab^{-1} = a^k rather than stick with \phi_b(a) = ...$
+what is going on from addition group to multiplicative group???? from element to automorphism ... order???
+
+
+shifting constant also 
+    preserves primitive
+    harmo-holo
+    
+as longas domain is simply connected, we can use primitive, proof for convergence on compact does not influence the existence of such primitive
+fundamental theorme (ora any its variant) can 
+    1. do integral
+    2. use as the reverse of cauchy estimate (i.e. given bound f back from f' as long as the set is compact)
+
+commutator in a self subgroup (including self) guarantee self to be normal (so that central series condition automatically guarantee our pullback in central series are still normal in G, AND G_i normal in our pullback)
+    1. xyx^{-1}y^{-1} \in G_i, to prove G_{i+1} normal in G let x \in G, y \in G_{i+1}
+    2. xyx^{-1}y^{-1} \in G_i to prove G_i normal in G_{i+1}, let x \in G_i,  y \in G_{i+1}
+    
+alternatively
+1. normal subgroup correspondence (as we are in center, we are always normal, therefore our pullback is normal as well)
+2. the slash itself must imply normality
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 list generator of the starter
+1 list automorphisms in the target (AND compute their order through powering)
+2. now map. collect Isomorphic if src can be shuffled by an auto to make equal or target can be shuffled through conjugation of one of the auto to make it equal   
+    
+proving equality between something and a product factorization f = prod
+
+
+0. show product actualy converges (through \sum(...) implies \prod(1+...) and bound 
+
+0!!! DO NOT think of weierstrass factorization, that is for construction (not proving equality)
+
+1. check if they have the same zero (counting multiplicty), if they are f = e^hprod for some h
+2,  now try to show h = 0
+    1. first show h' = 0 (and therefore h = c) through logarithmic derivative
+    f -> f'/f
+    e^h -> h'
+    z^m -> m/z
+    constant (factor) -> nothing
+    \prod f_i -> \sum f_i'/f_i (e.g. 1-(z/a)^2 -> 2z/(z^2-k^2)
+    
+    cot(\pi a) formula
+    
+     + log(\prod)' --> note the log(\prod) becomes a sum, and we just take derivative of each term
+    
+    2. 
+        1. if we have no zero at origin, we take z=0 (or any convenient value) and plug into f = e^c prod to show c=0
+        2. if we do have a zero at origin, divide LHS and RHS by the z^.. component, then evaluare at 0. (e.g. sin(\pi)/\piz -> 1, and hopefully \prod without z^ component -> 1 as well
+        
+!!! to MEMORIZE the sine factorization though, use sin\pi/\pi = \prod (1+z^2/k^2) version k \geq 1
+
+e^z
+z^m
+f'
+f+g
+fg
+
+!!! special cse e^.. does not appear, rank = genus
+
+!!! to reduce produt back to weierstrass form 
+    (1-(z/a)^2) = (1-z/a)e^{z/a}(1+z/a)e^{-z/a} 
+    = E_1(z/a)E_1(-z/a)
+
+
+
+alwayys use multiplicative notation in src, as in target, automorphism combines through composition (hence using multiplcaition in src grup makes it less confusing)
+
+
+each generator and each target form a relation in the final presentation. (that once we decide generators' target the semidirect homomorphism is unique, (and only until that it is unique)
+    which is why we have aca^{-1} = c^{-1} AND bcb^{-1} = c^{-1} in that stackexchange question
+    
+    src automorphism, a pre network layer before the homomorphism layer, that swap src generator around (while still maintaining the same semi-direct). Hence if we have two homo, we can try to find a premap layer so that they are equal, then they are isomorphic)
+    
+    
+
+!!! check correctness
+
+
+    given original wf form, we can  use order (and only order!!) to (show equality)
+    1. get a sequence that satisfy weierstrass factorization (need to argue that plug in a greater value than rank still ensure convergence as |a_n| \to \infty and have sufficiently large N such that n >= N implies |a_n| >=1
+    
+    
+    (i.e. order, derivative/LHP, ODDNESS can help constrain a WF form, in particular, ODDNESS/EVENNESS can help evaluation when we do not have convenient pt to eval other than 0)
+    2. hence we get some form of WF 
+        1. multiplcity at 0
+        2. \prod E_p(z/a_n), where p is the order
+        3. e^h
+        
+        now function derivative tells us multiplicty at 0
+        
+        now odd function -> E_p split into E_p(z/a_n)E_p(-z/a_n) (and multiply together to see the result form 1-(z/a_n)^2)
+        
+        
+        why does he say discard zeros??
+        
+        order tells us max degree of h and hence write it as polynomial (za+b)
+        LHP (or direct eval if there is no 0 at origin) tells us the constant part of the polynomial b
+        oddness tells us a=0
+    
+    
+    2. constrain e^.. to be polynomual
+        then use LHP (if zeros at origin) and evaluation to further constrain its coefficient
+
+
+
+??? ompute order from taylor
+    for sufficiently large n (or r), we can use \epsilon argument to remove the lim (technically lim's definition is that), u+\epsilon \geq or u-\epsilon \leq (two versions)
+    
+    connection derivative value, coefficient and order (bound), use cauchy estimate) 
+
+    when we are given a subfield, we can extend isomorphism, or take a look at its normal closure
+        
+    that's when there are more than one cyclic group of the smae size (which is not possible wif the aut subgroup is cyclic itself). If that does happen, if we can find $f$ post -processing layer via conjugation $fAut(N)f^{-1}$ can help us go from one target to another, then they are isomorphic
+    
+    now if there are multiple src generator and multiple target, 
+        note that trivial is never a target (or infact any automorphism in the center of Aut), once mapped, any conjugation will make it remain trivial. which is also why we do not need to consider it when we only have one target of that order
+        
+        multiple generator (AND they have to be in the same order)
+        a valid target is only a target whose order divides the src generator order. Hence say we have order2 and order3 generator and one target for each of them, we are still in unique generator unique target case (rather than multiple multiple case). But in case we are in multiple multiple, we need to try pre-processing, post-processing AND any combination of pre-processing and post-processing.
+        
+        technically need to chek the entire group map is consistent after shuffling, but C_2 \times C_2 case is easy, as there are only one target, and we have (target, trivial, target)
+        
+        ????? how about C_4 -> C_4 case?
+        
+given a homomorphism like in semi, it fully decides once we deccide where the generator is mapped to. Hence when the target is unique (i.e. there is only one element of order 2), the entire homomorphism is unique and we need not bother using isomorphic rules
+rules only used when we have multiple generators or/and multiple targets
+    1. multiple generator, unique target. Then one generator is mapped to the target and rest mapped to trivial automorphism. Then src shuffling rule as long as we can always shuffle one gen to another.
+    2. single generator multiple target...????
+    3. multiple generator, multiple target
+        
+        
+        
+        
+        cauchy estimate holds for any R. Hence we are allowed to choose R_n to cancel terms in n
+        inequality direction does not change when we push \epsilon to 0
+        ??? forogot to divide extra e
+        
+        !!! powering test -> exponent a^a^a
+        !!!! reduction exponent mod [element group size]
+        
+        
+        !!! composition multiply exponent
+        !!! powering test, powering -> multiply exponent till it mod original size = 1 (i.e. a->a^k, then smallest m such that k^m = k*k*k*....*k (total m times) such that mod size = 1)
+        
+        !!! order of element is through (a^k)(a^k)...(a^k) = a^{mk}, we find the smallest m such that mk mod size = 0
+        !!! (i.e. in addition notation, we add for element addition (identity 0), multiply for automorphism composition (identity 1)
+            in multiplicative notation, we add exponent for element multiplication (identity 0), aply k times become multiply by k
+            multiply exponent for automorphism composition (identity 1), apply k tmes become exponetiate by k
+        
+        
+        hence if target group is ablian, then post-processng layer has no effect and we do not need to consider it.
+            given all target of suitable order, we only need to consider those that generate different group?
+            ??? check example groups???? to verify target??? from homework??
+            two target are the same if they generate the same group????
+            two src are the same if they generate the asme group (i.e. only one generator is needed)
+        
+        
+        note that |c_n| -> 0 and hence for sufficiently large n, -log(|c_n|) is POSITIVE
+        but this also means
+            a > b ---> log(a) > log(b)
+            a > b ---> -log(a) < -log(b)   (hence be careful of what is positive what is negative in inequality???)
+        
+        
+        
+        the condition is 
+            1. generator map decide the entire map
+            2. if the entire map are identical up to pre-processing and post-processing layer, then they are isomorphic
+            
+            
+            generator swap is sufficient for multi-src case, 
+            if \phi(a) = c and \phi(b)=d
+            suppose we also have f(a) = d and f(b) = c
+            and after swapped by some k such that f \circ k = g and g(a) = c g(b) = d
+            then since g is an homomorphism!!!!, the rest of g must be the same as \phi
+            
+            hence if map to another target, find who is amp to the original target in current map. (call it m)
+            then find an auto from generator to m and we solve the problem
+            ASK???
+   
+    M(R) has two way (by its sup definition
+        1. |f(z)| \leq M(R) for all z in radius R (caucy estimate direction)
+        2. if(z)| \leq K for all z (e.g. a bound on taylor series), then M \leq K
+        
+            1. through FTC (for first derivative)
+            2. through bound on taylor series  (for coeff)
+        
+        1. when there is only one n term, use R_n to cancel all $n$ just make sure n \to \infty$ implies R_n \to \infty as well, then push R_n \to \infty
+        2. when there is a series of n term, cut into two series in terms of n=some expresison of R. Then bound each of them separately 
+        
+        but now we can obtain order from either derivative or its taylor series coeffs
+        
+        
+        
+        
+        
+        
+
+    
+                
+                
+                
+                bdd nbr, then hoose a disk
+                !!! holomorphic function are continuous, therefore bounded on compact (in fact maps compact to compact)
+                !!! a set remove a point is not compact anymore!!! which is why we need to 
+                1. pick an annulus around 0
+                2. given uniformly bounded on the annulus, 
+                
+                need to say by removalbe singulairty theorem, before claiming bdd nbr or holomorphic extendable
+                
+                ask how to quickly argues
+                
+                
+                . We cannot just pick a nbr around 0 as that is not compact
+                
+                ??check the other direction
+        
+        as n \to \infty
+        negative exponent -> 0
+        positive exponent (regradless whether between 0-1) -> \infty
+        
+        
+        series multiplier self check
+        i.e. A = 1-z+z^2-...
+        then A-1 = -zA (no need to compute manually A-1)
+        simiarly A-1+z = z^2A
+        
+        
+        it is always select the generatro $g$ from src group, map to an automorphism whose order divides $g$'s order. Now we may have multiple generator of maximum order an they can replace $g$, that is where the isomorphic semidirect product comes in
+        
+        grab a target generator and generate the whole group and list each one's order?
+        the collection of zeros of the product simply comes from all factors (counting multiplicities)
+        
+        
+        goes to \infty ----> gievn any compact set, for any z in it, there exists  |z-b_n| >=1 
+        M test in compact set -> 
+        1. if we can boundit by some constant series (rather than another funciton series)
+        then the function series absolute uniform convergence on compact,
+             target holomorphic (although no restriciton on codomain), 
+            derivartives
+        (and hence the infinite product converges absolutely uniform convergence on compact), 
+            target holomorphic
+            zeros
+        
+        
+        
+        
+        
+        
+gen->gen, (x -> x^k such that gcd(k,n) = 1, which is why there are \phi(n) automorphisms) this required, otherwise it is not an Aut(Z_n)
+now to compute the order k^k^k....till it beceoms 1 mod n (e.g. 10^10 mod 11 = 1 and hence n -> n^10 is an auto with order 2 in the Aut group, representing the element 2)
+    i.e. WARNING order of auto has NO DIRECT RELATIONSHIP WHATSOEVER with the exponent we start with
+    !!! although if we want an order 2 automorphism, we can always x -> x^{-1}
+    !!
+        1. decide possible size of embedding image, such size has to both divide \phi(n) by lagrange and divide the size of our src group. for each size, there will be a unique cyclic subgroup as we know the structure of AUt(C_n) = C_{\phi(n)}
+        2. for each szie from step 1, find a generator automorphism of that order, say \phi(n) = n^m
+        ??? what to quotient???
+        
+        3. for that size, select an element with order |src|/SIZE (and hence the quotient is of size |SIZE|)
+        
+        
+        3. now presentation relation will be \phi_h(n) = hnh^{-1} = n^m, where h is the generator of (our src/kernel)
+    
+Hnece to find an automorphism with order of sth, we have to do test and trial through each possible automorphism
+
+
+
+no zero/divisoon of two same zero (counting multiplicties)/not equal to w
+    
+    2. 1/\frac{f(z)-w}
+    3.  1/f(z) f'/f are all entire 
+        ---> f'/f admit primitive F -> f = ce^F ---> f=e^{shifted F}
+        ----> admits logarithm ---> Log(f) = F ---> f = e^F
+        ---> mmp
+        
+
+
+
+
+
+infinite zeros
+    weierstrass factorization/ML (find/construct)
+    Jensen' formula (show condition/prove bound, need to prove Jensen's inequality on exam)
+    identity theorem (show constant/zero/equality)
+    division trick/mmp (show bound)
+    blaschke product (special, only used when f D -> D, \partial D -> \partial D) (bound)
+    angle shift trick/mmp (special, only for area, shwo cosntant/zero)
+    weierstrass facorizaion condition test/order-rank contradiction (prove identically zero)
+    
+each derivative evaluation to 0 gives order +1
+    
+    
+weierstrass function and function'' l.u. converges
+infinite prdouct produt converges
+     and its loagairthmic derivaive converges l.u. (except at those zeros)
+    
+
+
+
+   
+   
+    
+
+H->H auto: composing is enough as the src are elements, hene automorphism preserve their orders
+Au(N) -> Aut(N) auto: conjugate composing is required, otherwise direct composing will change the target automorphism order of each element, which is bad. (but conjugate autm by auto preserve the order of the original auto)
+
+Remember apply \phi(k) = k^6 twice we get k^36 not k612. Hence for order 2 amp in C_11, it is \phi(k) = k^10 = k^{-1}
+
+
+isomorphic pair of root must in the same irreducible factor through p(\phi(a)) = \phi(p(a)) = \phi(0) = 0
+thus once we get an auto from a to \phi(a), it is an extension of \phi(a)
+
+similarly given ay two root in irreducible factor must have an automorphism (by transitive action property), although it is not needed here.
+
+
+when we compute order, we NEED a bound on circle of radius R, NOT A POINT. Hence use cauchy estimate like the following:
+    Take M(R+1)
+    Now for any point within radius R, construct a radius 1 circle and compute cauchy
+    you get |f'(z)}| \leq M(R+1) for all z and hence M'(R) \leq M(R+1)
+
+
+conjugate composition of automorphism does not change derivative (i.e. f'(a) = \phi'f'\phi^{-1}')
+    it can be verified through f \circ f^{-1} = id and hence f'f^{-1}' = 1
+
+
+
+1. merge top (to show middle field isomorphism can be extended)
+2. merge bottom
+3. merge both (to impy transitive action)
+
+
+

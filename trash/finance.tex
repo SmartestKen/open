@@ -1,0 +1,345 @@
+arbitrage
+	free lunch through buy and sell
+loan ---> one gives money to other and expect to get it back
+
+
+(1+r)f
+
+(1+R)s
+
+http://www.ams.sunysb.edu/~frey/Instruction/PriorSemesters/Spring2018/AMS-512--Prof.RobertJ.Frey--Spring2017.html
+http://www.ams.sunysb.edu/~frey/Instruction/PriorSemesters/2005-06/Fall/AMS-691-03/
+
+
+earn through
+	1. current price sell, lower price buy
+	2, current price buy, higher price sell
+	
+	(i.e. regardless of time order, buy in price MUST be lower than sell-out price)
+	
+	!!! For example, we obtain an arbitrage if we can buy an option that agrees to buy in a lower price, OR sell it at a higher prie in the future
+
+	!!! For example, shorting when predicting stock price drop, bull when predicting price will increase
+
+
+capital/equity market
+	stock (we py to buy share, then if share price rises we can sell to earn profit, or we just use these to control company's operation through voting)
+	bond (we pay to buy bond, then bond will pay back regular interest and principal at the end)
+derivative market (based on price of something else, utilize time difference)
+	future (obligation in future)
+	option (right, but not obligation in future)
+		call -> buy later
+		put --> sell later
+		strike --> pre-specified price at buying/selling
+		
+			(i.e. we can choose to let it delivers (we buy) at any time at the fixed price, if that fixed price is lower, then it equals t we buy in at a lower price, we then immediately sell it at current price to earn the profit.), although the price difference will be deducted by the premium cost the beginning (which is charged for the RIGHT of doing all these actions)
+			
+			if we cannot earn, we just let the contract expire and loses our premium (it will not force us to buy in at a higher price)
+securities
+	equity -->???
+	debt ---> bond/certificates of deposit
+	first purchaser (without selling in the middle): bond interst fixed (a.k.a fixed income), can only be dangerous if the corpporate/country breaks down and unable to pay back
+	sell before maturity:
+	interest rate inversely correlate to bond price (the higher rate, people care less about your existing bond, hence if you want to sell it, you sell it at a lower price than its face value, and hence lose money)
+	similarly you earn if 
+		the interest goes down
+		you sell your existing bond
+		
+low price  -> no one want to sell/supply it. Everyone wants to buy/demand it
+high price -> the other way
+hence equilibrium of supply and demand exist at certain price
+
+(R_i -R_f)/(R_m - R_f) = \beta_i
+
+after offseted by risk-free return rate, how much we gain from investment/how much we gain without investment = \beta_i
+Hence if investment is riskier than what we already have (our current portofilo), then \beta_i > 1. If it makes our portofolio safer, then \beta_i < 1
+(Hence the riskier, the higher the return of the to-be-added stock should be) 
+
+offset to account for time value of money. i.e. buying T-bill is like we just put the money there and how much "profit" it will gain naturally as time goes
+price fltuation --> supply and demand flutuation
+
+risk-free rate (of return)
+	usually take interest rate of 3 omnth T-bill, used as offset
+
+multiple (product/stock) is less risky than a single (product/stock)
+speculation ~ close to gamble		
+portofolio
+	collection of securities
+
+!!! generally risk-free factor
+market( existing portfolio) return is fixed across all the stocks we want to add)
+
+
+E --> average over all possibilities (i.e. turn an random variable expression into a sum expression)
+auto-covariance mat --> when we have more than 2 variable, then (i,j) is the cov of X_i and X_j (hence vairance of each on the diagonal)
+cross_covariance mat --> when we have two random vectors, hence may not be square matrix
+
+
+
+when we talk about variance of random vector x, we mean either
+	\Sigma (Cov) matrix
+	w^T\Sigma_x w, where w is our distribution of initial fund
+	
+	by back derivation, w^T\Sigma_x w = Var(w^Tx)
+	
+	use traiditional formula to derive thing above
+
+Var = E((x-\mu)^2) = E(x^2) - \mu^2
+Cov = E((x-\mu_x)(y-\mu_y)) = E(xy) - \mu_x\mu_y
+
+Cov_{i,j} = Cov(X_i, X_j)
+Cov = E((X-\mu(X))(Y-\mu_Y)^T)
+
+https://www.adityabirlacapital.com/abc-of-money/capital-market-and-derivative-market
+
+
+
+white noise.
+	1. cross product of dominant and error_i has zero cov
+	2. cross product of error_i and error_j has zero cov as well
+
+
+
+brownian motion
+reflection principle
+
+central limit theorem
+
+what technique needed, just understand those technique.
+
+space  ---> all outcomes
+collection of measurable set ---> collection of event (each is a set of outcomes)
+measure ---> probability functionn
+metric
+set of random variables
+state (a.k.a label/value) space/measure
+
+random variable is then a measurable function mapping outcomes to value (i.e. preimage of measurale set is measurable, hence e.g. the preimage of {outcome: X(outcome) = 1} is measurable and tehrefore has a probability)
+
+distribution: a function that evaluates to the preimage measure at any given state
+
+!!! outcomes space is not necessarily a coordinate space (in fact it is usually not), hence cannot directly add a coordinate t. We can only say a set of random variable indexed by t
+
+
+X is F measurable means the coarest \sigma-algebra generated by X is a subalgebra of F
+
+
+M_t = sup B(s) represent the minimum time B(s) hits anything
+B can become smaller, but M will not
+
+4.4 P51 intersection -> note that t is in \mathbb{R}, not discrete
+
+1. axis mapping
+	real coeff real -> real
+	the other axis -> circle
+	but then circle -> other axis
+2. 5 pt drawing (i.e. draw coordinate, then write values 1,-1,i,-i,0 map to near those points)	
+	!!! first decide boundary using what we get from 1, then use extra pt
+	
+	half plane decision
+		1. boundary can map to either axis or circle. Hence target can be either half plane, disk or outside of disk
+		2. now use one of extra pt (1,-1,i,-i) to decide
+		
+	quadrant decision
+		1. boundary will always include part of an axis and part of a circle, hence target will always be a half circle
+		2. now use conformal mapping angle rule
+	
+	disk decision
+		1. boundary will map to an axis, hence the target can only be half plane
+		2. now use 0 to decide
+		
+	
+	half disk decision
+		1. boundary will can either include (part of two axis), or include (an axis and part of circle), hence target can either be quadrant or half circle
+		2. now use conformal mapping angle rule
+	
+	comple to comple
+		
+		
+square	quad -> half -> with slit
+square root with slit -> half -> quad
+
+e^{iz} strip of width -> quad/half/entire plane with slit depending on the width
+		half strip of width -> inside/outside quad/half/entire circle with slit depending on the width
+			
+		x-axis -> circle
+
+iz: rotate target counterclockwise by 90
+-z: rotate target counterclowise by 180
+-iz: rotate target counterclockwise by 270
+
+complement to complement, use rotation/multiplication to slightly modify the target
+outer compose: left \to right
+inner compose: right \to left
+
+f(kz): pull back domain of f
+	!!! in that montel problem, we basically fix a domain of z and forward it to the domain of f. (unlike in transformation, where we have fixed domain of f and pullback to some other domain)
+kf(z): forward the image of f
+
+						\frac{z-1}{z+1} (inverse (1+w)/(1-w))
+real axis				real axis
+imaginary axis			unit circle
+unit circle				imaginary axis
+five pt mapping
+		i
+\infty	-1	0
+		-i
+
+upper half plane		upper half plane (real -> real, then use target of i)
+right half plane		unit disk (img-> circle, then use target of 1)
+first quadrant 			upper half disk (real -> real, imag -> circle)
+
+disk					left half plane (circle -> img, then use the target of 0)
+upper half disk			4th quadrant (real -> real, then use target of i/angle rule)
+right half disk			left half disk (img -> circle, then look 5pt mapping)
+
+1st quad disk			4th quad disk
+
+
+sin						use \sqrt{1-cos^2}, note that \sqrt{1-...^2} is biholomorphic
+
+cos						semi-infinite strip to lower half plane
+https://math.stackexchange.com/questions/4248893/cosz-is-a-biholomorphic			
+						use trick 
+						(u+u^{-1})/2
+						= (u^2+1)/2
+						= \frac{(u+1)^2+(u-1)^2}{(u+1)^2-(u-1)^2}
+
+
+tan						infinite strip to unit disk
+https://math.stackexchange.com/questions/1072329/biholomorphic-mapping-of-tanz
+						use trick
+						(u-u^{-1})/(u+u^{-1})
+						= (u^2-1)/(u^2+1)
+
+
+every theorem has holomorphic within ...
+many theorem has boudnary condition
+zero+sequnece of function -> hurwitz (no zero at boundary of the chosen compact set)
+
+infinite sequence in comapct set must converge (related to identity theorem as well)
+
+the formula version for coeff soes not have n!
+
+probability generating function
+	probability of something happen at t=k (multiplied by t^k)
+	its self product is probability of sometihing happen twice at t=k
+	multiply z = shift time coordinate backwards by 1, (i.e. add an empty timestep)
+	
+	resolve the generating fucntion from recurrence relation into explicit form will give us all the coeff (i.e. the exact probability)
+
+
+!! when dealing with last two pt in five pt map, you will get things like \pi/4 and 3\pi/4
+!! i.e. a permutation between real axis/img axis and unit circle, in complex coeff, when you plug in another complex coeff, the numerator AND the denominator can both pull out i and therefore cancel each other. Hence real coeff (real -> real), img coeff (img -> real)
+1. possibilities summary 
+2. methodology (coeff, 5pt map, then boundary + 1 extra pt) + trick (intersection, complement)
+
+
+						\frac{z-i}{z+i} (inverse i\frac{1+w}{1-w})
+real axis				unit circle
+img	axis				real axis
+unit circle				img axis
+five pt map
+	 0
+i	-1	  -i			
+   \infty
+
+upper half plane		unit disk
+right half plane		lower half plane
+first quadrant			lower half disk
+
+unit disk				left half plane	
+upper half disk			left half disk
+right half disk			3rd quadrant
+					
+1st quad disk
+
+!! trick using intersection/union
+
+z domain multiply k is the domain of f,
+!!!! are we given f's domain and want to pullback OR are we given z's domain and want to map?
+!!! unlike mobius, exp and log, it is faster to use x+iy and re^{i\theta} analysis
+
+															exp()
+(0, \pi/2) horizontal(Im) strip							first quadrant
+(0, \pi/2) horizontal(Im) negative(x<0) strip 			first quad disk	
+	
+(-\pi/2, \pi/2) horizontal(Im) strip					right half plane
+(-\pi/2, \pi/2) horizontal(Im) negative(x<0) strip		right half disk
+
+!!!! notice the slit contains 0, use OMT if it does not!!!
+(-\pi, \pi) horizontal(Im) strip						plane with (-\infty,0] slit
+(-\pi, \pi) horizontal(Im) negative(x<0) strip			disk with (-\infty,0] slit
+
+(-\pi,\pi) imaginary axis segment						unit circle without -1
+
+e^{iz} (pullback the column at left back i, i.e. rotate CLOCKWISE 90 degree)
+
+
+
+									log()
+first quadrant		(0, \pi/2) horizontal(Im) strip										
+first quad disk		(0, \pi/2) horizontal(Im) negative(x<0) strip 			
+	
+right half plane 	(-\pi/2, \pi/2) horizontal(Im) strip
+right half disk		(-\pi/2, \pi/2) horizontal(Im) negative(x<0) strip
+
+!!!! notice the slit contains 0, use OMT if it does not!!!
+plane with (-\infty,0] slit		(-\pi, \pi) horizontal(Im) strip
+disk with (-\infty,0] slit		(-\pi, \pi) horizontal(Im) negative(x<0) strip
+
+unit circle without -1			(-\pi,\pi) imaginary axis segment
+
+
+circle
+
+
+
+shift brownian by any single B_s is still a brownian
+https://stats.stackexchange.com/questions/312474/what-is-it-meant-with-the-sigma-algebra-generated-by-a-random-variable
+i.e. it includes preimage of any measurable set in the rv's state space
+
+the less set, the smaller the union
+the less set, the bigger the intersection
+
+union appear in at least one
+intersection appear in all
+
+
+
+
+
+BC Lemma
+if a sequence of event E_n has finite probability sum, then limsup E_n, the set of  outcomes that appear infinitely many times in E_n, has 0 probability (i.e. almost never)
+
+conversely, if E_n are independent and have infinite probability sum, then the limsup has 1 probability (i.e. almost surely)
+
+# headphone + extension cable
+# laptop
+# phone charging cabl
+# whiteboard smaller version?
+# extra backpack
+
+
+log(z) --> the other wya of e^z
+
+rotation/multiplication
+
+
+
+
+
+		
+independent, normal (with 0 mean) increment 
+rv at 0 is the zero variable
+	half disk decison -> use conformal mapping rule
+
+
+??? limsup???p
+ 
+function pth integrable quotiented by equality almost everywhere
+
+lim sup --> usually equivalent to some sort of uniformly blabla (continuous/convergence)
+function pth integrable quotiented by equality almost everywhere
+
+

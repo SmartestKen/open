@@ -1,0 +1,1222 @@
+\section{irreducible, root, rore}
+root implies reducible (generally we prove this rather than the cotrapositive)
+(no the other way around unless degree \leq 3)
+
+\section*{set tricks, theorem with set cautions}
+
+dense
+1. if for any y, r>0, B_r(y) contains a point from the set
+	Hence if not image of f is not dense, there exists y for us
+	to use the 1/(f(z)-y) trick
+	
+
+
+\section*{zero/pole trick}	
+	??? mmp f 1/f trick ,note that |f| = 1 everywhere implies f=1 (as maximum modulus achieved within interior impies constant)
+	
+	zero f/(z-w)
+	pole f(z-w)???
+	
+\section*{holo zero real implies imaginary constant}
+A holomorphic function $f=u+iv$. If $u = 0$, then $v$ at most can be a constant (by $u_x = v_y$ and $v_x = -u_y$). Hence given a harmonic fucntion, if we construct two holomorphic functions from a harmonic function (ie.. $f_1 = u+iv_1, f_2 = u+iv_2$, then $v_1-v_2$ is a cosntant (i.e. the holormophic function differs up to a imaginary constant)
+
+Hence if we find multiple incompatible holomorphic func for harmonic func to cover the entire domain, then it has to be so (unified one cannot exist)
+
+\section*{pointwise bound vs bound on entire graph}
+everything below obtained by z=x+iy and triangular inequality
+							|e^{iz}|		|cos(z)/sin(z)|			e^{|z|}
+pointwise max bound			e^{-y}			(e^{-y}+e^y)/2			e^(|x|+|y|)		
+pointwise min bound			e^{-y}			|e^{-y}-e^y|/2			e^{||y|-|x||}
+max on graph				lowest y	either highest/lowest y			---
+min on graph				highest y			---						---
+
+!!! pointwise bound should be directly used (rather than max/min on graph) if our graph is infinite (by pushing y \to \infty).
+
+
+
+\section{harmo->holo connection}
+1. shifting constant
+    preserve primitive, holomorphic, ...?
+2. |e^f| = |e^u|
+3. (1+i)f = Re(f) - Im(f) + i(Re(f) + Im(f))
+
+4. If u is constant, then f = u+iv is a constant. (By Cauchy-Riemann equation)
+
+\section{maximum modulus principle, how to argue the modulus must strictly increase, identity theorem}
+maximum modulus is only allowed to be achieved at boundary. if equality of maximum on two different circles, then there is an interior point that achieves the maximum, causing the function to be constant
+
+now use identity theorem to argue that constant in an annulus area implies onstant everywhere on the circle
+
+
+\section{no uniform convergence, no such derivative, Runge's theorem, Fundamental theorem of calculus, residue theorem}
+Strategy 1: To show that there does NOT exist an uniform holomorphic approximation to $f$ in $K$, note that uniform convergence implies integral convergence. Hence if the integral does not converge (through computation), then approximation cannot exist. Hence the general strategy is to 
+	1. choose a closed trajectory $\gamma$ around one of the bounded holes of $K$ that contains poles of $f$. 
+    2. Compute $\oint_\gamma f$ (through residue theorem) will usually give a non-zero result. But $\oint_\gamma$ on any 
+    	1. polynomials
+    	2. rational functions without a pole in the hole
+    	3. holomorphic function on $K$ AND the hole.
+	will produce 0 and hence they cannot uniformly approximate $f$ in $K$.
+	
+!!! the same strategy can be used to prove holomorphic function does not have certain derivatives. (Just replace the last chunk by residue theorem + Fundamental theorem of calculus, which works as long as the given function is holomorphic an neighborhood of the trajectory)
+	
+	
+	
+
+\section*{cauchy integral/estimate}
+1. decide circle R whose interior include the target values
+2. decide a bound that cover the entire circle (and therefore entire disk by MMP) (need not to be M(R))
+
+\section*{derivative related methods}
+1. cauchy estimate
+2. order
+3. FTC/residue contradiction/simply connected
+4. weierstrass theorem second part 
+   note that nth derivative sequence converges to nth derivative of the target (all holomorphic/entire). Hence if the sequence itself is a sequence of derivative of a single function, then target = target's derivative (i.e. ce^z)
+   
+   
+\section*{argue no zero/does not have certain number of zeros, DO NOT use triangular inequality, convergence, hurwitz}
+use hurwitz, if f_n \to f and f has certain number of zeros (or no zeros) in any compact set, then f_n should has that zero count in the same ciompact set for n large enough.
+
+
+
+!!! this helps us avoid trying to use triangular inequality to argue   
+\section*{proving injectivity, convergence, hurwitz usage}
+
+1. For injective, use Hurwitz theorem. We need:
+	1. $f$ holomorphic on compact subset $V$
+    2. $f$ has no zeros on $\partial V$
+	3. $f_n \to f$ locally uniformly
+then there exists $N$ such that 
+	$n \geq N$ implies number of zeros of $f_n$ equals to number of zeros of $f$ in $V$ 
+
+	Hence suppose $f(x_1)=f(x_2)=m$. Then shift everything by $-m$.
+	1. We can find a compact subset that include both $x_1$ and $x_2$ 
+    2. if we cannot, then accumulation of zero and identity theorem implies $f-m$ identically 0.
+
+
+\section*{convergence of sequence fo function related}
+    runge
+    integral not converge argument/residue theorem
+    montel
+    hurwitz
+    \epsilon-\delta uniform convergence
+    Weierstrass (although not fixing codomain and still require MMP), second part useful for derivative
+    convergence for harmonic/subharmonic
+
+
+\section*{semidirect product non-trivial kernel implies non-trivial center}
+if the kernel of semidirect product is nontrivil, then by definition there exists element in $h$ such that $h$ is mapped to $\phi_h(n) = hnh^{-1} = n$ for all $n \in N$. 
+Hence this implies $h$ commutes with anything in $n$. Now if $h$ also commutes with anything in $H$, then since the semidirect product implies $G = HN$, we have $h$ commutes with everything in $G$ 
+Therefore $G$ has a non-trivial center
+
+
+    
+\section*{semidirect product conjugation notation}
+!!!! the notation \phi_h(n) = hnh^{-1} = whatever target comes from 
+    0. in short internal uses hnh^{-1} to start, external uses \phi_h(n) to start, they are isomorphic and hence when we write in presentation form, we can use the internal notion./
+    1. we start with N,H subgroup, conjugation action is well defined as we are in G, we use that to defined \phi: H \to Aut(N), construct the semidirect product and realize this is exactly isomorphic to G (i.e. internal direct product = external semidirect product)
+    2. or we can start wtih external, define the group and embedded, then do internal semidirect via now well-defined conjugate and realize this is exactly the outer we starts with
+    
+    
+    
+\section*{semidirect product procedure}
+
+1. condition to check
+    1. one of subgroup normal
+    2. |H \cap N| = 1 (If order of H and N are coprime, which is the case for sylow subgroups, then this is automatically satisfied)
+    2. G = HN (arguing |HN| = |H||N|/|H \cap N| = |H||N| = |G| is sufficient)
+    
+    
+2. list homomophisms $H \to Aut(N)$ for $N \rtimes H$  
+    !!! homomorphism can be surjective, multiple src can map into the same target, hence be careful
+    total number of map = product of (# of target situable for each src generator)
+    then we start to use isomorphic rule to reduce to total number of DISTINCT map.
+        
+    any generator -> set of target includes those (auto) whose order divides its order
+    list something like the following to decide the structure, after that pick one generator auto and call it \alpha and map everything in terms of \alpha????
+ order                       mod 7                          in terms of \alpha
+   1         x -> x      1                                      1
+  2          x -> x^2    2 -> 4 -> 8 (1)                        \alpha^2
+  6          x-> x^3    3 -> 9(2) ->....->15(1)                \alpha  
+            ...
+            x->x^6          ...                                 ...
+
+
+
+3. merge isomorphic maps (through preprocessing layers, generally when the target group is cyclic, it is abelian and therefore conjugate postprocessing layer is useless
+
+    if we want to find show f(a) = b map is the same as g(a) = c map. then 
+    1. we find who is mapped to c in f map, say f(m) = c (usually c=b^k and hence we pick m=a^k)
+    2. find a automorphism that maps a to m and precompose
+        since the generator decides everything, the entire map must be equal and we are done.
+                
+    (If there are multiple generators, ensure the automorphism in step 2 works for all of them)        
+
+4. write into presentation
+    basically <H gen, N gen| H relation, N relation, automorphism relation>
+    where automorphism relation is usually of the from hnh^{-1} = n^k, representing GENERATOR h is mapped to an automorphism that sends n to n^k. (Do this for each generator of H)
+    
+    !!!! representation of Z_2 \times Z_2 a^2=1 b^2=1 ab=ba (notice the last one!!!)
+    !!! every time we map to trivial isomorphism, we basically fall into one case of fundamental theorem of abelian group
+
+
+
+
+\section*{(simple) root count/find, rouche's theorem}
+
+Strategy 1: use Rouche's theorem 
+    If the following three things hold, 
+        1. $g,f$ holomorphic in $D$ (including on $\partial D$), 
+        2. $|g| < |f|$ on $\partial D$
+        3. $\partial D$ is simple (no self intersection), 
+    then
+    	1. $f+g$ has the same number of zeros (counting multiplicities) in $Int(D)$ as $f$. (i.e. We can safely drop the non-dominant part of the expression). For example, if f has a order 5 zero and a order 2 zero, we know that $f+g$ has a total of 7 zeros (e.g. one order 3 zero and one order 4 zero) in $Int(D)$.
+    	2. $f+g$ cannot have any zeros on $\partial D$, this is by triangular inequality $0 = |f+g| \geq |f| - |g|$, but this is a contradiction to assumption 2.
+    
+    To satisfy the second condition, refer to the inequality section.
+      
+	To count the number of simple zeros, analyze the group of equation 
+$f(z) = 0$ and $f'(z) = 0$. Any solution of this equation group will be an zero of order at least 2. Then just plug those into $f''(z)$, $f'''(z)$ etc till it is not zero. The remaining quota are all simple zeros (e.g. if $f(z)$ has 3 solutions and none of $f'(z)=0$'s solution solves $f(z)=0$, then we have 3 simple zeros)
+
+
+
+Strategy 2: use Rouche's theorem (composite region)   
+    If region $D$ is an annulus, then apply 1 to both outer disk $D_1$ and smaller disk $D_2$. Now note that $D_1 \setminus D_2$ will include $\partial D_2$. However, zero cannot exist on $\partial D_2$ because that would mean $|f+g| = 0$ on $\partial D_2$. But that would force $|f| - |g| = 0$ by triangular inequality, which contradict conditon 2 of Rouche's theorem.
+    
+
+
+
+
+
+\section*{Conjugacy class and normal subgroup in $S_n$}
+
+1. Conjugacy class
+	1. if and only if the same cycle type (e.g. (123)(4) is a cycle type of (3,1)). Each possible integer partition of $n$ represents a cycle type in $S_n$.
+   	2. the size of the classes can be deduced by $\frac{n!}{\prod_j j^{a_j}(a_j!)}$, where the cycle type has $a_j$ number of cycles of length $j$. 
+    
+        
+2. Normal subgroup is a union of conjugacy classes (as if $x \in K$, the $g^{-1}xg \in K$ for any $g \in G$ by definition of normality). 
+	1. The identity class is mandatory. 
+    2. This limits the possibilities of size of normal subgroup
+
+
+3. To obtain a index 2 normal subgroup (also related to simple), take intersection with alternating group (group of even permutations)
+
+
+\section*{conformal mapping examples, rules, constructions}
+
+
+0. examples 
+    mobius
+    disk automorphism (blaschke factor)
+
+
+
+1. rules that every conformal mapping satisfy
+
+    1. send generalized circle (circle or infinite line) to generalized circle.
+    2. respect angles and directions (e.g. turn right $90^o$ is mapped to turn right $90^o$.
+    Hence to reveal the target, simply pick 3 points on the circle and show that they mapped to the target circle
+
+
+2, to construct
+    !!! center may not be map to center under conformal map. Hence when CONSTRUCT, DO NOT use center for evaluation.
+
+    Since It will generalized circle to generalized circle (line to infty/circle -> line to infty/circle), hence the best way to determine (OR CONSTRUCT) is to find 3 points c+r c-r c+ir and determine where they are mapped to (and recover the center from there)
+     
+    Hence note that automorphism of disk are conformal map and can be used to move inner circle around (along with maximum modulus principle)
+
+
+
+
+
+\section*{220 SP20 1,2,3 recovery done}
+
+\section*{220 FA21 final 1,2,3,4 recovery done}
+
+
+
+\section*{algebra framework}
+group action
+    injective embedding, alternating group intersection trick, orbit-stabilizer theorem, conjugacy class-normality relation
+p-group
+    class equation, nontrivial center
+solvable/nilpotent
+    subgroup/quotient solvable = self solvable
+    nilpotent subgroup & quotient normal /sylow normal/sylow direct product
+    direct product of nilpotent
+    upper central series condition swap/intersection trick (any normal intersect center non-trivially)/go down & lift up/refine
+sylow
+    overflow argument/C_G coverage argument
+    
+semidirect product
+    procedure, presentation
+free group 
+    universal property, isomorphism theorem
+centralizer
+    self-other transfer trick, center-relation
+normalizer
+    frattini argument
+
+tensor product
+    universal property, isomorphism proof, commute with direct sum, A \times R[x] \cong R[x], right eaxctness,
+    
+structural theorem of f.g module
+    CRT
+
+similarity
+    Jordan/rational/characteristic/minimal poly
+    
+    
+perfect
+    normal closure, non-separable -> special form of polynomial + Frobenius not surjective
+    
+finite field
+    frobenius cyclic group, subfield rule, polynomial divisors
+    
+galois theory
+    standard procedure, isomorphism extension theorem, transtiive action on each orbit, up and down
+    
+    
+free resolution
+    tensor/hom/tor/ext
+free-projective-flat-torsion free
+    ideal-module relationship
+maximal ideal/localization
+
+\section*{semidirect product part completed}
+
+
+\section*{char/min polynomial (of matrix), computational info}
+1. char polynomial
+	1. product of all invariant factors of the matrix. 
+    2. The order (highest exponent) is simply the size of the matrix. 
+ 	!!! a random polynomial with root at matrix and order equals to size of the matrix is not necessarily the characteristic polynomial. (It may just be a polynomial that can be divided by the minimal polynomial)
+    3. To compute characteristic polynomial of $A$, compute $det(A-xI)$
+ 
+2. min polynomial
+	1. largest invariant factor. 
+    2. It divides any polynomials of which the matrix itself is a root. 
+    
+
+
+!!! There is no easy ways to compute minimal polynomials directly. All we know is that
+	1. minimal polynomial divides characteristic polynomial
+	2. minimal polynomial contains AT LEAST one of each $(x-\lambda_i)$
+If we can use these to derive (case by case) $gm_i$ of each $\lambda_i$, then it will be sufficient to verify them with $ker(A-\lambda_iI)$.
+    3. char polynomial can only add to exponent of min poly, but cannot create any new roots
+    
+
+\section*{matrix order-min/char poly relation}
+!!! when we say a matrix $A$ has order 4, we have $A^4-I = 0$ but $A^2-I \neq 0$. 
+
+
+\section*{compute invariant factors/elementary divisors from char/min poly (with extra given information)}
+!!! If char and min poly (with other information) are given and we are asked to compute elementary divisors and invariant factors, then
+	1. derive chain of invariant factors using char/min polynomial invariant factor property above 
+	2. split each invariant factors into prime singletons and the collection of those singletons are the elementary divisors.
+    
+    
+    
+    
+\section*{am_i and gm_i (algebraic multiplicity vs geometric multiplicity)}
+
+Note that $am_i =$ algebraic multiplicities of $\lambda_i$ 
+        $=$ total number of exponent of $lambda_i$ on the char polynomial
+    	$=$ total number of $\lambda_i$ entries on the diagonal of the Jordan form
+        $=$ total number of generalized eigenvectors correspond to $\lambda_i$ 
+        $=$ sum of exponents of elementary divisors associated with $(x-\lambda_i)^$
+
+
+This is called $gm_i = $ geometric multiplicities of $\lambda_i$
+    $=$ number of basic (i.e. directly from $(A-\lambda I)v = 0$) eigenvectors (kernel size of det|A-\lambda_iI|
+	$=$ the number of Jordan blocks of $\lambda_i$ in the Jordan form
+    $=$ the number of elementary divisors associated with $\lambda_i$
+
+
+
+!!!! g_m can freely ranges between 1 and a_m. If $am_i > gm_i$, then there must be generalized eigenvectors (and a matrix diagonalizable if and only if it does NOT have any generalized eigenvectors)
+
+
+    
+\section*{Jordan/Rational canonical form (including J blocks and companion matrix)}
+
+!!! The following seems to be the only way to gather information about "Jordan canonical form $\iff$ elementary divisor $\iff$invariant factor $\iff$ rational canonical form" directly from the matrix
+
+1. To compute Jordan canonical form (note that this requires the char polynomial to split over given field (which usually indicated in problem by having algebraic closure), hence you cannot just use Jordan canoncial form $A= PJP^{-1}$ to prove general theorems unless we are in algebraically closed $ \mathbb{C}$),
+	1. compute the characteristic polynomial $(x-\lambda_1)^{am_1}...(x-\lambda_n)^{am_n}$.
+    
+    2. For each $\lambda_i$, compute the size of $ker(A-\lambda_iI)$.
+    
+    
+    3. Now if $am_i > gm_i$, then there must be generalized eigenvectors. The following is an example of $am_i = 5$ and $gm_i = 2$
+    
+    											    solution chain 1			solution chain 2 
+    Level 1 $(A-\lambda_i I)v = 0$						$v_1$						   $v_2$
+    Level 2 $(A-\lambda_i I)^2v = 0)$		$(A-\lambda_i I)v_3 = v_1$ 	    $(A-\lambda_i I)v_4 = v_1$ 
+    Level 3 $(A-\lambda_i I)^3v = 0)$		$(A-\lambda_iI)v_5 = v_3$		End of chain
+    Level 4 $(A-\lambda_i I)^4v= 0)$		End of chain
+    
+    For each level $k$, compute $ker((A-\lambda_iI)^k)$, call the size $s_k$. Now $s_k - s_{k-1}$ is the amount of vectors allocated for this level (e.g. at level 2 our quota is 2 and at level 3 our quota is 1). Given this quota, find a vector (UNIQUE up to a constant factor) that satisfy the relation. If there is such vector, then the chain (column) continues, if there is no such vector, the chain stops.
+    
+    We can stop at the level where all $am_i$ quota are spent. Now 
+    $v_1 \to v_3 \to v_5$ corresponds to a chain of length 3, or a Jordan block of size 3, or an elementary divisor $(x-\lambda_i)^3$
+    $v_2 \to v_4$  corresponds to a chain of length 2, or a Jordan block of size 2, or an elementary divisor $(x-\lambda_i)^2$
+
+	4. An elementary divisor $(x-\lambda_i)^{k_i}$ corresponds to a Jordan block (with diagonal $\lambda_i$) of size $k_i$, https://en.wikipedia.org/wiki/Jordan_matrix. Now direct sum (i.e. combining along diagonal) Jordan blocks into the Jordan form
+
+
+2. To compute Rational canonical form,
+	1. assume we obtain the invariant factors (using elementary divisors from strategy 1 to form the dividing chain)
+    2. For each invariant factor (polynomial), the corresponding companion matrix is https://en.wikipedia.org/wiki/Companion_matrix. Note that for each companion matrix, their char poly $=$ minimal poly $=$ invariant factor we start with.
+    3. Now direct sum (i.e. combine along the diagonal) the companion matrices in the order of invariant factor chain.
+    
+  
+
+\section*{bound (ANY weird bound) near poles implies reomovable singularity, finite/infinite argument (cauchy estimate), 220 FA21 final, P6}
+0. |f| \leq 1-|z| (or any other bound) for all z near pole implies REMOVABLE SINGULARITY!!!!
+1. therefore for these poles, we can fill each of the poles using 0
+2. for finite, compact set we only have finitely many pole (and therefore can use polynomial multiplier argument)
+
+Hence together we can prove f(z)*polynomial is a polynomial by cauchy estimate. Therefore f rational
+
+\section*{Similar (matrix)}
+
+1. If we can construct same rational canonical form using companion matrices converted from invariant factors, then similar. If similar, then we have the same rational canonical form.
+2. (same for Jordan canonical form)
+
+3. If and only if have the same list of invariant factors (as invariant factors can be derived from and completely determine the rational canonical form)
+4. (same for elementary divisors)
+
+5. IMPLIES the same characteristic polynomial and minimal polynomial
+6. IMPLIES identical $gm_i$ and $am_i$ for all eigenvalues $\lambda_i$
+(When matrix size less or equal 3, these two IMPLIES becomes if and only if)
+
+Hence using 5 and 6, to prove two matrices are not similar, we have two (easy) methods.
+	1. different characteristic polynomial
+    2. find some $\lambda_i$ and show that $ker(A-\lambda_i)$ has different sizes from $ker(B-\lambda_i)$ (i.e. different $gm_i$)
+
+
+\section*{h(0) = 0 holomorphic implies h(z)^m (for any m > 1) not injective, used to show that injective implies derivative at 0 not equal to 0}
+    1. h(0) = 0, h holomorphic implies that
+        by omt, h(z) maps an open neighborhood of 0 to an open neighborhood of 0
+    2. Hence we can pick two points in the image such that they map to the same point after power by m 
+        !!!! (as neighborhood of 0 contains all the angles)
+    3. now pull back to domain, we have (at least) two points such that $h(z_1)^m = h(z_2)^m$
+
+
+
+
+
+\section*{separable polynomial, perfect}
+
+1,1 separable
+    perfect <-> irreducibe implies separable
+            <-> Frobenius automorphism is surjective
+    
+    distinct separable irreducible does not share root, hence product still separable
+    
+    
+1.2 inseparable
+
+    0. ANY polynomial is inseparable if and only if f f' share zero (or equivalently gcd(f,f') != 1). Note that we do not need irreducibility to use this rule (unlike 1 and 2)
+
+    1. an irreducible is inseparable if and only if characteristic p AND exponent p-form \sum_i a_ix^{ip} (due to the gcd arguement)
+        
+    
+    2. non-perfect
+        1. if and only if there EXISTS an irreducible that is inseparable
+        2. if and only if positive chracteritistic AND there exists $a$ (in finite field of char p) such that it is NOT a pth power (i.e. Frobenius not surjective)
+        
+
+2. example
+
+    x^{p^n}-x 
+    
+    .... modify
+        separable because it does NOT have exponent p-form (finite field separable). hence those imperfect field must be infinite + positive characteristic
+    
+    x^p-a 
+        is irreducible if and only if a is not pth power of some element from the field
+        is inseparable if and only if we are in char p (by using rule 0)
+        
+        hence when Frobenius not surjective AND we are in char p (i.e. non-perfect), this serves as an example of irreducible but inseparable polynomial
+    
+
+\section*{injectivity related}
+    definition
+    h(z)^m
+    hurwitz
+\section*{220 FA21 final 6,7 recovery done}
+
+
+\section*{cauchy integral formula/estimate condition}
+cauchy integral/cauchy estimate to eval an integral or bound the function
+condition
+1. $f$ holomorphic on both the closed arc and its interior
+2. target $a$ as in $(z-a)$ is in the INTERIOR
+then
+https://en.wikipedia.org/wiki/Cauchy%27s_integral_formula
+
+
+
+\section*{residue/cauchy/laurent resolution}
+
+
+cauchy's formula can apply to negative degree (those in Laurent princple part) as well. When n=-1 it is exactly the residue theorem
+laurent series: ensures converging, but in order to avoid singularities, it differs depending on the annulus (this can be seen from the cauchy integral formula itself)
+trick $1/(z+a) = (1/z)*\frac{1}{1+a/z}$ after $z > a$ (for center at $c$ extract z-c out). Now a/z is less than 1 and hence geometric expansion will work.
+
+ 
+\section*{residue theorem, product of functions}
+cauchy inegral does not have the built-in capapbilities to deal with product, but residue have other meaning, e.g. the coefficient on (1/z) in laurent series
+(holomorphic only). Now try to get $a_{-1}$ of $fg$ from coefficients from laurent of $f$ and $g$.
+
+
+
+
+\section*{residue theorem bound, type of contour, type of function}
+Residue part
+	
+    $\oint_\gamma f = 2\pi i*(\sum_{a \in A} Res(f,a))$
+    !!! DO NOT FORGET the 2\pi i there!!!!
+
+	0. integration is 0 when it is holomorphic, i.e. there is not applicable deonminator.
+    1. f/g, simple pole at $c$, g not necessarily rational ---> eval f/g' at c
+    2. f/R, degree $n>1$ pole at $c$, R has to be singleton polynomial $(z-c)^n$, eval f^{(n-1)}(c)/(n-1)!
+		!!! to rememeber it, notice that residue here correspond to n-1th coefficient of taylor series of f.
+		
+		!!!! if a singleton rational function with numerator constant, no need to use 2, just read it as a laurent series. (e.g. $1/(x-a)$ has residue 1 at $a$, $1/(x-a)^2$ has residue 0 at $a$)
+
+
+!!!!
+    for zeros of $z^n-1$, it is $2k\pi i/n$, $k \geq 0$
+    for zeros of $z^n+1$, it is $(2k+1)\pi i/n$, $k \geq 0$ 
+    both symmetrically located with respect to real axis
+
+
+
+
+
+
+M part:
+0. triangular inequality
+	1. upper bound (for numerator) |\sum_i x_i| \leq \sum_i |x_i|
+	2, lower bound (for denominator) |\sum_i x_i| \geq max_j (|x_j| - \sum_i|x_i|)
+		i.e. the lower bound is |dominant_term| - (sum of |non-dominant-term|)
+		When R is large, dominant term is the highest power of R
+		When r is small, dominant term is the smallest power of r (usually constant term)
+	
+1. abs can pass into power, that is if |a|<|b| then |a^2| < |b^2|. If |a|>|b|, then |a^2| > |b^2|. Hence use triangular inequality for internal terms then add exponent.
+
+
+
+2. |Log^n(z)| = |(logR + i\theta)^n| \leq Log^n(R) + non-dominant part
+
+
+!!! this part can be computed once and use for both r and R (hence just compute in r and replace by R)
+cos^2
+sin
+
+
+
+
+ML part:
+
+1. big/small circle (to be pushed to \infty)
+\frac{log^n(R)}{R} \to 0 when R \to \infty for any exponent n
+Hence diminishing of R \to \infty rely on denominator
+
+rlog^n(r) \to 0 when r \to 0 for any exponent n
+Hence r \to 0 rely on L part
+
+use LHopital if necessary
+
+2. 
+
+negative real segment in semicircle contour (which is used when denominator is odd/even), as z = xe^{-i\pi} = -x
+	https://math.stackexchange.com/questions/1079723/how-to-show-the-contour-integral-goes-to-0-of-semicircle
+	Log(z) = log(x) + i\pi on the negative real axis
+	z^\alpha = e^{\alpha Log(z)} = e^{\alpha log(x)}e^{\alpha i2\pi}, this is NOT x^\alpha when \alpha is not an integer
+
+
+real line segments in Keyhole contour (used when denominator is NOT odd/even)
+	https://math.stackexchange.com/questions/2245314/complex-keyhole-contour-integral
+	!! note the inner circle and outer circle have \sqrt{r^2+\delta^2} and \sqrt{R^2+\delta^2} because the line segment start at r, end at R, and has height \delta (now use triangle length rule). Although we can simply call these radius r_* and R_* and they do not influence the diminishing argument
+	
+	bound is not needed here, we directly use \delta \to 0 argument
+	
+	on line segment ABOVE real axis
+		Log(z) = log(x+i\delta) ---> log(x)
+	
+	
+	on the line segment BELOW the real axis (z ---> xe^{i2\pi})
+		Log(z) = log(x-i\delta) ----> log(x) + i2\pi 
+	
+	
+		when \alpha NOT a real number
+		z^\alpha 
+		= (x-i\delta)^\alpha
+		= e^{\alpha Log(x-i\delta))		
+		---> e^{\alpha (log(x) + i2\pi)}
+		= x^\alpha e^{\alpha i2\pi)
+	
+	Note that unlike the semicircle-real axis contour, both line segment has positive x. Hence the segment below the real axis will contribute a negative sign during conversion \int_R^r \to -\int_r^R. 
+		(This usually cancel the highest power of log, which is why to compute any real integral \int_0^\infty f(x), we instead consider \int f(z)Log(z) for the contour integral, where Log has branch cut (0, 2\pi)
+
+
+
+
+
+
+
+
+
+
+
+
+    
+\section*{residue theorem, contour integration, contour integral side for log}
+
+    !!! 1. real to real imaginary to imaginary at the end
+
+    1. Construct contour as follows: 
+	    1. real line $[r,R]$ ($Log(z) = log(x)$ here)
+        2. upper semicircle (counterclockwise) of radius $R$
+        3. real line $[-R,-r]$  ($Log(z) = log(-x)+i\pi$ here)
+        4. upper semicircle (clockwise) of radius $r$
+
+    2. compute $2\pi i \sum_a Res(f,a)$, where $a$ iterate through poles of $f$ INSIDE the contour above (If no pole, the sum will be 0)
+
+    3. Push $r \to 0$ and $R \to \infty$ and use ML bound tricks
+
+
+    4.1 for the real integrals, replace $z$ by $x$ now (except when we have $Log(z)$, we write $log(-x)$ for the negative real integral
+    4.2 now convert (the negative one) real integral into , two negative sign cancel
+	    1. swap the integral ends $\int_{-\infty}^{0}$ $\to$ $\int_0^{-\infty}$ 
+        2. replace every $x$ by $-x$ and hence $d(-x) = -dx$. producing one negative sign, (if you are really confused, let $m=-x$ and see what happens)
+    Hence in effect, 
+	    1. replace all $x$ by $-x$ WITHIN the function (integrand)
+        2. swap the integral value and direction
+    
+ 
+\section*{bound sin(kz), cos(kz) on infinitely large semicircle, contour integration}
+For upper semicircle that approaches $\infty$, using $sin$ and $cos$ directly will prevent us to bound its integration value (through ML method). Hence before we start residue theorem, we replace
+	$sin(kz), cos(kz) \to e^{ikz}$
+	$sin^2(kz), cos^2(kz) \to 1-e^{2ikz}$
+Hence
+	1. at integral along large upper semicircle, $e^{ikz} \to 0$
+    2. at the real integrals, we will have $e^{ikx}$ from positive part and $e^{-ikx}$ (converted from negative part), and hence they (hopefully) correctly cancel to the original form. Note that $1-e^{2ikx} + 1-e^{-2ikx} = 2 - 2cos(2x) = 2 - 2(cos(x)^2-sin(x)^2) = 2sin(x)^2$ 
+ 
+ 
+\section*{residue theorem, log computation tricks}
+
+1. $Log$ will produce $-i\pi$ during negative real conversion. Hence do not be surprised if the residue side produces a pure imaginary number. (That just means real integral is 0)
+
+3. 
+$\int_0^\infty \frac{1}{1+x^2} = tan^{-1}|_0^\infty = \pi/2$
+$\int_0^\infty \frac{log(x)}{1+x^2} = 0$ (by residue computation)
+$\int_0^\infty \frac{log(x^2)}{1+x^2} = \pi^3/8$
+    
+\section*{special ML bound using oddness of the function, residue}
+    
+    if the function is odd and domain is rectangular, then to bound it, we only need to consider two side of rectangle boundary. If these two sides integer bounds (e.g. $|y| = n$ and $|x| = n+1/2$, we may be able to bound $e^{2\pi z}$.
+        e.g. $|cot(z)|<3$ as in 220A HW6 Q6
+    
+    
+    
+\section*{ML inequality bound tricks, residue theorem}
+
+!!!! ML inequality cannot be directly used. You still have to compute the bound along the semicircle using methods below (which does not mkae it any different from computing cauchy estimate). 
+
+bdd directly
+	1. when $R$ is large, source of bound may come from denominator. In worst case e.g. $\frac{logR}{R}$, use L''hopital's rule
+    	$log(R)/R \to 0$ as $R \to \infty$
+    	$|1+z^2| \to R^2$ when $|z| = R \to \infty$
+	2. when $r$ is small, source of bound may come from $\pi r$ (the length of the contour)
+    	$rlog(r) \to 0$ as $r \to 0$ 
+    	$|1+z^2| \geq 1$ when $|z| = r \to 0$
+
+bdd indirectly
+	expand to laurent series, splitting out extra rational terms (bad terms) into an extra integral
+
+
+
+
+
+
+\section*{residue/constant coeff meaning in series}
+note: Residue at $a$, computed from $\oint f(z)$ correspond to $1/(z-a)$ term (i.e. Laurent EXPANDED AT a, not expanded at a random place)
+similarly, evaluation at a correspond to constant term of the taylor series EXPANDED AT $a$
+
+
+\section*{breal}
+
+
+
+
+
+--------Integral calculation related
+\section*{cauchy integral/anti-parametrization, sin^n, cos^n}
+to standardize, always write integral alone and push everything to the other side
+e.g. $2\pi if^{(n)}(a)/n!$ = cauchy integral
+
+cauchy integral related, when dealing with derivative of sum power (e.g. anti-parametrization of cos(t) and sin(t), use binomial theorem.
+
+
+(i.e. depending on if directly comuputable)
+dz/z = idt
+parametrization (z -> t) --> antideritive/ COMPUTABLE easy integral etc..
+anti-parametrization (t->z) --> when integral hard to do, parametrized back and use cauchy
+(x --> z) ---> residue theorem
+
+
+1. parametrization (and primitive), FTC
+2. anti-parametrization
+3. cauchy integral (and residue theorem as its variant)
+5. special conjugate integral derived from cauchy integral
+
+
+
+\section*{show bound/prove inequality}
+    1. schawarz lemma (show bound, although usually only one zero f(a)= 0, sometimes along with mobius transformation)
+    2. MMP/OMT
+    3. cauchy estimate
+    4. inverse 1/f trick + MMP/OMT
+    5. integral bound/ML |\int| \leq \int|| (similar to part of cauchy but apply to any inequality asking for |..| \geq ..)
+        the trick is to do
+        |(residue/any integration technique to compute \int f)| 
+        = |\int f| 
+        \leq \int |f|  
+        \leq ML
+
+
+
+    
+
+
+
+
+\section*{A_4 properties}
+1. group of order 12
+2. the only normal subgroup has order 4 (class 1+3), where that class of size 3 corresponds to (12)(34), (13)(24), (14)(23)
+3. no subgroup of order 6 (otherwise it has to be normal, contradcicting 2)
+
+\section*{group tricks/Classification theorem of abelian group}
+
+!!! Cyclic group. For any divisor $m$ of its order, there is a UNIQUE subgroup that has order $m$ (useful for semidirect product)
+
+
+
+1. $p$ prime
+	cyclic $C_p$
+
+2. $p^2$, $p$ prime
+	1. either $C_{p^2}$ or $C_p \times C_p$ (direct proof by picking elements of order $p$)
+    2. Or prove that $G$ is abelian and use fundamental theorem of finite abelian group, which states that any abelian group of order $m$ can be obtained through these steps
+    	1. prime factorize $m = \prod_i p_i^{k_i}$
+    	2. for each prime $p_i$ take any integer partition of the exponent $k_i$
+    	3. for each number $s$ in the integer partition you choose, take $C_s$ (cyclic group of order $s$). Now direct product all the cyclic groups (across all primes) together.
+
+	!!! note that for group of order 4, Klein 4 group is exactly $D_2$
+    
+3. $2p$
+	Either $C_{2p}$ or $D_p$ (dihedral group)
+    	1. For $p=2$, refer to $p^2$ section
+        2. For $p>2$, follow this proof https://math.stackexchange.com/questions/291349/looking-for-a-simple-proof-that-groups-of-order-2p-are-up-to-isomorphism-mat
+        	The key thing being if $yxy^{-1} = x^t$, then $y^2xy^{-2} = x^{t^2}$.
+
+	!!! Note that $D_3 \cong S_3$
+    
+3. $pq$, $p<q$ distinct prime
+	 Through sylow analysis $n_p, n_q, C_G$, we have the following cases
+     	1. abelian, then $C_{pq}$. Note that $C_p \times C_q \cong C_{pq}$ if you go from finite abelian classification.
+        2. non-abelian (can only happen when $p | (q-1)$) through unique semi-direct product. Note that you will eventually arrive at semidirect product $C_p \to Aut(C_q) \cong C_{q-1}$. But as $C_{q-1}$ is a cyclic group, it has a UNIQUE subgroup of order $p$. Now by isomorphic semidirect product, there is only one such construction.
+
+
+
+\section*{normal tricks}
+    if and only if preserved under conjugation. Hence if there is only one group of such size, it MUST be normal
+    if and only if sum of conjugacy class (where identity calss is mandatory), hence this limits the size of normal in S_n and A_n
+    if normal of a supergroup then normal of any intermediate group
+
+\section*{conjugacy size formula for symmetric group
+https://groupprops.subwiki.org/wiki/Conjugacy_class_size_formula_in_symmetric_group}
+
+
+\section*{for primitive root residue sum, use geometric series, residue theorem}
+1+x+,,,+x^k = \frac{1- x^{k+1}}{1-x}
+
+x+...+x^k = x(1+...+x^{k-1}) = x\frac{1-x^k}{1-x} 
+
+2k\pi i/n (k start from 0 end at n-1)
+(2k+1)\pi i/n (start from 0  end at n-1 as well)
+
+e^{i\pi} = -1
+
+
+
+\section*{ext and tor}
+
+for ext, uses the original series (before removing Hom(M,N) and argue that Hom is left exact, and hence still exact at Hom(M,N) and Hom(P_0,N)
+for tor, uses cokernel preserves
+
+
+
+division to remove all zeros and apply mmp on that function
+
+bounding technique collection!!!
+disk integral and move abs val inside integral
+FTC, cauchy estimate
+mmp with sepcial divison trick
+
+
+Jensen's formula can only be used when we have ALL the zeros, but Jensen's inequality can be used at any time (i.e. we may know no zero, a few zero, all zero)
+!!! Jensen's formula uses log|..| everywhere, i.e. we only care about (and can only obtain) information about absolute values of f(0), zeros and f(re^{it})
+it is a real value formula, hence abs value can directly be applied on the integral (without traingular inequality), and then we USE the bound information
+
+Jensen connected bound and zero distribution (both forward and backward)
+Note that unlike cauchy integral, ML here gives L=2\pi and exactly cancel the 1/2\pi coefficient outside, it does NOT produce r
+
+
+
+check if 
+	\phi_a	\phi_a'
+0	-a		1-|a|^2	
+a	0		1/(1-|a|^2)
+\phi_a \phi_{-a} relation 
+and boundary to boundary property
+
+then the only thing is blaschke ability to construct
+
+outer compose
+1. we can expnad the internal f, 
+2. we can compose both size outward by its inverse, although the reuslt form looks bad. We only know it is still an auto (as auto compose auto is auto)
+inner compose
+1. we can furture inner compose its inverse. Now we can expand right hand side. 
+2. the form looks good e^{i\thta}*... , in case we want a good explicit expression
+
+zero division bound always weaker than blaschkle bound/jensen bound, the last two ALWAYS yield the same bound (although we do need to shift the root and domain of f when f uses a bigger/smaller circle as domain)
+
+Jensen's formula, 3 terms,
+1. log|f(0)|
+2. log r^n/product (when appearing on LHS) or log product/rn when appearing on RHS). 
+	either way (lhs has less to add or rhs has less to deduct), when we have less than all zeros, log|f(0) side| \leq integral side
+
+	(to remeber, root up right)
+3. intergral of log along circle r (but L = 2\pi), the term vanish when |f| is bounded by 1
+
+both bound at M(\prod_i a_i)/r^n
+
+log -> plus becomes multiply inside, multiply become exponent inside (going up)
+exp --> exponent becomes multiply inside, multiply becomes sum inside. (going down)
+
+
+1. figure out different map between different type of domain and make a chart (outer, inner)
+!! montel family caution, f(az) does not count
+2. sine factorzaion (cosine from lecture???
+
+sin(2x) = 2sin(x)cos(x)
+hence cos factoriation through sin(2x)/2sin(x)
+
+To show factorization
+1. e^h analysis
+2. order analysis
+3. using existing sine factorization (either by pluggin in or with trig formula)
+	trick: split the product into k=2l and k=2l+1, these are still two INFINITE product and we may use one of them to cancel things and the other will remain.
+
+
+
+go down
+	cauchy
+go up
+	disk integral
+	FTC
+	taylor series (if given information about all a_n)
+
+
+!! remeber to check if there are extra 0 at orign terms for weierstrass factorizzatiob and MF
+		outer
+
+e^z		hori strip to right half plane
+e^{iz}	vertical strip to right half plane
+z^2		enlarge strip (or if going therugh e, then equivalently make angle larger)
+		
+it is always ok to do
+1. extend domain and extend function for runge, then restrict back to the original domain and function
+
+
+!!! simply connected REUIQRE open AND connected in the first place. (Hence multiple pieces of disjoint simply connected set is NOT simply connected)
+
+RMT + disk autmorphism
+each coefficient we have in MF construction can control one coefficient in the final product. HNote that $m_n$ is NOT the multiplicities of zero here (which is not even relevant). Hence we just make an MF construction of (m_n+1) terms.
+
+In general, if there are k coeff in the product to decide, then our MF should start with k term laurent principal
+
+to prove converges to a holomorphic, we usually means convergnece on compact (and use Weierstrass theorem)
+
+!! remember to multiply n! to convert coeff to derivative
+!! order k means the lowest term is (z-c)^k (for 0) and (z-c)^{-k} for pole
+
+!!! To prove uniformly continuous (e.g for sine/cos)
+	1. use MVP
+	2. holomorphic -> continuous 
+		now if we are in  a compact set (e.g. provided when trying to prove locally uniformly convergence), that elevates to uniformly continuous (i.e. continuous iff uniformly cont in compact)
+		!! periodic: shrink the universe (\mathbb{C} or \mathbb{R})into a compact set
+		 
+!!! do not  converge pointwise -> pick a point and show not converge is sufficient
+
+
+special type mapping, prove biholo
+check start and end and think how to connect them together using existing biholomorphism? 
+then prove the given one is composed by these pieces
+
+e^{iz} vertical strip of width \pi -> half plne
+		half strip of width \pi -> inside/outisde the semi unit disk
+		vertical strip of width 2\pi -> plane with slit
+		half strip of width 2\pi -> unit circle with slot
+
+diff between unif/point conv 
+	1. uniform, one N use for all points in the set (there is \epsilon, but n \delta here), it is NOT about uniformly continuous
+	2. ptwise, one N use for EACH x
+we only see the usage of \delta and multiple point |x-y| < \delta in uniformlu continuous, which allow any x,y, (and continuous, fix any y and allow any x)
+
+Re->magnitude, 
+		Im->angle
+logz	magnitude->Re
+		angle -> Im
+e^{iz}	Im->-magnitude
+		Re->angle
+
+cos(z) vertical half strip -> half plane'
+
+tan(z) 
+(proven by split into multiple automorphism)
+shift by multiplier
+shift by rotaation
+
+\section*{schwarz max uage}
+!!!! if we have |f(k(z))|' \leq 1 or |f(k(z))| \leq |z|, then equality is exactly achieved when f(k(z)) = z i.e. f=k^{-1}(z)
+
+		outward 	pullback
+
+
+(1-...^2) for weierstrass factorization ---> always split into (1-z)(1+z) = E_1(z)E_1(-z), otherwise analysis does NOT work
+
+
+mmp need continuity at boundary
+Jensen need holomorphic at boundary
+
+
+
+blaschke (construction???) need continuity at boundary
+
+
+differentiate
+1. how to show bound
+2. how to use bound (e,g, what to do when given a bounded entire/holomorphic...?)
+	Jensen
+	distribution of zero/order
+	liouville?
+
+
+
+blaschke product
+	construction e^h, \partial D -> \partial D requii]red
+	division, required all zeros in the interior of unit disk and hence expanding/shrinking may be needed, 
+	
+	but unlike normal zero polnomial division, that use traingular ineuqality to bound itself, this blaschke product can directly use |B(z)| = 1 whnever |z|=1
+	with similar argument as root divison and mmp
+	how to use Jensen to prove such thing???
+	
+	
+	
+	Jensen's formula, convergence condiion, bounded holomorphi function
+
+schwarz
+holomorphic D \to D (open disk)
+f(0) = 0
+
+then we can say something about modulus (but not value itself)
+	|f(z)|	|f'(0)|
+
+if furthermore biholomorphic
+	then equality of modulus
+
+if further-furthermore we are given
+any point value of f (other than 0), or the value of f' at 0
+then the function is fully determined
+
+now this can go backward and prove the maximum of inequality obtained from schwarz is actually achieved
+
+derivative relation with disk automorphism???---> schwarz??
+
+\section*{punctured disk (removable singularity), essential singularity, pole}
+
+!!! When we argue about neighborhood around singualrities, we always punctured the singularity itself.
+
+punctured argument
+
+!!! The singularity type differs as follows
+	1. the image of any PUNTURED holomorphic neighborhood of the essential singularity is dense (by Casorati-Weierstrass theorem)
+		!!! Hence it prevents injectivity by preimage argument)
+	2. Limit at essential singularity does not exist  (use 1 to prove, it is NOT part of Casorati-Weierstrass)
+    	
+	3. (DEFINITION) if and only if it is not a removalbe singualarity or a pole. 	
+		!!!! Hene the converse of 2 holds, if limit does not exist, then it cannot be a removable singualrity nor a pole, and hence must be essential singularity
+	4. !!! if and only if Laurent expansion has infinite principal part (directly follow from 3)
+
+
+
+
+	2.Limit at pole is $\infty$. (i.e. limit EXISTS)
+	!!! Laurent expansion has finite principal part
+
+
+    3. There exists a BOUNDED neighborhood of removable singularity (by removable singularity theorem)
+    	!!! Laurent expansion has no principal part
+	
+    !! all conditions in 1/2/3 are if and only if condition	 
+
+
+
+\section*{==========================cache}
+
+essential singularity prevent injectivity
+	preimage argument
+
+!!! you need to carefully state all theorems that you use
+removable singaulruty --> removalbe singualrity theorem
+essential singularity -> casorati-weierstrass theroemhttps://www.epfl.ch/labs/disopt/wp-content/uploads/2018/09/scribes08_Parmeet_Bhatia.pdf
+
+\subusbection*{liouville with limit usage}
+original version
+	1. we get f=c from liouville
+	2. f(z_0) = 0 implies c-0
+	
+limit version
+	1. we get f=c from liouville
+	2. lim_{z \to z_0} f(z_0) = 0 again implies c=0 (as otherwise limit will not converges to 0), z_0 can be \infty
+
+
+
+
+
+
+
+
+
+
+\section*{rouche's theorem multiple versions, does NOT need a fully known expression, dominant term special usage}
+rouche theorem does not have to know all the coefficient, it just need a form |a| < |b| on the boundary to imply equality on number of roots of a+b and b. 
+
+
+
+Version 1.
+    |non-dominant| < |dominant| on the boundary \partial D, both holomorphic in both interior and boundary
+    \partial D simple (no self intersection)
+    
+version 2
+    |whole| < |-dominant| on the boundary \partial D, both holomorphic in both interior and boundary 
+
+???
+
+
+
+!!! hence given bound |f| < 1. 
+
+
+
+    1. the dominant term of f (call it h) has |h| = 1
+    2. then let h_* = -h, we have |f| \leq |h_*| by assumption
+    3. Rouche's theorem f+h_* has the same number of roots as h_* in the interior, we may reach a contradiction (e.g. polynomial degree) from here.
+
+
+!!! contradiction can only result in non-dominant part being identically 0???
+If there exists $h$ such that $f + h = a$ and |h|=1, then f-h and h has the same number of roots
+
+
+
+
+
+----------properties of field go down
+gal key equation
+min polynomials
+
+
+----double integral bound trick
+1. we want to show l.u bound. Hence we must show that given a compact set, and ANY a in this compact set and ANY f, |f(a)| \leq M
+
+now we have disk integral MVP, choose a radius r (hence the disk not necessarily in comapct but still in the domain as it is open)
+
+
+--------sin/cos zeros
+zeros of cos and sin are all on the real axis (even if they are defined for the entire complex plane)
+
+-------show entire constant given e^... bound, divide by sin or cos, periodic usage
+??? triangular inequality + location specific bound??
+
+
+
+!! sin and cos have the same bounding capacity as exp
+
+!! horizontal bound: periodic implies bounded along the perioidic direction (as holomorphic + compact (i.e. within each period) implies bounded 
+!!! vertical bound: divide another function and show the resulting function is
+    step 1: constant c
+    step 2: plug in a special point to show c=0
+then the original function is a constant
+
+-----------properties of intermediate field go up
+extend ---. inverse of restrct
+for any, we can extend means 
+there exists a restriction group homomorphism Gal(K/F) --> Gal(L/F) 
+1. well defined as L/F galois, splitting field preserved
+2. surjective by assumption (as any extends translate to any there exists that restricts to itself
+3. kernel is those that fix L (i.e. Gal(K/L)).
+
+Hence conclude.
+
+
+1. isomorphism thoerem
+2. from top, look at group relation (top can be given top or galois closure, whichever more convenient), then use tower lemma
+
+show galois: if and only if gal size equals tower lemma result
+: if and only if normal and separable
+
+
+same object (e.g. permutation) but group smaller --> embed (injective)
+smaller obj (e.g. automorphism of subfield)----> restriction map (surjective)
+
+
+\section*{tensor and exact sequence}
+tensor is right exact, hence sufficient to prove the injectiev chunk
+(similarly hom is left exact...) 
+
+
+if any f_i has a nontrivial kernel, then f has one. If  has a kernel, then at least one of the summand has a nontriivla kernel. Hence projective (as a summand of free) is flat
+
+tensor is right exact, so cokernel (codmain/img) is preserved
+
+\section*{ext}
+for both ext and tor, we remove the module that generate the resolution itself. Then the start index is 0 (at the end)
+
+i.e. index like P_2 \to P_1 \to P_0 \to M \to 0, then remove M and tensor (or Hom)
+
+right exact --> cokernel preserved (which means when we tensor the entire sequence with B, new cokernel \cong original_cokernel \otimes B)
+
+left exact ---> kernel preserved (which means 
+
+\section*{cauchy integral formula and MVP and disk integral}
+both analytic and harmonic function satisfy MVP because it is derived from cauchy integral )for holomorphic), then taking projection to get harmonic version. THe technique is basically plug in z = a+re^{i\theta}, and dz = ire^{i\theta}d\theta
+
+hecne both holomorphic and harmonic satisfy disk MVP through the same proof (i.e. plug in MVP into the disk integral and show that it results in the center value)
+
+
+???? how to bound (1-|z|)^n. furthermore, which direction do we pull out stuff?
+
+
+
+taking product of those that preserve and those that fix???
+
+
+isomorphism:
+those that fix
+those that does not fix but preserve
+those that swap (will not happen in normal extension)
+
+we quote the fix (when normal) to get those that preserve
+similarly we compose (when extendable) those that fix and those that preserve to get all
+
+subfield normal extension, normal subgroup the other way within parenthesis
+tower lemma
+inequality always hold Gal \leq extension degree
+injective embedding
+
+
+
+--------
+
+
+
+
+
+isomorphism theorme/galois group/closure
+restrict: galois key eqn/min polynomial argument (lift up/down)
+
+-----------
+nilpotent nontrivial center by definition of upper central (beginning)
+supersolvable 
+
+
+simply connected
+    holomorphic version
+    ...
+non-zero+simply connected -> log (derived as f'/f is holomorphic)
+primitive of any holormophic f
+
+taking derivative????p
+
+
+\section*{cauchy estimate}
+
+when $M(R)$ is known, we can obtain bound for coefficient and derivatives
+!!! when coefficeint or derivative are known, we can also obtain a bound (from below) for M(R)
+    1. say a \leq M(R)
+    2. that means there exists z such that |f(z)| \geq a on the circle (otherwise |f(z)| cannot be infinitely closed to M(R), contradiction)
+   
+to swap the know  coefficeint to constant erm (and then MMP)
+do z^nf(1/z), 1. 1/z swap inside the circle and therefore property transfer
+
+Hence any known coeffciient of polynomial can tell us something about polynomial itself
+
+
+
+
+!!! primitive element theorem (finite separable, which means galois can also use it) 
+every finite separable extension is simple
+how to dealwith \alpha\ betqa?? galois collection
+
+
+   galois actual procedure 
+take normal closure (i.e. splitting field) we will obtain an galois extension
+
+
+   galois how to go up and go down -related to separable/normal
+   
+   go up galois closure
+   
+   
+   go down 
+    restriction of automorphism 
+    top goes down, min poly does not change, but we have less elements.
+    bottom goes up,
+        min poly (that has a root in top) may become an irreducible factor of the original min polynomial, we still have all the elements
+        any min polynomial, split and separable property transfer to its ireducible factor
+    
+separable
+
+anything achieving maximum (or any inequality) modulus in the interior is a constant. (e.g. if a derivative touches cauchy estimate in the interior, then it is a constant (as it is holomorphic and mmp applicable))
+
+
+
+
+any min polynomial with a root in top is separable
+        
+    normal
+        any min polynomial with a root in top split over top
+    orbit stabilizer on transitive??
+    
+    act on 4 objects, embedded as subgroup of S_4.
+    transitive act on n object -> one orbit of the full size ---> orbit stabilizer tells us n | |G| and stabilizer size (of each object) is |G|/n
+   
+\section*{tensor}
+    1. universal property and proving injective
+    2. sum rules and finding basis
+    3. CRT and A \otimes R[x]/(f) \cong A[x]/(f)
+
+degree 2 is always normal (2nd degree polynomial
+separable extensible
+the difficulty is always how to pull normality up, we nned to show some polynomial split
+
+
+galois, automorphism swap roots among irreducible polynomials

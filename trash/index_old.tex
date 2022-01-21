@@ -1,0 +1,729 @@
+\section*{__how to get into wall street?:
+
+
+	!!! Please, do NOT do things that you yourself are not even clear whether it is needed or not
+	
+
+\section*{200_FA21 Qual P2:
+	multiplication action -> coset of some subgroup -> (!!! any subgroup, does not matter whether it is normal or not)
+
+
+
+\section*{200_FA21 Qual P5
+	total number of chain
+	= total number of Jordan blocks (!!! as length of chain decide block size, NOT block #)
+	= total number of elementary divisor (!!! exponent correspond to block size)
+
+
+	Given M: V \to V, we use Mv = xv, which turns V (vector space) into a F[x]-module. Note that the constant level operation is preserved
+	Jordan block of size k satisfy
+		1. (x-\lambda)e_1 = e_1
+		2. (x-\lambda)e_i = e_{i-1} (i>1)
+	and hence satisfy
+	(x-\lambda)^k = 0 (zero matrix) and therefore the corresponding module is F[x]/(x-\lambda)^k
+
+
+
+	sum of modules
+	= sum of linear map V \to V
+	= Jordan blocks along the diagonal
+	= product of each char polynomial
+
+
+	Jordan block of size k satisfy (x-\lambda)^k
+
+
+	gm_i
+	= number of chain 
+	= size of kernel 
+	= number of entry at the first row of chain table
+
+
+	chain table
+		total number of entry
+		number of entry at first row = number of column 
+		
+	!!! we always use am_i and gm_i to connect to elementary divisor, not directly to invariant factor
+
+	now elementary divisor and invariant factor form a build/remove tower relation	
+		
+\section*{200C_HW1
+
+	product care everything together (as flow out to each component)
+	coproduct cares about one thing at a time (as component flow in)
+
+
+
+	hence direct sum (finitely many entry) for coproduct is good.
+	If we use direct product for coproduct, you will notice that we never specify those mapping for those elements with infinite entries, hence the final f is NOT unique. (hence direct sum if and only if coproduct)
+
+	similarly, tensor produt has to be coproduct as its elements are FINITE sum of tensors.
+
+
+
+	domain non-empty and codomain non-empty, then mapping cannot exist by definition
+
+
+
+	Hom (contravariant) because (!! the function map A to Hom(A,M), any morphism f originally mapping element A -> B now become a morphism mapping (through composition) homomorphisms Hom(B,M) -> Hom(A,M)
+
+
+
+	initial --> usually empty as that ensures empty map s the only map given any codomain
+	final --> usually singleton as that ensures 
+		1. everything can be mapped to SOMEWHERE
+		2. anything in domain has only one choice of mapping
+	!!! sometimes morphism will always map 0 to 0 and 1 to 1 (in which case initial target have to at least include those)
+		
+		
+	coproduct
+		coordinate mapping  decide all element mapping (usually this implies elements have finitely many non-zero entry)
+	product
+		self mapping decide all coordinate wise mapping (at the same time)
+		
+		
+	A ---> B
+	Hom(B,M) --->Hom(A,M)		
+		
+\section*{what does notation P(|X_n-X| > m) mean?
+equivalent to P(\{ outcome: |X_n(outcome) - X(outcome) | > m\})
+
+\section*{how to understand limsup and liminf of sets?s
+limsup = appear in all consecutive union  
+= elements shows up after any cutoff
+= elements that appears in infinitely many A_n
+= i.o.
+
+liminf = appear in at least one consecutive intersection
+= within finite steps, the element will start to persist
+= does not appear in finitely many A_n
+= a.b.f.o
+
+
+
+\section*{convergence in probability implies convergence in distribution?
+
+P_n \to P implies f(P_n) \to f(P) for all cont func f
+dominated convergence theorem: bounded convergence implies integral convergence (expected value is exactly defined as integral)
+converge in distribution iff integral convergence
+
+
+\section*{yield to maturity, cashflow balance eqn?}
+
+1+r (one period interest rate)
+
+(1+r/n)^n \to e^r = 1+R (R is the compounded interest, i.e. re-invest within one period interest rate)
+
+1+YTM (interest rate that satisfy multi-period cashflow balance eqn)
+	Price*(1+YTM)^n = \sum_{i=1}^n c_i*(1+YTM)^{n-i} + Face_val
+	e.g. |------|------|-------| for n=3
+
+
+when buying bond, the coupon starts after one period. Face value comes with one last coupon. (i.e. 2 year bond is the interval [0,2], no coupon at 0, coupon at 1 and coupon at 2 (and face value at 2))
+
+
+no arbitrage-> sum of cashflow (in with + and out with -) multiply interest should be 0 (otherwise arbitrage oppotunity exists)
+
+\section*{what is the relation betweem CML, CAPM and factor model?}
+r_p - r_f  <--\beta--->  (r_m - r_f)
+	|						|
+	|						|
+sharpe ratio			sharpe ratio
+	|						|
+	|						|
+  \sigma_p	<--\beta---> \sigma_m
+
+where $r_p$ is our portofolio and $r_m$ is the market portofolio. CML relates the vertical and use sharpe ratio (of market portofolio) as slope. CAPM relates the horizontal through $\beta$ risk coefficient.
+
+factor model: basically CAPM but assuming the vectical intersection is not 0.
+
+Each set of securities, with proportion parameter $w$, creates a CURVE on the return-variance graph. The curve created by market set (i.e. all securities) is the efficient frontier. Now maximize sharpe ratio (by drawing tangent line from (0, r_f)), we obtain the market portofolio as the tangent POINT.
+
+In other words, a portofolio = a set + a proportion vector.
+
+\section*{how is stock price decided?}
+
+buy -> assume price will rise (bull)
+sell -> assume price will drop (bear)
+
+Share price decided by latest trading price (i.e. when one of thebuyer decide to accept the lowest seller price). 
+	I predict price will go up (bull), so I buy. But the fact that I buy does not necessarily mean next trade price will go up/down.
+
+
+
+
+
+\section*{200 Qual FA21 P2}
+
+group trick
+	p
+	p^2
+	2p
+	pq (whether q|(p-1) decide if non-abelian exists)
+		
+\section*{200 Qual FA21 P3}
+galois, \phi(n) notes here
+	https://en.wikipedia.org/wiki/Euler%27s_totient_function#Computing_Euler's_totient_function
+	
+	0. check irerducible+splitting field/perfect
+	1. listroot
+	2. extend one of them, are all of them in the extended field already? (if so , we are in the splitting field, if not, we need to pick extra basis and repeat till everything is in the extension).
+normal/splitting field
+
+!!! once we reach normal, we are galois because there is only one irreducible factor here. (Imagine we are given (x^3-2)(x^5-3), which is redcible), then the composition matrix need 4 dimension)
+
+!! order of element -> a^2a^2a^2.... -> a^{2+2+2...} till =1
+	order of auto -> ((a^2)^2)^2.... --> a^{2*2*2*2.} till =a
+	3. finding field correspond to group, use $\sum_{g \in G} g(\gamma)$ for some g (then it is fixed by any element in G as any element just permute it to itself by left action)
+	
+
+\section*{200 Qual FA21 P4}
+inseparable notes here
+	Forbenius
+	derivative, gcd
+	imperfect
+	special form (given irreducible)
+	
+	x^{p^n} - x
+	x^p - a
+		
+
+\section*{200 FA21 Qual P6}
+a \otimes 1 + a \times 1 = 2a \otimes 1
+(a,1) + (a,1) \neq (2a,1)
+
+THat's why direct sum cannot use the same strategy as tensor product to prove itself as coproduct
+
+
+\section*{200C HW2}
+R \otimes R \cong R
+or pick a basis for each side, then tensor of each pair basis is a basis for the tensor product
+
+tensor does not commute with direct product
+	Q and \prod_p Z/pZ under tensor coefficient ring Z
+	
+\section*{200C HW3}
+
+contradiction if maximal ideal can further extend
+
+merge and spit out of R/a (spit out to tensor, merge into multiplication)
+https://math.stackexchange.com/questions/855222/prove-that-if-the-induced-homomorphism-m-mathfrak-am-to-n-mathfrak-an-is-su
+
+\section*{200C HW5}
+tensor: preserve kernel and left exact
+
+Hom: preserve cokernel AND right exact
+	taking cokernel in the tensor sequence \cong taking cokernel in the original sequence and tensor
+	
+BOth property are used when dealing with Hom and Ext
+\section*{200C HW6}
+
+free
+	1. cannot generate by 1 (k(ax+by) = x -> kb=0 -> b=0
+	2. cannot generate by any 2 (by invert matrix)
+
+projective
+	use coprime ideals (I+J = R, I \cap J = 1)
+	and sequence 0 \to I \cap J \to I \oplus J \to I +J  \to 0
+	and projective properties
+
+
+tensor mapping isomorphic
+ 
+	1. (if necesasry, cross product mapping well defined) and then universal property (prove bilinear)
+	2. surjective (natural)
+	3. injective (using if there exists something in kernel, it must be 0)
+
+
+
+!!! element in R/(I+J) are cosets of the form a+(I+J). NOT a+b!!!!
+
+
+
+
+
+\section*{what is the origin of efficient frontier? what is a line/a point on the return-variance coordinate?}
+
+position -> quantity of share in hand
+
+each portofolio is a set of asset and a proportion vector. This is represetned by a point on the return-risk coordinate. Also note that the return is a rate, hence increase the amount of money without changing proportion vector does not move the point.
+
+efficient frontier: portofolio that 
+	1. includes only risky asset (no risk-free allowed)
+	2. solves the mean-variance optimization problem at any given risk.
+!!! HAS NOTHING TO DO WITH THE portofolio set and proportion vector
+
+No arbitrage law forces only one possible risk free asset on the y-axis.
+
+The line between any point on the efficient frontier and the risk-free point decide the proportion of money devoted to risk-free and risky asset (i.e. proportion vector of portofolio only decide how to distribute among risky assets).
+
+The highest sharpe ratio line is called the CML.
+
+
+
+\section*{what is the no arbitrage formula that relates cashflow and interest?}
+cash flow multiply interest rate (with period exponent) will be sum to 0 (no arbitrage)
+
+
+replace message app (Ineed the names though)
+also try to adjust the level of voice from pc
+
+
+\section*{AMS Qual 17, P1}
+
+current value should inflat by at least risk-free interest
+
+no earning when risk-free
+which means if buyer want to earn, he must take the risk away from me by buying
+
+!!! exercise/strike price is something at time T (hence discount when pull back)
+
+\section*{why does call-put parity hold when both c term and p term are there?}
+!!! C = 0 when S_t < K
+	P = 0 when S_T > K
+	Hence S_T - K = Ce^{rT} - Pe^{rT} always hold as 
+	1. S_T \geq K, by no arbitrage, S_T - K = Ce^{rT} 
+	2. S_T \leq K, K - S_T = Pe^{rT}
+
+
+
+
+\section*{AMS Qual 2017 P3}
+
+
+Ito lemma
+	1. given X = \mu(X,t)dt + \sigma(X,t)dB, an ito process (and B is the brownian motion). Ito process can be considered as drifted, diffused Brownian motion
+	2. taylor expansion (multivariate) trick
+	3. quadratic variation trick
+tell you the formula for any df(X)
+
+1. Geometric brownian motion is a special kind of Ito process, \mu(X,t) = aX (a cosntant), \sigma(X,t) = bX, b constant.
+	!!! using log derivative trick dln(X) and Ito's lemma, we can solve GBM
+
+	!!! d(ln(X)) \neq dX/X, hence must use ito's lemma to do logarithmic derivative trick rather than doing it directly
+
+
+	!!! hence multiplicative model is only remotely related, but no direct (e.g. taking limit) relationship
+
+\section*{what are the well-known maps between torsion modules}
+R/p -> R/(p^m) use p^{m-1} map (injective)
+R/(p^m) -> R/(p) use third iso map (surjective)
+
+
+
+\section*{___200 FA21 Qual P4
+
+perfect -> every min poly is separable -> separable extension?
+1. perfect, frobenius is surjective, hence a = k^p
+2. but x^p-k^p = (x-k)^p
+3. 
+perfect + irreducible (of what___?)
+if it is perfect F and irreducible over F, then it does not make sense to apply here.
+
+x^p-a is the min polynomial of some n that resolves it, not $a$ itself. But then if K perfect, then x^p-a has a root due to Frobenius. Hence there exists such $n \in K \setminus F$. Now this is the min polynomial but we find it inseparable. Hence contradiction?
+
+\section*{___copula problem in ams qual
+copula C(F_1(a),F_2(b)) = P(x \leq a, y \leq b)
+
+
+\section*{android cmd to replace app (manually)
+adb install
+adb uninstall --user 0___
+
+
+
+\section*{where are the assignment located FA21? how about office hours?}
+280A
+	https://canvas.ucsd.edu/courses/30188/assignments
+	MWF 2:30 PM to 3:30 PM (Zoom)
+		https://canvas.ucsd.edu/courses/30188/pages/math-280a-probability-theory-i?module_item_id=996919
+281A
+	https://canvas.ucsd.edu/courses/30148/assignments
+	Tuesday && Thursday 4pm-5:00pm (Zoom)
+		https://canvas.ucsd.edu/courses/30148/assignments/syllabus
+		
+257
+	https://scungao.github.io/ucsd-f21/index.html
+	Tuesday and Thursday, 1:50 pm- 2:30pm in the grass area at the center of center hall 
+		https://app.slack.com/client/T02DJNCH2P9/C02EP34AB3J/thread/C02E5LBS23W-1632544696.036200
+271A
+	https://ccom.ucsd.edu/~peg/math271a/Protected/Homework.html
+	Wednesday, Friday 2:00-3:15p AP&M 5872
+		https://ccom.ucsd.edu/~peg/math271a/
+
+
+
+
+
+
+
+
+
+
+\section*{___difference btween python async/await and those in other languages}
+https://stackoverflow.com/questions/50557259/can-i-use-multiple-await-in-an-async-functions-try-catch-block/50557863
+
+
+basically await and async are unseparable in python, but at the same time python has event loop.
+
+hence unlike 1 continue straight and 1 branch away, we must have two branch away
+	
+2. async for/with (just to make for awaitable (not to make it disorder-able), when await still return to parent async FUNCTION)
+
+	at any await
+	if need to wait, jump out through async
+	if completed, return promise and next line
+
+
+
+
+\section*{___stella visit resolution}
+
+
+
+
+	
+
+
+\section*{___financia times podcast 10 min}
+bloomberg, barron's, wsj___?
+
+
+___? bus 101 target and its timing?
+___ difference between central limit theorem and law of large number
+	law of large number deal with relation between sample mean and expected value (population mean)
+	
+	___ does clt implies lln?
+	1. rv drawn from distribution means rv's density function is that distribution
+	2. both theorem requries sequence of i.i.d rv
+	
+	
+___ martingale
+___? we know in probability implies distri, but how does a.s. implies probability
+
+___ does PhD worth in general as an investment? how about finance master (at top school) as an alternative?
+
+
+
+
+
+\section*{___main progress tracker and planner}
+take a look at princeton student's resume, use it as progress reference)
+ask people who already in/obtain the target
+does PhD add value to your profile?
+when you do not know if skill/block will add to your profile, DO NOT aim to sharpen the skill/block. ASK, and PLAN accordingly, before you do so.
+
+
+new york university
+university of penn
+columbia university
+
+\section*{___what is convergence almost everywhere correspond to in basic convergence? 281A HW1 P1}
+
+forward: pdf convergence, dct, then scheffe theorem to implies integral (cdf) converge pointwise
+
+backward: tight to get subsequence convvergence, then do we follow this or use that unifrom integrability stuff?
+
+
+1. limit exist, 2 it is \mu and \sigma
+tightness can only show 2.
+
+
+
+as long as outcome space remains the same, probability measure remains the same. The pdf and cdf are the properties of the varaible itself, not of the probability measure P
+
+|a hat -a| < \epsilon
+
+
+slusky/chebyshev
+convergence of first moment E(\lambda hat] -> \lambda
+Var[\lambda hat] -> 0
+done
+
+
+\section*{what is mle estimator?}
+We draw a sequence of X_i from an unknown distribution, we simply want to get the parameters that maximize $\prod_i P(X_i = x_i)$, where the probability density function is a function of X_i and parameters.
+
+Now this estimate (and any other estimate) is written as a function of observation rv  X_i. (e.g. sample mean, as an estimate of population mean, can be written as \sum_i X_i/n). Now we try to prove that this estimate e.g. has expected value = target, or converges to the target as n \to \infty
+
+
+when i.i.d, the likelihood is the product of individual likelihood by definition
+
+!!! partial derivative with respect to the parameters, NOT the observations. For indicators functions, try to show that one direction is zero all the time and the other is (positive) but always decreasing, hence maximum is achieved at the jump point)
+
+(In contrast to maximize likelihood, we can also estimate by minimizing the square of error among existing observations, that is basically the least square estimate. Sometimes, these two estimates are identical)
+
+
+\section*{difference between stats and probability}
+we obtain some estimates that shows us the probabilitic model wprks (or to what extent it works)
+
+now you can argue that the estimates you make up is good or bad (e.g. biased vs unbiased). e.g. R^2 of your regression may tells you that linear model explains lots of stuff you observe. But it may not be a good estimate/statistics to begin with as it basically says overfitting is better. (See https://otexts.com/fpp2/least-squares.html)
+
+
+\section*{___how to show that our estimate converge in probability to the correct parameter (in population distribution?}
+
+a typical example is the weak law of large number (sample mean converges in proability to the (population) mean)
+
+https://en.wikipedia.org/wiki/Law_of_large_numbers#Weak_law
+
+
+
+\section*{variance of sum equals to?}
+sum of covariance. In independent case, therefore, is the sum of variance
+
+
+
+\section*{way to go for proving convergence in probability}
+1. inequality (just like how we prove weak law of large number)
+	chebyshev inequality
+	
+2. characteristic equation convergence pointwise, then levy continuity theorem. THen convergence in distribution implies convergence in probability in the SPECIAL CASE of constant target.
+
+
+\section*{what is an unbiased estimator?}
+estimator is a function of observation (rv)
+E(estimator) = target then unbiased
+hence if unbiased, then if we get enough observation, this estimate will be close enough to the true parameter, otherwise we need to correct that bias
+
+
+
+
+1. P(|a_hat - a| > \epsilon) = P(a_hat > a + \epsilon) + P(a_hat < a - \epsilon)
+2. P(X_min > k) = P(all X_i > k) 
+= \prod_i P(X_i > k)			(independent)
+= P(X_1 > k)^n 					9identically distributed)
+
+similarly for X_max, but has to be P(X_max < k).
+
+
+
+\section*{!!!! Deadlines}
+\section*{!!!Stage}
+
+under what conditions does clt holds?
+cauchy distribution
+	does not follow clt as the sample mean is standard cauchy regardless of $n$ and therefore converges to standard cauchy (rather than normal distribution if clt applies)
+converge in distribution if and only if char func pointwise converges.
+
+
+281A hw by Sat 12:00
+Working strategy that can run unattendedly Sat 23:59
+
+
+canvas annoucement
+
+280A homework
+career center check by Sat 23:59
+
+
+Statistic test to verify model quality by Sun 23:59
+
+resume by Sun 12:00
+website by Sun midnight
+
+forecast paper by Sun 23:59
+
+Japanese first list Sun 23:59
+
+
+
+
+
+\section*{___CNN vs RNN?? MCTS or not___}
+
+\section*{___how do we use time series to forecast? And then how do we evaluate statistically the performance of our forcast?}
+
+Holt-Winter's Seasonal Smoothing
+
+___? is chapter 9 basically about arima-garch? or a duplicate of arima?
+
+trend moving average (long-term moving avg, short-term...)
+
+
+seasonal average among all the intervals (e.g. if yearly interval, then average of 10/11 become the seasonal at all 10/11.)
+noise: the rest 
+
+\section*{___chapter 1/2/3/5/7/10 and see what can be added into the code}
+
+!!! In particular, stress on statistical analysis.
+
+___? does 
+
+\section*{___what is chapter 3 about___}
+time series decomposition___
+stationarity test??
+
+exponential smoothing
+arima
+(how to use that to froecast?)
+
+1. project (following what is packt?)
+2. awm 
+3, reach out to more professor (about resaerch/common project)
+4. homework
+5. resume/website build-up
+
+\section*{___FAMOUS EQUITY BLOGS}
+
+be clear about the BEST objective before optimization
+i.e. figure difficult things out does not  necessarily make you a better future/result
+
+!!! it is not that important to optimize the amount of thing that you learn. There are always someone whose knowledge is a superset of you. To beat them in job market, egt to know (and have good relationship with) more PEOPLE.
+
+!!! even slightly good relationship can help you pass critical stage even without careful studying/planning. even indifference can kill you at critical stage even with careful studying/planning. Sure you can study extremely harshly and plan extremely carefully to avoid killing, but how about just get along with people___
+
+rather than harshly optimizing solid stuff, just ensure solid stuff is not too bad and devote remaining in knowing people that is in the target place you want to go.
+
+People will start to rationally compare candidates ONLY when they do not know both. that is biggest source of failure.
+
+courses -> demonstrate relevant and ability to master
+	probability/statistics/time series
+intern x2 -> demonstrate computational related
+	ask whether intern during regular quarter is possible
+	appointment with career center staff
+project -> support intern
+		-> the ability to use AI, SQL to make up an trading stuff
+research -> research units (GPA)/paper/advanced to candidacy -> award if possible
+involvement/leadership -> awm
+website -> updated_cv
+
+computer skills -> demonstrated by project and intern
+interest -> japanese
+kelly -> ask statistics of graduated students
+
+University of Pennsylvania
+Harvard University
+Cornell University
+Princeton University
+Columbia University
+The University of Michigan at Ann Arbor
+
+website
+c++/python --> tensorflow/deep lerning trading
++SQL/NoSQL 
+AWS
+
+\secion*{___how to use sql from python??}
+acid
+1. atomicity
+2. illegal transaction does not corrupt data
+3. concurrent control
+4. resistant to power/server failure (if completed, as in 1, then it is on the disk)
+
+\section*{___if optimization is needed?}
+ASK industry people.
+Probably not custom optimization problem or custom method. Usualy just the ability to convert data into standard model and quickly solve it.
+
+___exposure to problem is important, as otherwise you will nevr know if you are learning the correct skills set
+
+\section*{___ask scoot linear algebra TA}
+\section*{___double directin sync config file based on local timestamp?}
+	___ fix sync cp 
+\section*{___return monitor and amazon stuff}
+\section*{___bigger  bag___}
+	1. volume
+	2. water proof
+
+
+\section*{we do index, but rather than using taht to describe the proportion, we use heuristic collected by AI to decide the proportion and action}
+
+\section*{___website, better photo}
+
+\section*{how does a cdf work?}
+first, a random variable X maps from the outcome space to the real axis. (This means it assigns a probability to each of the outcome). 
+
+It is from outcome to real axis, NOT measurable sets (events) to real axis.
+
+Now Pr(X \leq x) is basically the proability of the pullback of $\{X \leq x\}$, i.e. the set of outcome such that $X(outcome) \leq x$. 
+
+Hence, the flow is real axis ---pullback---> outcome space ---P measure---> segment [0,1]. Therefore we form a graph of real axis ---> [0,1]
+
+\section*{___how does copular work?}
+bascially mask the marginal away by taking x-u transform
+
+C(u_1, u_2)
+= Pr(U_1 \leq u_1, U_2 \leq u_2)
+= Pr(X_1 \leq F_1^{-1}(u_1), X_2 \leq F_2^{-1}(u_2))
+= F(F_1^{-1}(u_1), F_2^{-1}(u_2))
+
+where, F_1, F_2 are maginal cdf and F is joint cdf
+equivalently
+C(F_1(x_1), F_2(x_2)) = F(x_1, x_2)
+
+Note x-u transform is bijective
+
+\section*{what is risk neutral measure and how is it related to fundamental theorem of asset pricing}
+
+\section*{___can pearson coeff be computed by knowing copula? or the only thing needed is the marginal?}
+http://www.columbia.edu/~mh2078/QRM/Copulas.pdf
+https://en.wikipedia.org/wiki/Pearson_correlation_coefficient#Definition
+
+
+
+\section*{difference between a field anda \sigma-field? 280A HW1 P21}
+\sigma-field = field closed under infinite unions (arbitrary field only closed under finite unions)
+
+\section*{how to check monotone limit of a set? 280A HW1 P23}
+to check (monotone) limit of set, check 1. monotone sequence 2. intersection/union of chain equal to final result
+
+\section*{how to prove \sigma-field generated by a set? 280A HW1 P36}
+1. include empty set and universe
+2. keep expanding (through complement and union of sets already in the collection until no new set can be produced. (e.g. complement, add, union, add, complement, add...)
+
+Hence the field satisfy
+1. generated by the original set
+2. removal of any element by construction makes it no longer a \sigma field
+
+\section*{280A HW1 P41}
+given any arbitrary union, we can always convert it into disjoint union or monotone union, 
+
+
+
+\section*{___AMS QUal 17 P9
+		LHS-(recur)
+ar		output-(output)
+arma	output-(output, error)
+arch	error var-(error)
+garch	error var-(error, error var)
+
+___ what is null hypo in step 2 about? coeff = 0 or ARCH exists?
+
+___ how to compute loss distribution of arma-garch given the recurrence relation.
+
+\section*{how to shutdown pc when lid close?}
+# https://wiki.archlinux.org/title/Power_management
+
+echo "HandleLidSwitch=poweroff" >>/etc/systemd/logind.conf
+\section*{___buy bags/smaller jackets/socks}
+\section*{___reading course and drop 271}
+
+
+\section*{___VaR of an european option{
+
+1. given a horizon t=k and a pricing formula f(t, X_t), where X_t is a vector of random variable input (e.g. risk factor, underlying stock price etc.), we have
+L = -G = -(f(k, X_K) - f(0, X_0)), where G is the gain.
+
+Now the following are equivalent
+	1. k\% VaR is a
+	2. there is k\% chance that Loss will NOT exceed a (Gain will NOT be less than -a)
+	3. there is 1-k\% chance that Loss will exceed a (Gain will be less than -a)
+	4. Pr_L(x \geq a) = Pr_G(x \leq -a) = 1-k\%
+	5. pullback cdf_G^{-1}(1 - k\%) = -a
+				cdf_L^{-1}(k\%) = a    (kth quantile)
+
+So all we need is the distribution of L from the equation above
+
+2. in option pricing, we can use solution to BS equation for f(t,X_t)
+
+
+
+
+
+
+
+\section*{what does it mean to say k\% VaR?
+the value x such that Pr(X \leq x) = k\%. (i.e. the pullback of cdf = k\%)
+
+\section*{how to avoid unexpected communication downfall?
+be 0 at first, gradually know their level, then predict and expect based on this level (DO NOT, NEVER, predict/expect based on your own level, ESPECIALLY DO NOT EXPRESS THIS KIND OF VIEW OR QUESTIONS in conversations)
+	
