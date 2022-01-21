@@ -23,6 +23,6 @@ git push -f origin master
 
 pkill sync.sh
 index=`tail -c 2 /etc/hostname`
-clean_repo /home/ken/open laptop$index
+# clean_repo /home/ken/open laptop$index
 clean_repo /home/ken/private laptop$index
-clean_repo /home/ken/clips laptop$index
+# clean_repo /home/ken/clips laptop$index
