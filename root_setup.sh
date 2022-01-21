@@ -115,14 +115,14 @@ printf "How many lines to remove from .xinitrc?"; read N
 # existing file will retain its permission
 echo "$(head -n -$N /home/ken/.xinitrc)" >/home/ken/.xinitrc
 # leave qt5ct variable there for qt5 font support
-echo "redshift -O 3000K &
+echo 'redshift -O 3000K &
 /home/ken/open/sync.sh &
 export QT_QPA_PLATFORMTHEME=qt5ct
 XDG_SESSION_TYPE=x11 plank &
-geany -i /home/ken/open/index.* &
+geany -i &
 xfce4-terminal &
 
-if xrandr | grep 'HDMI1 connected'
+if xrandr | grep "HDMI1 connected"
 then
 	max_width=2560
 	max_height=1440
@@ -136,7 +136,7 @@ else
 fi
 
 sleep 1
-noteid=$(xdotool search --name index.)
+noteid=$(xdotool search --name untitled)
 
 xprop -id $noteid -format _NET_WM_STRUT_PARTIAL 32c -set _NET_WM_STRUT_PARTIAL 0,0,0,$target_height,0,0,0,0,0,0,0,$target_width
 xdotool windowmove $noteid 0 $((max_height-target_height))
@@ -154,7 +154,7 @@ xdotool windowsize $cmdid $((max_width-target_width)) $target_height
 xprop -id $cmdid -format _NET_WM_WINDOW_TYPE 32a -set _NET_WM_WINDOW_TYPE _NET_WM_WINDOW_TYPE_DESKTOP
 xprop -id $cmdid -format _NET_WM_STATE 32a -set _NET_WM_STATE _NET_WM_STATE_STICKY,_NET_WM_STATE_SKIP_TASKBAR,_NET_WM_STATE_SKIP_PAGER
 
-exec openbox --replace" >>/home/ken/.xinitrc
+exec openbox --replace' >>/home/ken/.xinitrc
 echo "startx" >>/home/ken/.bash_profile
 
 
