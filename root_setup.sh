@@ -85,7 +85,7 @@ pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel d
 
 pacman -Rns sudo --noconfirm
 pactl set-sink-mute @DEFAULT_SINK@ false
-
+pactl set-source-mute @DEFAULT_SOURCE@ false
 
 su ken -c "
 git clone --depth=1 https://aur.archlinux.org/brave-bin.git /home/ken/brave-bin
