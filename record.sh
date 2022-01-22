@@ -17,6 +17,21 @@ then
 
 	# ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i default -c:v mjpeg -preset ultrafast -c:a aac /tmp/temp.$ext
 	
+	
+	# ask two input two audio sources if not already there.
+	if [[ ! -f /home/ken/.audio1 ]]
+	then
+		printf "audio_target_1: "; read temp
+		echo "$temp" >/home/ken/.audio1
+	fi
+		
+	if [[ ! -f /home/ken/.audio2 ]]
+	then
+		printf "Please enter audio 2"; read temp
+		echo "$temp" >/home/ken/.audio2
+	fi	
+	
+	
 	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i alsa_input.pci-0000_00_1f.3.analog-stereo -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac -map 1:0 -map 2:0 /tmp/temp.$ext    
 
 	
