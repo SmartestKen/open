@@ -22,15 +22,9 @@ then
 	# pacmd list-sources | grep -e 'index:' -e device.description -e 'name:'
 	# set default on pavucontrol and check the name with * in pacmd output (or look at the device.description
 	# note source only (there are .monitor ones for sys sound, do not use sink
-	if [[ ! -f /home/ken/.audio1 || ! -f /home/ken/.audio2 ]]
-	then
-		echo "require /home/ken/.audio1 and /home/ken/.audio2 from pacmd"
-		exit 1
-	fi
-		
 
 	
-	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i $(</home/ken/.audio2) -f pulse -i $(</home/ken/.audio1) -c:v libx264 -preset ultrafast -c:a aac -map 0:0 -map 1:0 -map 2:0 /tmp/temp.$ext
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i default -c:v libx264 -preset ultrafast -c:a aac /tmp/temp.$ext
 
 	
 	ffplay /tmp/temp.$ext -nodisp -autoexit 2>/dev/null &
