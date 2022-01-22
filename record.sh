@@ -24,7 +24,7 @@ then
 	# note source only (there are .monitor ones for sys sound, do not use sink
 
 	
-	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i default -c:v libx264 -preset ultrafast -c:a aac /tmp/temp.$ext
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i default -f pulse -i alsa_input.pci-0000_00_1f.3.analog-stereo -c:v libx264 -preset ultrafast -c:a aac -map 0:0 -map 1:0 -map 2:0 /tmp/temp.$ext
 
 	
 	ffplay /tmp/temp.$ext -nodisp -autoexit 2>/dev/null &
