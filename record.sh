@@ -20,8 +20,8 @@ then
 	
 	# ask two input two audio sources if not already there.
 	# pacmd list-sources | grep -e 'index:' -e device.description -e 'name:'
-	# pacmd list-sinks | grep -e 'index:' -e device.description -e 'name:'
 	# set default on pavucontrol and check the name with * in pacmd output (or look at the device.description
+	# note source only (there are .monitor ones for sys sound, do not use sink
 	if [[ ! -f /home/ken/.audio1 || ! -f /home/ken/.audio2 ]]
 	then
 		echo "require /home/ken/.audio1 and /home/ken/.audio2 from pacmd"
