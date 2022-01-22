@@ -30,7 +30,7 @@ then
 		
 
 	
-	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i $(</home/ken/.audio1) -f pulse -i $(</home/ken/.audio2) -c:v libx264 -preset ultrafast -c:a aac -map 1:0 -map 2:0 /tmp/temp.$ext
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i $(</home/ken/.audio2) -f pulse -i $(</home/ken/.audio1) -c:v libx264 -preset ultrafast -c:a aac -map 1:0 -map 2:0 /tmp/temp.$ext
 
 	
 	ffplay /tmp/temp.$ext -nodisp -autoexit 2>/dev/null &
