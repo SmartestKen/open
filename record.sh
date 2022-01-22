@@ -9,7 +9,7 @@ else
 	screen_size="1920x1080"
 fi
 
-ext="mkv"
+ext="mp4"
 folder="/home/ken/clips"
 
 if [[ $1 == "" ]]
@@ -17,8 +17,9 @@ then
 
 	# ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i default -c:v mjpeg -preset ultrafast -c:a aac /tmp/temp.$ext
 	
-	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i alsa_input.pci-0000_00_1f.3.analog-stereo -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac -map 1:0 -map 2:0 /tmp/temp.$ext    
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i  -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac -map 1:0 -map 2:0 /tmp/temp.$ext    
 
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY -f pulse -i  -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac -map 1:0 -map 2:0 /tmp/temp.$ext 
 	
 	ffplay /tmp/temp.$ext -nodisp -autoexit 2>/dev/null &
 	
