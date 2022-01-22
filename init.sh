@@ -38,7 +38,5 @@ then
 	do
 		kill $pid
 	done
-
-
 	initFunc &
 fi
