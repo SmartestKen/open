@@ -9,7 +9,7 @@ else
 	screen_size="1920x1080"
 fi
 
-ext="mkv"
+ext="mp4"
 folder="/home/ken/clips"
 
 if [[ $1 == "" ]]
@@ -19,9 +19,9 @@ then
 	
 	
 	# ask two input two audio sources if not already there.
-	# pacmd list-sinks | grep -e 'index:' -e device.string -e 'name:'
-	# pacmd list-sources | grep -e 'index:' -e device.string -e 'name:'
-	# set default on pavucontrol and check the name with * in pacmd output
+	# pacmd list-sources | grep -e 'index:' -e device.description -e 'name:'
+	# pacmd list-sinks | grep -e 'index:' -e device.description -e 'name:'
+	# set default on pavucontrol and check the name with * in pacmd output (or look at the device.description
 	if [[ ! -f /home/ken/.audio1 || ! -f /home/ken/.audio2 ]]
 	then
 		echo "require /home/ken/.audio1 and /home/ken/.audio2 from pacmd"
