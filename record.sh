@@ -19,6 +19,7 @@ then
 	
 	
 	# ask two input two audio sources if not already there.
+	# pacmd list-sinks | grep -e 'index:' -e device.string -e 'name:'
 	if [[ ! -f /home/ken/.audio1 || ! -f /home/ken/.audio2 ]]
 	then
 		echo "require /home/ken/.audio1 and /home/ken/.audio2 from pacmd"
