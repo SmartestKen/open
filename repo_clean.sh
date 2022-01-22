@@ -3,10 +3,12 @@
 clean_repo() {
 
 cd $1
-cp .git/config /tmp/config
+mv .git/config /tmp/config
+mv .git/info/attributes /tmp/attributes
 rm -rf .git
 git init
-cp /tmp/config .git/config
+mv /tmp/config .git/config
+mv /tmp/attributes .git/info/attributes 
 
 
 ignore_files=`find . -type f -size +75M -not -path '*/\.git/*'`

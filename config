@@ -1,0 +1,148 @@
+    January 2022          February 2022   
+Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
+                   1         1  2  3  4  5
+ 2  3  4  5  6  7  8   6  7  8  9 10 11 12
+ 9 10 11 12 13 14 15  13 14 15 16 17 18 19
+16 17 18 19 20 21 22  20 21 22 23 24 25 26
+23 24 25 26 27 28 29  27 28               
+30 31                                     
+-=-=-=-=-=-=-=-=Fri Jan 21 18:49:37 PST 2022-=-=-=-=-=-=-=-=
+
+[22-01-15 7pm Allan Report]
+1. introduction
+	efficient market hypothessis
+		momentum/value strategy
+		what is done in timmermann, indicate what is lacked in those.
+
+2. outline and preliminary testing
+	1. outline targeting those 5 points, refer to how it want to analyze things
+	2. statistical testing
+		1. ARIMAX, why can't we use OLS
+		2. Mcnemar
+
+
+3. experimental results
+	1. backtesting
+	2. real time testing and comparison of train sample, validation sample and real test sample performance comparison). how result can be intepreted as well here.
+
+4. conclusion and future directions
+	conclude on how we satisfactorily make correspondence withrequirement in allan
+	but despite those efforts, too weak against market microstructure, and did not fully reject market efficiency due to joint testing. To address these two issues, we list out two research directions.
+		NLP
+		Statistical arbitrage.
+
+[22-01-15 RNN implementation]
+
+	1. input/output/archi/objective
+
+
+	1. citation
+	2. open review
+	3. code
+	
+	---> what assumption or intention is the application for?
+	---> implementation of networks !!!!!
+	---> what kind of analysis needed to be performed !!!!
+
+! mask: 1 if data there, 0 if data not there
+? How does workflow look like when we directly predict? What are we predicting?
+? what is the ultimate goal?
+? deep learning how to make comparison? accuracy? 
+
+
+Repo:
+	
+	https://github.com/PeterChe1990/GRU-D
+	https://github.com/eXascaleInfolab/bench-vldb20
+	https://github.com/steveli/partial-encoder-decoder
+	
+	https://github.com/jsyoon0823/MRNN
+	https://github.com/ivivan/SSIM_Seq2Seq
+	https://github.com/felixykliu/NAOMI/blob/master/model.py
+	https://github.com/pbansal5/DeepMVI/blob/main/model.py
+
+
+
+Recurrent neural networks for multivariate time series with missing values, Zhengping Che
+	(1087/1105)
+	(Cited by MRNN as 25, Cited by Naomi as 6, cited by chengxian as Che)
+
+	(focus: assumed missing, GRU-D with masking and time interval (to represent missing chunk)
+	
+	
+	
+	
+	(opinion on the other side: does not capture the missing data pattern themselves as we impute and downstream model can only see the "full" series)
+	(also, extra assumptions, 1. small rate of missing, missing at random, 2. computationally expensive)
+	
+	
+Mind the gap: an experimental evaluation of imputation of missing values techniques in time series, Mourad Khayati
+	(20/21)
+	
+	(Cited by Bansal as 12)
+	
+
+Learning from irregularly-sampled time series: A missing data perspective, ChengXian Li
+	(15/15)
+	
+	(Cited by None)
+	
+----------------------------------
+
+Estimating missing data in temporal data streams using multi-directional recurrent neural networks, Jinsung Yoon
+	(73/73)
+	
+	(Cited by Bansal as 27, Cited by chengxian as Yoon, Cited by SSIM as 14, Cited by mind the gap as 69, Cited by Naomi as 13)
+	
+	
+	(assumptions/focus)
+	(code repo:
+SSIM—A deep learning approach for recovering missing time series sensor data, YiFan Zhang
+	(53/54)
+	
+	(Cited by None)
+	
+Naomi: Non-autoregressive multiresolution sequence imputation, Yukai Liu
+	(39/40)
+	
+	(Cited by Bansal as 17)
+	
+Missing Value Imputation on Multidimensional Time Series, Parikshit Bansal
+	(2/2)
+	
+	(Cited by None)
+
+
+Jinsung
+	obj min loss(target, cross_section(target, horizontal))
+	architecture
+		cross_section -- feedforward
+		horizontal: non-identity ---- BiRNN
+	look at code
+
+Use it to predict the type/sector of stock?
+
+time series used: 
+1. is it irregular
+2. the type of data
+
+-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+
+[0Next NLP]
+	in actually helping trading, need a prototype to proceed --> i.e. those paper that contain an application example, not just an architecture.
+[0Next statistical arbitrage]
+	external seek, paper/prof/prof's stu/thesis, and prepare to actually trBde, focus on actually tradable ones if possible
+[0Recurring 12-2 pm 281B]
+	Thurs https://ucsd.zoom.us/j/9923144079
+[0Recurring scan trading events]
+[0Recurring vocab]
+	J 100 words, K maintain reading ability
+[22-01-20 a math model for self-destruct]
+[22-01-22 5pm Chris]
+	ASK chris, ok we are learning all theories about no-arbitrage, but then we are trying to do arbitrage right? then why do we need to learn all these? But then should I read books/courses in financial economics?
+	ASK chris, what broker does he use to access market? IBKR?
+[Unknown continue searching along https://www.google.com/search?q=quant+trading+wiki&ei=LvzkYbesHNfOkPIPzJizqA8&start=30&sa=N&ved=2ahUKEwi3--_HhLj1AhVXJ0QIHUzMDPU4FBDy0wN6BAgBEEE&biw=1024&bih=361&dpr=2.5]
+[Unknown read Liu Jun's recommendation on basic econometrics? But what problem am I aiming for by doing this? arbitrage?]
+[Unknown read http://docs.lhpedersen.com/DynamicTrading.pdf as to check how to do optimal timing]
+[unknown mean reversion and trend must hedge to 0, otherwise arbitrage?]

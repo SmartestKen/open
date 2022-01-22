@@ -26,6 +26,8 @@ echo w # Write changes
 
 
 umount /mnt
+umount /dev/mapper/croot
+cryptsetup luksClose croot
 mkfs.fat -F32 /dev/$dname$bid
 
 # cryptsetup benchmark if wish to try custom ones
