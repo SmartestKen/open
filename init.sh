@@ -16,7 +16,7 @@ initFunc() {
 		sleep 1
 	done
 	
-	cur_date=`date -I`
+	cur_date=1970-01-01
 	while true
 	do
 		temp_date=`date -I`
@@ -33,5 +33,12 @@ initFunc() {
 # if pacman currently running, do not start a new script
 if ! pgrep pacman
 then 
+
+	for pid in $(pidof -o $$ -x "init.sh")
+	do
+		kill $pid
+	done
+
+
 	initFunc &
 fi
