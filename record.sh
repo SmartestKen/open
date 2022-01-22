@@ -20,7 +20,8 @@ then
 	
 	# ask two input two audio sources if not already there.
 	# pacmd list-sources | grep -e 'index:' -e device.description -e 'name:'
-	# set default on pavucontrol and check the name with * in pacmd output (or look at the device.description
+	# pacmd "set-default-source ...."
+	# where ... is the name of source you want to set default
 	# note source only (there are .monitor ones for sys sound, do not use sink
 
 	
