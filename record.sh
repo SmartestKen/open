@@ -20,7 +20,7 @@ then
 	
 	# ask two input two audio sources if not already there.
 	# pacmd list-sources | grep -e 'index:' -e device.description -e 'name:'
-	# pacmd "set-default-source ...."
+	# laptop1 pacmd "set-default-source alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink.monitor"
 	# where ... is the name of source you want to set default
 	# note source only (there are .monitor ones for sys sound, do not use sink
 
