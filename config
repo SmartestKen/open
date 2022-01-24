@@ -50,19 +50,6 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 ? deep learning how to make comparison? accuracy? 
 
 
-Repo:
-	
-	https://github.com/PeterChe1990/GRU-D
-	https://github.com/eXascaleInfolab/bench-vldb20
-	https://github.com/steveli/partial-encoder-decoder
-	
-	https://github.com/jsyoon0823/MRNN
-	https://github.com/ivivan/SSIM_Seq2Seq
-	https://github.com/felixykliu/NAOMI/blob/master/model.py
-	https://github.com/pbansal5/DeepMVI/blob/main/model.py
-
-
-
 Recurrent neural networks for multivariate time series with missing values, Zhengping Che
 	(1087/1105)
 	(Cited by MRNN as 25, Cited by Naomi as 6, cited by chengxian as Che)
