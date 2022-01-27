@@ -12,7 +12,7 @@ initFunc() {
 
 	for value in {1..15}
 	do
-		printf 10 >/sys/class/backlight/intel_backlight/brightness
+		printf 1 >/sys/class/backlight/intel_backlight/brightness
 		sleep 1
 	done
 	
