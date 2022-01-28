@@ -18,7 +18,7 @@ loop() {
             if [[ $now > $end ]]
             then
             
-				for i in {1..10}
+				for i in {1..60}
 				do
 					xset dpms force off
 					sleep 1
