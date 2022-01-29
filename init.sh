@@ -1,7 +1,7 @@
 #!/bin/bash
 initFunc() {
 	# dns setting
-	printf "nameserver 1.1.1.1" >/etc/resolv.conf.head
+	echo "nameserver 1.1.1.1" >/etc/resolv.conf.head
 
 
 	rfkill block bluetooth
