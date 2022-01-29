@@ -163,7 +163,6 @@ echo "startx" >>/home/ken/.bash_profile
 
 systemctl enable dhcpcd
 echo "
-nohook resolv.conf
 noarp" >>/etc/dhcpcd.conf
 echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=ken
 update_config=1" >/etc/wpa_supplicant/wpa_supplicant.conf
