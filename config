@@ -6,7 +6,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 16 17 18 19 20 21 22  20 21 22 23 24 25 26
 23 24 25 26 27 28 29  27 28               
 30 31                                     
--=-=-=-=-=-=-=-=Sat Jan 29 21:04:16 PST 2022-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=Sun Jan 30 12:56:21 PST 2022-=-=-=-=-=-=-=-=
 
 [22-01-15 7pm Allan Report]
 1. introduction
@@ -31,6 +31,26 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 		NLP
 		Statistical arbitrage.
 
+-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+
+[0Next NLP]
+	in actually helping trading, need a prototype to proceed --> i.e. those paper that contain an application example, not just an architecture.
+[0Next statistical arbitrage]
+	external seek, paper/prof/prof's stu/thesis, and prepare to actually trBde, focus on actually tradable ones if possible
+[0Recurring 12-2 pm 281B]
+	Thurs https://ucsd.zoom.us/j/9923144079
+[0Recurring scan trading events]
+[0Recurring vocab]
+	J 100 words, K maintain reading ability
+[22-01-20 a math model for self-destruct]
+[22-01-22 5pm Chris]
+	ASK chris, ok we are learning all theories about no-arbitrage, but then we are trying to do arbitrage right? then why do we need to learn all these? But then should I read books/courses in financial economics?
+	ASK chris, what broker does he use to access market? IBKR?
+[Unknown continue searching along https://www.google.com/search?q=quant+trading+wiki&ei=LvzkYbesHNfOkPIPzJizqA8&start=30&sa=N&ved=2ahUKEwi3--_HhLj1AhVXJ0QIHUzMDPU4FBDy0wN6BAgBEEE&biw=1024&bih=361&dpr=2.5]
+[Unknown read Liu Jun's recommendation on basic econometrics? But what problem am I aiming for by doing this? arbitrage?]
+[Unknown read http://docs.lhpedersen.com/DynamicTrading.pdf as to check how to do optimal timing]
+[unknown mean reversion and trend must hedge to 0, otherwise arbitrage?]
 [22-01-15 RNN implementation]
 
 	1. input/output/archi/objective
@@ -112,24 +132,3 @@ Use it to predict the type/sector of stock?
 time series used: 
 1. is it irregular
 2. the type of data
-
--#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
-
-
-[0Next NLP]
-	in actually helping trading, need a prototype to proceed --> i.e. those paper that contain an application example, not just an architecture.
-[0Next statistical arbitrage]
-	external seek, paper/prof/prof's stu/thesis, and prepare to actually trBde, focus on actually tradable ones if possible
-[0Recurring 12-2 pm 281B]
-	Thurs https://ucsd.zoom.us/j/9923144079
-[0Recurring scan trading events]
-[0Recurring vocab]
-	J 100 words, K maintain reading ability
-[22-01-20 a math model for self-destruct]
-[22-01-22 5pm Chris]
-	ASK chris, ok we are learning all theories about no-arbitrage, but then we are trying to do arbitrage right? then why do we need to learn all these? But then should I read books/courses in financial economics?
-	ASK chris, what broker does he use to access market? IBKR?
-[Unknown continue searching along https://www.google.com/search?q=quant+trading+wiki&ei=LvzkYbesHNfOkPIPzJizqA8&start=30&sa=N&ved=2ahUKEwi3--_HhLj1AhVXJ0QIHUzMDPU4FBDy0wN6BAgBEEE&biw=1024&bih=361&dpr=2.5]
-[Unknown read Liu Jun's recommendation on basic econometrics? But what problem am I aiming for by doing this? arbitrage?]
-[Unknown read http://docs.lhpedersen.com/DynamicTrading.pdf as to check how to do optimal timing]
-[unknown mean reversion and trend must hedge to 0, otherwise arbitrage?]
