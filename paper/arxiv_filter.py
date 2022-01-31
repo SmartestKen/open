@@ -21,7 +21,7 @@ with open(json_load_path, "r") as f:
 		year = a["id"][0:4]
 		if year >= start:				
 			for item in a["categories"].split(" "):
-				if item.startswith("q-fin") and "arbitrage" in a["title"]:
+				if item.startswith("q-fin") and "arbitrage" in a["title"].lower():
 					csv_data.append([a["id"], a["title"].replace("\n", ""), a["authors_parsed"][0][1] + " " + a["authors_parsed"][0][0], a["categories"]])
 					break
 
