@@ -5,15 +5,16 @@ folder = '/home/ken/Downloads/'
 json_load_path = folder + "arxiv-metadata-oai-snapshot.json"
 csv_save_path = folder + 'arxiv_src.csv'
 
-start = "1905"
-end = "2105"
-
 
 with open(json_load_path, "r") as f:
 	
-	included_list = {"econ.EM", "eess", "math", "cs", "q-fin"}
+
 	csv_data = []
 	category_count = dict()
+	
+	start = "1905"
+	end = "2105"
+	
 	
 	for line in f:
 		a = json.loads(line)	
