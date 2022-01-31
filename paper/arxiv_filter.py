@@ -20,13 +20,13 @@ with open(json_load_path, "r") as f:
 		print(a["id"])
 		year = a["id"][0:4]
 		if year >= start:	
-			flag = 0
+			flag = [False, False]
 			for item in a["categories"].split(" "):
 				# if item.startswith("q-fin") and "arbitrage" in a["title"].lower():
 				if item.startswith("q-fin"):
-					flag += 1
+					flag[0] = True
 				elif item == "cs.CL":
-					flag += 1
+					flag[1] = True
 				
 				if flag == 2:
 					csv_data.append([a["id"], a["title"].replace("\n", ""), a["authors_parsed"][0][1] + " " + a["authors_parsed"][0][0], a["categories"]])
