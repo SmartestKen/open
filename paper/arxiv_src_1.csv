@@ -1,0 +1,35 @@
+1906.09694,Business Taxonomy Construction Using Concept-Level Hierarchical  Clustering,Haodong Bai,cs.CL q-fin.PM
+1908.04369,Wasserstein Index Generation Model: Automatic Generation of Time-series  Index with Application to Economic Policy Uncertainty,Fangzhou Xie,econ.GN cs.CL q-fin.EC
+1909.03792,Tehran Stock Exchange Prediction Using Sentiment Analysis of Online  Textual Opinions,Arezoo Hatefi Ghahfarrokhi,q-fin.ST cs.CL cs.LG
+1912.10806,DP-LSTM: Differential Privacy-inspired LSTM for Stock Prediction Using  Financial News,Xinyi Li,q-fin.ST cs.CL
+1912.10858,"""The Squawk Bot"": Joint Learning of Time Series and Text Data Modalities  for Automated Financial Information Filtering",Xuan-Hong Dang,cs.CL cs.LG q-fin.ST stat.ML
+2003.04967,KryptoOracle: A Real-Time Cryptocurrency Price Prediction Platform Using  Twitter Sentiments,Shubhankar Mohapatra,cs.CL cs.LG q-fin.ST
+2003.05895,"Investigating the influence Brexit had on Financial Markets, in  particular the GBP/EUR exchange rate",Michael Filletti,q-fin.ST cs.CL
+2003.13414,Using News Articles and Financial Data to predict the likelihood of  bankruptcy,Michael Filletti,q-fin.GN cs.CL cs.SI
+2004.00999,Pruned Wasserstein Index Generation Model and wigpy Package,Fangzhou Xie,cs.LG cs.CL econ.GN q-fin.EC
+2005.02527,ESG2Risk: A Deep Learning Framework from ESG News to Stock Volatility  Prediction,Tian Guo,q-fin.CP cs.CL cs.LG
+2005.06386,Which bills are lobbied? Predicting and interpreting lobbying activity  in the US,Ivan Slobozhan,econ.GN cs.CL cs.LG q-fin.EC
+2005.09980,Artificial Intelligence versus Maya Angelou: Experimental evidence that  people cannot differentiate AI-generated from human-written poetry,Nils Köbis,cs.AI cs.CL econ.GN q-fin.EC
+2006.09723,A Tweet-based Dataset for Company-Level Stock Return Prediction,Karolina Sowinska,cs.CL cs.SI q-fin.ST
+2006.12426,Using Company Specific Headlines and Convolutional Neural Networks to  Predict Stock Fluctuations,Jonathan Readshaw,cs.CL cs.LG q-fin.ST
+2007.11201,IITK at the FinSim Task: Hypernym Detection in Financial Domain via  Context-Free and Contextualized Word Embeddings,Vishal Keswani,cs.CL cs.LG q-fin.CP
+2008.01535,Weighted Accuracy Algorithmic Approach In Counteracting Fake News And  Disinformation,Kwadwo Osei Bonsu,cs.CL cs.SI econ.GN q-fin.EC
+2009.01317,Towards Earnings Call and Stock Price Movement,Zhiqiang Ma,q-fin.ST cs.CE cs.CL cs.LG
+2009.04975,Forecasting financial markets with semantic network analysis in the  COVID-19 crisis,A. Fronzetti Colladon,q-fin.GN cs.CL cs.SI econ.GN q-fin.EC
+2012.05906,A Sentiment Analysis Approach to the Prediction of Market Volatility,Justina Deveikyte,q-fin.ST cs.AI cs.CL
+2101.05365,Scared into Action: How Partisanship and Fear are Associated with  Reactions to Public Health Directives,Mike Lindow,econ.GN cs.CL q-fin.EC stat.CO
+2101.07695,Twitter Subjective Well-Being Indicator During COVID-19 Pandemic: A  Cross-Country Comparative Study,Tiziana Carpi,econ.GN cs.CL q-fin.EC stat.AP
+2105.04900,Exploring the Antecedents of Consumer Confidence through Semantic  Network Analysis of Online News,A. Fronzetti Colladon,econ.GN cs.CL cs.SI q-fin.EC
+2105.07749,Studying the association of online brand importance with museum  visitors: An application of the semantic brand score,A. Fronzetti Colladon,cs.CL cs.SI econ.GN physics.soc-ph q-fin.EC
+2105.09154,Using four different online media sources to forecast the crude oil  price,M. Elshendy,econ.GN cs.CL q-fin.EC q-fin.GN
+2105.12825,Trade the Event: Corporate Events Detection for News-Based Event-Driven  Trading,Zhihan Zhou,cs.CL q-fin.CP q-fin.TR
+2107.08721,Stock Movement Prediction with Financial News using Contextualized  Embedding from BERT,Qinkai Chen,q-fin.ST cs.CL cs.LG q-fin.PM
+2107.09055,Stock price prediction using BERT and GAN,Priyank Sonkiya,q-fin.ST cs.CL cs.LG
+2107.10941,Graph-Based Learning for Stock Movement Prediction with Textual and  Relational Data,Qinkai Chen,cs.CL q-fin.ST
+2108.00480,Realised Volatility Forecasting: Machine Learning via Financial Word  Embedding,Eghbal Rahimikia,q-fin.CP cs.CL cs.LG
+2110.12003,Embracing advanced AI/ML to help investors achieve success: Vanguard  Reinforcement Learning for Financial Goal Planning,Shareefuddin Mohammed,q-fin.ST cs.AI cs.CL cs.LG
+2110.13317,Exposure of occupations to technologies of the fourth industrial  revolution,Benjamin Meindl,cs.CY cs.CL econ.GN q-fin.EC
+2110.13815,As long as you talk about me: The importance of family firm brands and  the contingent role of family-firm identity,P. Rovelli,econ.GN cs.CL cs.SI physics.soc-ph q-fin.EC
+2111.00526,FinEAS: Financial Embedding Analysis of Sentiment,Asier Gutiérrez-Fandiño,cs.CL q-fin.CP q-fin.PM
+2111.04951,American Hate Crime Trends Prediction with Event Extraction,Songqiao Han,cs.CL cs.AI econ.GN q-fin.EC stat.AP
+2111.09111,Forecasting Crude Oil Price Using Event Extraction,Jiangwei Liu,cs.LG cs.AI cs.CL econ.GN q-fin.EC stat.AP

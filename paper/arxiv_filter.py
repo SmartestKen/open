@@ -25,10 +25,10 @@ with open(json_load_path, "r") as f:
 				# if item.startswith("q-fin") and "arbitrage" in a["title"].lower():
 				if item.startswith("q-fin"):
 					flag[0] = True
-				elif item == "cs.CL":
+				elif item == "eess.SP":
 					flag[1] = True
 				
-				if flag == 2:
+				if all(flag) == True:
 					csv_data.append([a["id"], a["title"].replace("\n", ""), a["authors_parsed"][0][1] + " " + a["authors_parsed"][0][0], a["categories"]])
 					break
 
