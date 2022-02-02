@@ -17,7 +17,7 @@ loop() {
             battery_left=$(</sys/class/power_supply/BAT1/capacity)
             if [[ $now > $end ]]
             then
-            
+				physlock
 				for i in {1..15}
 				do
 					xset dpms force off
