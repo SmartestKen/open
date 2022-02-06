@@ -5,7 +5,7 @@
 # make sure the partitions you specify has been deleted through fdisk (option d) before running this script
 
 
-
+pacman -Syy
 
 lsblk
 printf "Enter device name, boot_idx, system_idx (both including suffix), g if want a new partition table"; read dname bid sid erase
