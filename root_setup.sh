@@ -84,7 +84,7 @@ printf "CHECKPOINT (BOOTABLE)?"; read
 pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany redshift git openssh nano android-tools xorg-xrandr alsa-utils sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg physlock xorg-xset --noconfirm
 
 pacman -Rns sudo --noconfirm
-pactl set-sink-mute @DEFAULT_SINK@ false
+# pactl set-sink-mute @DEFAULT_SINK@ false
 # pactl set-source-mute @DEFAULT_SOURCE@ false
 # python -m ensurepip --upgrade
 
@@ -156,6 +156,8 @@ xdotool windowsize $cmdid $((max_width-target_width)) $target_height
  
 xprop -id $cmdid -format _NET_WM_WINDOW_TYPE 32a -set _NET_WM_WINDOW_TYPE _NET_WM_WINDOW_TYPE_DESKTOP
 xprop -id $cmdid -format _NET_WM_STATE 32a -set _NET_WM_STATE _NET_WM_STATE_STICKY,_NET_WM_STATE_SKIP_TASKBAR,_NET_WM_STATE_SKIP_PAGER
+
+pactl set-sink-mute @DEFAULT_SINK@ false
 
 exec openbox --replace' >>/home/ken/.xinitrc
 echo "startx" >>/home/ken/.bash_profile
