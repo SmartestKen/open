@@ -6,7 +6,7 @@
 
 
 pacman -Syy
-pacman -S archlinux-keyring
+pacman -S archlinux-keyring --noconfirm
 
 lsblk
 printf "Enter device name, boot_idx, system_idx (both including suffix), g if want a new partition table"; read dname bid sid erase
