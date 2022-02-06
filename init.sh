@@ -22,7 +22,7 @@ initFunc() {
 		temp_date=`date -I`
 		if [[ $cur_date != $temp_date ]]
 		then
-			pacman -Syyu --noconfirm
+			pacman -Syy --noconfirm
 		fi
 		cur_date=$temp_date
 		sleep 43200
