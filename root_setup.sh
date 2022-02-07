@@ -84,7 +84,9 @@ printf "CHECKPOINT (BOOTABLE)?"; read
 pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany redshift git openssh nano android-tools xorg-xrandr alsa-utils sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg physlock xorg-xset --noconfirm
 
 pacman -Rns sudo --noconfirm
-# python -m ensurepip --upgrade
+python -m ensurepip --upgrade
+python -m pip install ocrmypdf
+
 
 su ken -c "
 git clone --depth=1 https://aur.archlinux.org/brave-bin.git /home/ken/brave-bin
