@@ -85,7 +85,7 @@ pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel d
 
 pacman -Rns sudo --noconfirm
 python -m ensurepip --upgrade
-python -m pip install ocrmypdf
+
 
 
 su ken -c "
