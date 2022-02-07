@@ -17,13 +17,9 @@ initFunc() {
 	done
 }
 
-# if pacman currently running, do not start a new script
-if ! pgrep pacman
-then 
 
-	for pid in $(pidof -o $$ -x "init.sh")
-	do
-		kill $pid
-	done
-	initFunc &
-fi
+for pid in $(pidof -o $$ -x "init.sh")
+do
+	kill $pid
+done
+initFunc &
