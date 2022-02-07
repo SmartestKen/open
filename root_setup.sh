@@ -175,7 +175,7 @@ systemctl mask systemd-journal-flush systemd-journald systemd-journal-catalog-up
 
 # plasma -Rsn to remove package and its dependencies
 pacman -Scc --noconfirm
-printf "CHECKPOINT (GENERIC DESKTOP)?"; read
+
 
 # init, desktop setting, repo (everything that does not relate to extra installation or existing system services)
 curl https://raw.githubusercontent.com/SmartestKen/open/master/init.sh  --output /init.sh
@@ -194,6 +194,12 @@ RestartSec=2
 [Install]
 WantedBy=multi-user.target' >/etc/systemd/system/init.service
 systemctl enable init
+
+
+
+# everything later is about git, if not enough time, then stop here and start system
+printf "CHECKPOINT (GENERIC DESKTOP)?"; read
+
 
 # only sync laptop or vbox use sync service
 # ssh key setup 
