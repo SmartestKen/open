@@ -24,6 +24,7 @@ for index, item in enumerate(sorted(existing_result, key=lambda x: int(x[-1]), r
 	
 	
 	link = prefix + item[0]
+	print(link)
 	alt_text = "[" + item[3] + "] " + item[1] +  ", " + item[-1]
 	if index != 0 and prev_item[1][0:20].lower() == item[1][0:20].lower() and item[-1] == prev_item[-1]:
 		continue
