@@ -24,12 +24,14 @@
 2105.09154,Using four different online media sources to forecast the crude oil  price,M. Elshendy,econ.GN cs.CL q-fin.EC q-fin.GN
 2105.12825,Trade the Event: Corporate Events Detection for News-Based Event-Driven  Trading,Zhihan Zhou,cs.CL q-fin.CP q-fin.TR
 2107.08721,Stock Movement Prediction with Financial News using Contextualized  Embedding from BERT,Qinkai Chen,q-fin.ST cs.CL cs.LG q-fin.PM
-2107.09055,Stock price prediction using BERT and GAN,Priyank Sonkiya,q-fin.ST cs.CL cs.LG
-2107.10941,Graph-Based Learning for Stock Movement Prediction with Textual and  Relational Data,Qinkai Chen,cs.CL q-fin.ST
-2108.00480,Realised Volatility Forecasting: Machine Learning via Financial Word  Embedding,Eghbal Rahimikia,q-fin.CP cs.CL cs.LG
-2110.12003,Embracing advanced AI/ML to help investors achieve success: Vanguard  Reinforcement Learning for Financial Goal Planning,Shareefuddin Mohammed,q-fin.ST cs.AI cs.CL cs.LG
-2110.13317,Exposure of occupations to technologies of the fourth industrial  revolution,Benjamin Meindl,cs.CY cs.CL econ.GN q-fin.EC
 
+2107.09055,Stock price prediction using BERT and GAN,Priyank Sonkiya,q-fin.ST cs.CL cs.LG
+
+2107.10941,Graph-Based Learning for Stock Movement Prediction with Textual and  Relational Data,Qinkai Chen,cs.CL q-fin.ST
+
+2108.00480,Realised Volatility Forecasting: Machine Learning via Financial Word  Embedding,Eghbal Rahimikia,q-fin.CP cs.CL cs.LG
+
+2110.12003,Embracing advanced AI/ML to help investors achieve success: Vanguard  Reinforcement Learning for Financial Goal Planning,Shareefuddin Mohammed,q-fin.ST cs.AI cs.CL cs.LG
 
 2111.00526,FinEAS: Financial Embedding Analysis of Sentiment,Asier Gutiérrez-Fandiño,cs.CL q-fin.CP q-fin.PM
 2111.04951,American Hate Crime Trends Prediction with Event Extraction,Songqiao Han,cs.CL cs.AI econ.GN q-fin.EC stat.AP
