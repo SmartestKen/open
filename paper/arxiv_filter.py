@@ -25,7 +25,7 @@ with open(json_load_path, "r") as f:
 				# if item.startswith("q-fin") and "arbitrage" in a["title"].lower():
 				if item.startswith("q-fin"):
 					flag[0] = True
-				elif item == "eess.SP":
+				elif item == "cs.CL":
 					flag[1] = True
 				
 				if all(flag) == True:
