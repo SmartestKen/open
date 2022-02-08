@@ -39,7 +39,7 @@ for index, item in enumerate(sorted(existing_result, key=lambda x: int(x[-1]), r
 	
 	batch.append("<a href=" + scholar_link + ">" + str(index) + "</a> " + 
 	"<a href=" + link + ">" + alt_text + "</a>" + "<br/>")
-	if len(batch) == batch_size:
+	if len(batch) == batch_size or index == len(existing_result) - 1:
 		with open(sorted_html_path + str(batch_count) + ".html", "w") as f:
 			for line in batch:
 				f.write(line)
