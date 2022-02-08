@@ -1,12 +1,14 @@
-1906.09694,Business Taxonomy Construction Using Concept-Level Hierarchical  Clustering,Haodong Bai,cs.CL q-fin.PM
-1908.04369,Wasserstein Index Generation Model: Automatic Generation of Time-series  Index with Application to Economic Policy Uncertainty,Fangzhou Xie,econ.GN cs.CL q-fin.EC
+
+
 1909.03792,Tehran Stock Exchange Prediction Using Sentiment Analysis of Online  Textual Opinions,Arezoo Hatefi Ghahfarrokhi,q-fin.ST cs.CL cs.LG
 1912.10806,DP-LSTM: Differential Privacy-inspired LSTM for Stock Prediction Using  Financial News,Xinyi Li,q-fin.ST cs.CL
 1912.10858,"""The Squawk Bot"": Joint Learning of Time Series and Text Data Modalities  for Automated Financial Information Filtering",Xuan-Hong Dang,cs.CL cs.LG q-fin.ST stat.ML
+
 2003.04967,KryptoOracle: A Real-Time Cryptocurrency Price Prediction Platform Using  Twitter Sentiments,Shubhankar Mohapatra,cs.CL cs.LG q-fin.ST
 2003.05895,"Investigating the influence Brexit had on Financial Markets, in  particular the GBP/EUR exchange rate",Michael Filletti,q-fin.ST cs.CL
+
 2003.13414,Using News Articles and Financial Data to predict the likelihood of  bankruptcy,Michael Filletti,q-fin.GN cs.CL cs.SI
-2004.00999,Pruned Wasserstein Index Generation Model and wigpy Package,Fangzhou Xie,cs.LG cs.CL econ.GN q-fin.EC
+
 2005.02527,ESG2Risk: A Deep Learning Framework from ESG News to Stock Volatility  Prediction,Tian Guo,q-fin.CP cs.CL cs.LG
 2005.06386,Which bills are lobbied? Predicting and interpreting lobbying activity  in the US,Ivan Slobozhan,econ.GN cs.CL cs.LG q-fin.EC
 2005.09980,Artificial Intelligence versus Maya Angelou: Experimental evidence that  people cannot differentiate AI-generated from human-written poetry,Nils Köbis,cs.AI cs.CL econ.GN q-fin.EC
