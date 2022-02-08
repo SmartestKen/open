@@ -127,7 +127,8 @@ async def generic_get(url, index):
 				time.sleep(1)
 
 
-connector = aiohttp.TCPConnector(limit=27)
+# connector = aiohttp.TCPConnector(limit=27)
+connector = aiohttp.TCPConnector(limit=5)
 session = aiohttp.ClientSession(connector=connector)
 
 loop = asyncio.get_event_loop()
