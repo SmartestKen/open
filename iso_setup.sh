@@ -50,5 +50,9 @@ nano /mnt/etc/fstab
 curl https://raw.githubusercontent.com/SmartestKen/open/master/root_setup.sh --output /mnt/root_setup.sh
 sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/root_setup.sh
 
+curl https://raw.githubusercontent.com/SmartestKen/open/master/pacman_syyu.sh --output /mnt/pacman_syyu.sh
+sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/pacman_syyu.sh
+
+
 arch-chroot /mnt
 # umount /mnt
