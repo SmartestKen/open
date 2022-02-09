@@ -48,7 +48,7 @@ nano /mnt/etc/fstab
 
 
 curl https://raw.githubusercontent.com/SmartestKen/open/master/root_setup.sh --output /mnt/root_setup.sh
-sed -i "/^dname=/ s/.*/dname=$dname; bid=$bid; sid=$sid/g" /mnt/root_setup.sh
+sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/root_setup.sh
 
 arch-chroot /mnt
 # umount /mnt
