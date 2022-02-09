@@ -180,6 +180,7 @@ pacman -Scc --noconfirm
 
 
 # init, assume already downloaded by iso_setup (because of sed problems)
+curl https://raw.githubusercontent.com/SmartestKen/open/master/init.sh  --output /init.sh
 chmod 744 /init.sh
 
 # After=network-online.target

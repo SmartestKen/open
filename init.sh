@@ -15,42 +15,13 @@ initFunc() {
 		printf 1 >/sys/class/backlight/intel_backlight/brightness
 		sleep 1
 	done
-	
-	cur_date=1970-01-01
-	# the following will be replaced by iso_setup.sh to reduce duplicate entry, bid -> boot id; sid -> system id
-	dname=nvme0n1; bid=p1; sid=p2
 
-	while true
-	do
-		temp_date=`date -I`
-
-		if [[ $cur_date != $temp_date ]]
-		then
-			mkdir /efi
-			mount /dev/$dname$bid /efi
-			
-			pacman -Syyu --noconfirm
-			
-			cp /boot/vmlinuz-linux /efi/
-			# use kernel for console font, equivalent.
-			sed -i '/^HOOKS=/ s/.*/HOOKS=(base udev autodetect keyboard modconf block encrypt filesystems fsck)/g' /etc/mkinitcpio.conf
-			mkinitcpio -g /efi/initramfs-linux.img -c /etc/mkinitcpio.conf -k /efi/vmlinuz-linux
-			
-			umount /efi
-			rmdir /efi
-		fi
-		cur_date=$temp_date
-		sleep 43200
-	done
-	
 	
 }
 
-if ! pgrep pacman
-then 
-	for pid in $(pidof -o $$ -x "init.sh")
-	do
-		kill $pid
-	done
-	initFunc &
-fi
+
+for pid in $(pidof -o $$ -x "init.sh")
+do
+	kill $pid
+done
+initFunc &
