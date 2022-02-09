@@ -17,12 +17,21 @@ initFunc() {
 	done
 	
 	cur_date=1970-01-01
+	dname=nvme0n1; bid=p1; sid=p2
+
 	while true
 	do
 		temp_date=`date -I`
+
 		if [[ $cur_date != $temp_date ]]
 		then
-			pacman -Syy --noconfirm
+			mkdir /efi
+			mount /dev/$dname$bid /efi
+			
+			pacman -Syyu --noconfirm
+			
+			cp /boot/vmlinuz-linux /efi/
+			
 		fi
 		cur_date=$temp_date
 		sleep 43200
