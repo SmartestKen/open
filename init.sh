@@ -15,11 +15,27 @@ initFunc() {
 		printf 1 >/sys/class/backlight/intel_backlight/brightness
 		sleep 1
 	done
+	
+	cur_date=1970-01-01
+	while true
+	do
+		temp_date=`date -I`
+		if [[ $cur_date != $temp_date ]]
+		then
+			pacman -Syy --noconfirm
+		fi
+		cur_date=$temp_date
+		sleep 43200
+	done
+	
+	
 }
 
-
-for pid in $(pidof -o $$ -x "init.sh")
-do
-	kill $pid
-done
-initFunc &
+if ! pgrep pacman
+then 
+	for pid in $(pidof -o $$ -x "init.sh")
+	do
+		kill $pid
+	done
+	initFunc &
+fi
