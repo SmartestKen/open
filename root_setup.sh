@@ -30,7 +30,7 @@ printf "is everything ok?"; read
 
 # add encrypt into hook and regenerate (can use mkinitcpio -p linux, which uses /etc/mkinitcpio.d/linux.preset to deduce all those arguments), the initramfs file name should correspond to what is cp below. Also note that 
 
-# the following will be replaced by iso_setup.sh to reduce duplicate entry, bid -> boot id; sid -> system id
+# the following will be replaced by iso_setup.sh to reduce duplicate entry, bid -> boot id; sid -> system id, there cannot be a inductive sed as that will modify the downstream commands itself
 dname=nvme0n1; bid=p1; sid=p2
 mkdir /efi
 mount /dev/$dname$bid /efi
@@ -179,9 +179,7 @@ systemctl mask systemd-journal-flush systemd-journald systemd-journal-catalog-up
 pacman -Scc --noconfirm
 
 
-# init, desktop setting, repo (everything that does not relate to extra installation or existing system services)
-curl https://raw.githubusercontent.com/SmartestKen/open/master/init.sh  --output /init.sh
-sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /init.sh
+# init, assume already downloaded by iso_setup (because of sed problems)
 chmod 744 /init.sh
 
 # After=network-online.target

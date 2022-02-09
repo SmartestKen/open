@@ -17,7 +17,7 @@ initFunc() {
 	done
 	
 	cur_date=1970-01-01
-	# the following will be replaced by root_setup.sh to reduce duplicate entry, bid -> boot id; sid -> system id
+	# the following will be replaced by iso_setup.sh to reduce duplicate entry, bid -> boot id; sid -> system id
 	dname=nvme0n1; bid=p1; sid=p2
 
 	while true
