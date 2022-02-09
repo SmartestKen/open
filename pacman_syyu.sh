@@ -2,9 +2,12 @@
 
 dname=nvme0n1; bid=p1; sid=p2
 
+rm -rf /efi
 mkdir /efi
 mount /dev/$dname$bid /efi
 
+pacman -Syy
+pacman -S archlinux-keyring --noconfirm
 pacman -Syyu --noconfirm
 
 cp /boot/vmlinuz-linux /efi/
