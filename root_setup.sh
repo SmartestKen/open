@@ -179,7 +179,7 @@ systemctl mask systemd-journal-flush systemd-journald systemd-journal-catalog-up
 pacman -Scc --noconfirm
 
 
-# init, assume already downloaded by iso_setup (because of sed problems)
+# init
 curl https://raw.githubusercontent.com/SmartestKen/open/master/init.sh  --output /init.sh
 chmod 744 /init.sh
 

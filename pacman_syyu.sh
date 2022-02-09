@@ -14,3 +14,9 @@ mkinitcpio -g /efi/initramfs-linux.img -c /etc/mkinitcpio.conf -k /efi/vmlinuz-l
 
 umount /efi
 rmdir /efi
+
+
+# to check current kernel version, use
+# uname -r
+# to install virtualbox (and select option 2 for virtualbox-dkms) and reboot
+# pacman -S linux-headers virtualbox
