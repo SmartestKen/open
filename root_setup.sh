@@ -181,6 +181,7 @@ pacman -Scc --noconfirm
 
 # init, desktop setting, repo (everything that does not relate to extra installation or existing system services)
 curl https://raw.githubusercontent.com/SmartestKen/open/master/init.sh  --output /init.sh
+sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /init.sh
 chmod 744 /init.sh
 
 # After=network-online.target
