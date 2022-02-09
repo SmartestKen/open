@@ -19,6 +19,6 @@ rmdir /efi
 
 
 # to check current kernel version, use
-# uname -r
+# pacman -Q linux && uname -r
 # to install virtualbox (and select option 2 for virtualbox-dkms) and reboot, qt5ct is there for font consistency
 # pacman -S linux-headers virtualbox qt5ct
