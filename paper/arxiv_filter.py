@@ -18,14 +18,15 @@ with open(json_load_path, "r") as f:
 	for line in f:
 		a = json.loads(line)	
 		print(a["id"])
-		print(a)
-		time.sleep(200000)
+		# print(a)
+		# time.sleep(200000)
 		year = a["id"][0:4]
 		if year >= start:	
 			# flag = [False, False]
 			flag = [False]
 			for item in a["categories"].split(" "):
 				if item.startswith("cs.CL") and ("news" in a["title"].lower() or "news" in a["abstract"].lower()):
+					flag[0] = True
 				'''
 				if item.startswith("q-fin"):
 					flag[0] = True
