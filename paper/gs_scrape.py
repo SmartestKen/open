@@ -145,13 +145,17 @@ latest_id = None
 import csv
 restart = True
 
+
 if not restart and os.path.isfile(result_path):
 	with open(result_path, "r") as f:
 		existing_result = list(csv.reader(f, delimiter=',')) 
 		if len(existing_result) != 0:
 			latest_id = existing_result[-1][0]
 
-	
+if restart:
+	result_write_mode = "w"
+else:
+	result_write_mode = "a"
 
 result = []
 batch_size =  1000
@@ -231,7 +235,7 @@ try:
 				batch = []
 			
 				# empty basket
-				with open(result_path, "a") as f:
+				with open(result_path, result_write_mode) as f:
 					writer = csv.writer(f)
 					writer.writerows(result)
 				result = []
