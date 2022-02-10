@@ -9,6 +9,7 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 -=-=-=-=-=-=-=-=Wed Feb  9 17:51:26 PST 2022-=-=-=-=-=-=-=-=
 [2022-02-16 Ndapa]
 	1. single language --> event predicon (e.g.) riot/natural disaster
+		news recommender based on financial impact
 	2. multi-language ---> consistent embedding or inconsistent arbitrage
 	3. difference between transformer and word2vec/seq2seq
 		randomly initialized embedding -> contextualize --> the word -> improving embedding 
