@@ -18,15 +18,20 @@ with open(json_load_path, "r") as f:
 	for line in f:
 		a = json.loads(line)	
 		print(a["id"])
+		print(a)
+		time.sleep(200000)
 		year = a["id"][0:4]
 		if year >= start:	
-			flag = [False, False]
+			# flag = [False, False]
+			flag = [False]
 			for item in a["categories"].split(" "):
-				# if item.startswith("q-fin") and "arbitrage" in a["title"].lower():
+				if item.startswith("cs.CL") and ("news" in a["title"].lower() or "news" in a["abstract"].lower()):
+				'''
 				if item.startswith("q-fin"):
 					flag[0] = True
 				elif item == "cs.CL":
 					flag[1] = True
+				'''
 				
 				if all(flag) == True:
 					csv_data.append([a["id"], a["title"].replace("\n", ""), a["authors_parsed"][0][1] + " " + a["authors_parsed"][0][0], a["categories"]])
