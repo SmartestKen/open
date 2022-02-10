@@ -143,7 +143,9 @@ csv_data = []
 # note, do not sort by citation yet. can be done later
 latest_id = None
 import csv
-if os.path.isfile(result_path):
+restart = True
+
+if not restart and os.path.isfile(result_path):
 	with open(result_path, "r") as f:
 		existing_result = list(csv.reader(f, delimiter=',')) 
 		if len(existing_result) != 0:
