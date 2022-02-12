@@ -18,6 +18,10 @@ with open(json_load_path, "r") as f:
 	for line in f:
 		a = json.loads(line)	
 		print(a["id"])
+		if a["id"] == "1910.14424":
+			print(a)
+			print("ranking" in a["title"].lower(), "ranking" in a["abstract"].lower())
+			time.sleep(200000)
 		# print(a)
 		# time.sleep(200000)
 		year = a["id"][0:4]
