@@ -158,7 +158,7 @@ else:
 	result_write_mode = "a"
 
 result = []
-batch_size =  1000
+batch_size =  800
 batch = []
 tasks = []
 
