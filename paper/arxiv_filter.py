@@ -33,7 +33,7 @@ with open(json_load_path, "r") as f:
 				
 				if item.startswith("q-fin"):
 					flag[0] = True
-				elif item == "cs.Cv":
+				elif item == "cs.CL":
 					flag[1] = True
 				
 				
