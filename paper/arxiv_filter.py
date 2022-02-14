@@ -23,17 +23,19 @@ with open(json_load_path, "r") as f:
 		# time.sleep(200000)
 		year = a["id"][0:4]
 		if year >= start:	
-			# flag = [False, False]
-			flag = [False]
+			flag = [False, False]
+			# flag = [False]
 			for item in a["categories"].split(" "):
-				if (item.startswith("cs.CL") or item.startswith("cs.IR")) and ("novels" in a["title"].lower() or "novels" in a["abstract"].lower()):
+				'''
+				if (item.startswith("cs.CV") or item.startswith("cs.IR")) and ("novels" in a["title"].lower() or "novels" in a["abstract"].lower()):
 					flag[0] = True
 				'''
+				
 				if item.startswith("q-fin"):
 					flag[0] = True
-				elif item == "cs.CL":
+				elif item == "cs.Cv":
 					flag[1] = True
-				'''
+				
 				
 				if all(flag) == True:
 					csv_data.append([a["id"], a["title"].replace("\n", ""), a["authors_parsed"][0][1] + " " + a["authors_parsed"][0][0], a["categories"]])
