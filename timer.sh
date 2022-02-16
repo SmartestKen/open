@@ -18,7 +18,7 @@ loop() {
             if [[ $now > $end ]]
             then
 				physlock
-				for i in {1..15}
+				for i in {1..10}
 				do
 					xset dpms force off
 					sleep 1
