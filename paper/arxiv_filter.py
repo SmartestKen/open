@@ -23,8 +23,8 @@ with open(json_load_path, "r") as f:
 		# time.sleep(200000)
 		year = a["id"][0:4]
 		if year >= start:	
-			flag = [False, False]
-			# flag = [False]
+			# flag = [False, False]
+			flag = [False]
 			for item in a["categories"].split(" "):
 				
 				if (item.startswith("eess.SP") or item.startswith("cs.IT")) and ("arbitrage" in a["title"].lower() or "arbitrage" in a["abstract"].lower()):
