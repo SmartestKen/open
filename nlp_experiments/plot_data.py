@@ -1,13 +1,26 @@
 
 
 
-async def get_data(start, end, symbol, suffix = None):
+async def get_data(start, end, symbol, suffix = None, tempfile = "/tmp/data.html"):
+	url = "https://eodhistoricaldata.com/api/eod/" + symbol + suffix + "?api_token=" + EOD_KEY + "&fmt=json&from=" + start + "&to=" + end
 
-	if symbol == "INTEREST":
-		# get from 
-		url = "https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=daily&apikey=" + AV_KEY
-	else:
-		url = "https://eodhistoricaldata.com/api/eod/" + symbol + suffix + "?api_token=" + EOD_KEY + "&fmt=json&from=" + http_start + "&to=" + end
+
+	async with session.get(url, headers=headers) as response:
+		html = await response.text()
+		if filename != None:
+			async with aiofiles.open(filename, mode='w')  as f:
+				await f.write(html)
+				
+		if response.status == 200:
+			if api != "newyorkfed":
+				return json.loads(html)
+			else:					
+				return float(ET.fromstring(html)[0][1][2].text)
+		elif response.status == 404 and url.startswith(AP_BASE + "/v2/positions/"):
+			return {"qty": 0}
+		else:
+			sys.exit(html)
+		
 		
 		
 		
