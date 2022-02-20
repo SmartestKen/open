@@ -1,6 +1,17 @@
 
 
 
+async def get_data(start, end, symbol, suffix = None):
+
+	if symbol == "INTEREST":
+		# get from 
+		url = "https://www.alphavantage.co/query?function=FEDERAL_FUNDS_RATE&interval=daily&apikey=" + AV_KEY
+	else:
+		url = "https://eodhistoricaldata.com/api/eod/" + symbol + suffix + "?api_token=" + EOD_KEY + "&fmt=json&from=" + http_start + "&to=" + end
+		
+		
+		
+		
 
 # note; INJECTION attack possible. Hence not to be exposed to user input
 async def get_historical_data(start, end, symbol, suffix = None):
