@@ -8,13 +8,6 @@ async def generic_get(url):
 	# get the url and return html
 	# if cannot get sys.exit
 
-
-
-
-
-async def EOD_get_data(start, symbol, tempfile = "/tmp/data.html"):
-	url = "https://eodhistoricaldata.com/api/eod/" + symbol + "?api_token=" + EOD_KEY + "&fmt=json&from=" + start
-
 	async with session.get(url) as response:
 		html = await response.text()
 		async with aiofiles.open(tempfile, mode='w')  as f:
@@ -24,6 +17,11 @@ async def EOD_get_data(start, symbol, tempfile = "/tmp/data.html"):
 			return json.loads(html)
 		else:
 			sys.exit(html)
+
+
+
+async def EOD_get_data(start, symbol, tempfile = "/tmp/data.html"):
+
 		
 		
 loop = asyncio.get_event_loop()
