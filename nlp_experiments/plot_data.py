@@ -22,6 +22,8 @@ async def EOD_get_data(start, symbol, tempfile = "/tmp/data.html"):
 		
 		
 loop = asyncio.get_event_loop()
-bars = loop.run_until_complete(loop.create_task(EOD_get_data("2022-01-01", "GSPC.INDX")))
+bars = loop.run_until_complete(loop.create_task(EOD_get_data("GSPC.INDX", "1y")))
+
+1y 1m 1w today
 print(bars)
 loop.run_until_complete(loop.create_task(session.close()))
