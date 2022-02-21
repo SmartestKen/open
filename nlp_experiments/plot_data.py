@@ -1,4 +1,4 @@
-import sys, aiohttp, aiofiles, json
+import sys, aiohttp, aiofiles, json, asyncio
 
 
 async def EOD_get_data(start, end, symbol, suffix = None, tempfile = "/tmp/data.html"):
@@ -16,4 +16,5 @@ async def EOD_get_data(start, end, symbol, suffix = None, tempfile = "/tmp/data.
 		
 		
 loop = asyncio.get_event_loop()
-bars = loop.run_until_complete(loop.create_task(EOD_get_data))	
+bars = loop.run_until_complete(loop.create_task(EOD_get_data("2022-01-01", "2022-02-02", "GPSC", "INDX")))
+print(bars)
