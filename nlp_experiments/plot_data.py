@@ -1,5 +1,7 @@
 import sys, aiohttp, aiofiles, json, asyncio
+sys.path.append("/home/ken/private")
 
+from api_access import *
 
 async def EOD_get_data(start, end, symbol, suffix = None, tempfile = "/tmp/data.html"):
 	url = "https://eodhistoricaldata.com/api/eod/" + symbol + suffix + "?api_token=" + EOD_KEY + "&fmt=json&from=" + start + "&to=" + end
