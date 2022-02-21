@@ -7,8 +7,8 @@ session = aiohttp.ClientSession()
 
 
 
-async def EOD_get_data(start, end, symbol, tempfile = "/tmp/data.html"):
-	url = "https://eodhistoricaldata.com/api/eod/" + symbol + "?api_token=" + EOD_KEY + "&fmt=json&from=" + start + "&to=" + end
+async def EOD_get_data(start, symbol, tempfile = "/tmp/data.html"):
+	url = "https://eodhistoricaldata.com/api/eod/" + symbol + "?api_token=" + EOD_KEY + "&fmt=json&from=" + start
 
 	async with session.get(url) as response:
 		html = await response.text()
@@ -22,6 +22,6 @@ async def EOD_get_data(start, end, symbol, tempfile = "/tmp/data.html"):
 		
 		
 loop = asyncio.get_event_loop()
-bars = loop.run_until_complete(loop.create_task(EOD_get_data("2022-01-01", "2022-02-02", "GSPC.INDX")))
+bars = loop.run_until_complete(loop.create_task(EOD_get_data("2022-01-01", "GSPC.INDX")))
 print(bars)
 loop.run_until_complete(loop.create_task(session.close()))
