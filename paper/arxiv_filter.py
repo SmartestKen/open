@@ -27,7 +27,7 @@ with open(json_load_path, "r") as f:
 			flag = [False]
 			for item in a["categories"].split(" "):
 				
-				if (item.startswith("eess.SP") or item.startswith("cs.IT")) and ("arbitrage" in a["title"].lower() or "arbitrage" in a["abstract"].lower()):
+				if (item.startswith("cs.CL") or item.startswith("cs.IR")) and ("ranking" in a["title"].lower() or "ranking" in a["abstract"].lower()):
 					flag[0] = True
 				
 				'''
