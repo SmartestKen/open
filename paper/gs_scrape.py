@@ -158,7 +158,7 @@ else:
 	result_write_mode = "a"
 
 result = []
-batch_size =  800
+batch_size =  200
 batch = []
 tasks = []
 
@@ -222,7 +222,7 @@ try:
 					except asyncio.exceptions.TimeoutError or aiohttp.client_exceptions.ServerDisconnectedError:
 						print("Error, restarting service")
 						loop.run_until_complete(loop.create_task(session.close()))
-						connector = aiohttp.TCPConnector(limit=27)
+						connector = aiohttp.TCPConnector(limit=5)
 						session = aiohttp.ClientSession(connector=connector)
 						time.sleep(1)
 						continue
