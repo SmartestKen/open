@@ -153,7 +153,7 @@ if not restart and os.path.isfile(result_path):
 			latest_id = existing_result[-1][0]
 
 if restart:
-	result_write_mode = "w"
+	result_write_mode = "a"
 else:
 	result_write_mode = "a"
 
