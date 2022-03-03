@@ -8,7 +8,7 @@ loop() {
 
     while true
     do	
-        end=`date -d "+20minute" +%s`
+        end=`date -d "+30minute" +%s`
         end_readable=`date -d "@$end" +%H:%M`
 
         while true
