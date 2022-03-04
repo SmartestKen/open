@@ -615,31 +615,31 @@
 わけにはいかない (wake niwa ikanai): must not, can’t afford to
 わずかに (wazuka ni): slightly
 わりに (wari ni): although, rather, unexpectedly
-をいいことに (o ii koto ni): to take advantage of
-をおいて (o oite): other than, without
-をきっかけに (o kikkake ni): with… as a start, as a result of
-をこめて (o komete): filled with
-をはじめ (o hajime): for example, starting with
-をめぐって (o megutte): concerning, in regard to
-をもって (o motte) – 1: by means of
-をもって (o motte) – 2: at the time
-をもとに (o moto ni): based on, from
-をものともせず (o monotomo sezu): in defiance of
-をよそに (o yoso ni): despite
-を中心に (o chuushin ni): focused on, centered on
-を余儀なくされる (o yogi naku sareru): to be forced to do something
-を兼ねて (o kanete): also for the purpose of
-を問わず (o towazu): regardless of
-を契機に (o keiki ni): as a good opportunity to, as a result of
-を機に (o ki ni): as an opportunity to
-を皮切りに (o kawakiri ni): starting with
-を禁じえない (o kinjienai): can’t help but
-を経て (o hete): through, after, via
-を踏まえて (o fumaete): based on
-を通じて/ を通して (o tsuujite/o tooshite): via, through
-を限りに (o kagiri ni): starting from
-を除いて (o nozoite): except, with the exception of
-を～として (o~to shite): as
+いいことに (o ii koto ni): to take advantage of
+おいて (o oite): other than, without
+きっかけに (o kikkake ni): with… as a start, as a result of
+こめて (o komete): filled with
+はじめ (o hajime): for example, starting with
+めぐって (o megutte): concerning, in regard to
+もって (o motte) – 1: by means of
+もって (o motte) – 2: at the time
+もとに (o moto ni): based on, from
+ものともせず (o monotomo sezu): in defiance of
+よそに (o yoso ni): despite
+中心に (o chuushin ni): focused on, centered on
+余儀なくされる (o yogi naku sareru): to be forced to do something
+兼ねて (o kanete): also for the purpose of
+問わず (o towazu): regardless of
+契機に (o keiki ni): as a good opportunity to, as a result of
+機に (o ki ni): as an opportunity to
+皮切りに (o kawakiri ni): starting with
+禁じえない (o kinjienai): can’t help but
+経て (o hete): through, after, via
+踏まえて (o fumaete): based on
+通じて/ を通して (o tsuujite/o tooshite): via, through
+限りに (o kagiri ni): starting from
+除いて (o nozoite): except, with the exception of
+として (o~to shite): as
 んがため (n ga tame): in order to
 んだって (ndatte): I heard that
 んばかりに (n bakari ni): as if, as though
