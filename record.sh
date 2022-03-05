@@ -1,19 +1,5 @@
 #!/bin/bash
 
-
-# list all sources name for loopback
-sources=`pactl list sources | grep Name: | sed 's/^.*Name: //'`
-if [[ $sources != *"dummy"* ]]
-then	
-	# to remove, use `pactl unload-module module-null-sink`
-	pactl load-module module-null-sink sink_name=dummy sink_properties=device.description=Recording
-	while IFS= read -r item
-	do
-		pactl load-module module-loopback source=$item sink=dummy
-	done <<<"$sources"
-fi
-
-
 if xrandr | grep 'HDMI1 connected' >/dev/null
 then
 	screen_size="2560x1440"
@@ -38,7 +24,7 @@ then
 	# note source only (there are .monitor ones for sys sound, do not use sink
 
 	
-	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i dummy.monitor -c:v libx264 -preset ultrafast -c:a aac /tmp/temp.$ext
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac /tmp/temp.$ext
 
 	
 	ffplay /tmp/temp.$ext -nodisp -autoexit 2>/dev/null &
