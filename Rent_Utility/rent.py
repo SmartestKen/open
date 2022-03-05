@@ -258,3 +258,6 @@ with open('/home/ken/open/Rent_Utility/rent.txt', 'a') as file:
 
 	rent = 2318.72 + 5
 	utility = 143.83
+	file.write('Mar(S,U) %7.3f       %7.3f       %7.3f\n' % (
+		rent * (500/2250) + utility * 0.33, rent * (1000/2250) + utility * 0.33,
+		rent * (750/2250) + utility * 0.33))

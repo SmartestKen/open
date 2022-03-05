@@ -81,7 +81,7 @@ printf "CHECKPOINT (BOOTABLE)?"; read
 # https://wiki.archlinux.org/title/Xorg#Installation for graphic driver instructions, no graphic driver causes tear when scrolling
 # android-tools for adb connection through usb
 # xorg-xrandr for monitor
-pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany redshift git openssh nano android-tools xorg-xrandr alsa-utils sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg physlock xorg-xset --noconfirm
+pacman -S base-devel archlinux-keyring xorg-server xorg-xinit xf86-video-intel dhcpcd wpa_supplicant openbox plank xfce4-terminal thunar thunar-archive-plugin xarchiver unzip unrar geany redshift git openssh nano android-tools xorg-xrandr alsa-utils sof-firmware pulseaudio pavucontrol noto-fonts-cjk python3 xorg-xprop xdotool ffmpeg physlock xorg-xset pyenv --noconfirm
 
 pacman -Rns sudo --noconfirm
 python -m ensurepip --upgrade
@@ -162,6 +162,10 @@ pactl set-source-mute @DEFAULT_SOURCE@ false
 
 exec openbox --replace' >>/home/ken/.xinitrc
 echo "startx" >>/home/ken/.bash_profile
+echo '
+export PATH="/home/ken/.pyenv/shims:$PATH"
+eval "$(pyenv init -)"' >>/home/ken/.bashrc
+
 
 
 systemctl enable dhcpcd
