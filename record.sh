@@ -23,6 +23,7 @@ fi
 
 ext="mp4"
 folder="/home/ken/clips"
+cur_file=`readlink /tmp/current.$ext`
 
 if [[ $1 == "" ]]
 then
@@ -37,7 +38,7 @@ then
 	# note source only (there are .monitor ones for sys sound, do not use sink
 
 	
-	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i default -c:v libx264 -preset ultrafast -c:a aac /tmp/temp.$ext
+	ffmpeg -y -v error -f x11grab -video_size $screen_size -framerate 10 -i $DISPLAY  -f pulse -i dummy.monitor -c:v libx264 -preset ultrafast -c:a aac /tmp/temp.$ext
 
 	
 	ffplay /tmp/temp.$ext -nodisp -autoexit 2>/dev/null &
@@ -61,16 +62,13 @@ then
 	mv /tmp/temp.$ext ${folder}/${topic}_$time.$ext
 
 
-else
-	cur_file=`readlink /tmp/current.mp4`
-	if [[ $1 == "rm" ]]
-	then
-		echo "removed $cur_file"
-		mv $cur_file /tmp/temp.$ext
-	elif [[ $1 == "mv" ]]
-	then
-		time=`date +"%Y-%m-%d_%a_%H:%M:%S"`
-		echo "$cur_file -> ${folder}/${2}_${cur_file#*_}"
-		mv $cur_file ${folder}/${2}_${cur_file#*_}
-	fi
+elif [[ $1 == "rm" ]]
+then
+	echo "removed $cur_file"
+	mv $cur_file /tmp/temp.$ext
+elif [[ $1 == "mv" ]]
+then
+	time=`date +"%Y-%m-%d_%a_%H:%M:%S"`
+	echo "$cur_file -> ${folder}/${2}_${cur_file#*_}"
+	mv $cur_file ${folder}/${2}_${cur_file#*_}
 fi
