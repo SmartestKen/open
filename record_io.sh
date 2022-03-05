@@ -1,3 +1,7 @@
+# list all sources name for loopback
+pactl list sources | grep Name: | sed 's/^.*Name: //'
+
+# null-sink
 pactl load-module module-null-sink sink_name=dummy sink_properties=device.description=Recording
 pactl list sources
 printf "use pauvcontrol, decide the sources"; read temp1 temp2
