@@ -1,10 +1,13 @@
 # list all sources name for loopback
-pactl list sources | grep Name: | sed 's/^.*Name: //'
+sources=`pactl list sources | grep Name: | sed 's/^.*Name: //'`
+if [[ $sources != *"dummy"* ]]
+then
+	
+fi
+
 
 # null-sink
 pactl load-module module-null-sink sink_name=dummy sink_properties=device.description=Recording
-
-
 
 pactl load-module module-loopback source=$temp1 sink=dummy
 pactl load-module module-loopback source=$temp2 sink=dummy
