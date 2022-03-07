@@ -1,9 +1,15 @@
 import tensorflow as tf
 
 class BertModel():
-	def __init__(self, config):
+	def __init__(self, config, input_data):
 		self.config = config
-		self["is_training"] = False
+		self.config["is_training"] = False
+		input_shape = input_data.shape.as_list()
+		batch_size = input_shape[0]
+		seq_length = input_shape[1]
+
+
+
 	
 
 
