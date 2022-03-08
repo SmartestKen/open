@@ -9,6 +9,15 @@ class BertModel():
 		seq_length = input_shape[1]
 
 
+# find embedding
+# get output, [-1] gives the output
+
+
+
+
+
+
+
 
 	
 
