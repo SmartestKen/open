@@ -1,5 +1,9 @@
 import tensorflow as tf
 
+
+# I do not have query, how does it work?
+# dummy e.g. "volatility" all the time?
+
 class BertConfig():
 	def __init__(self):
 		self.vocab_size = 
