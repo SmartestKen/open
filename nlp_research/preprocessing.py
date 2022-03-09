@@ -5,8 +5,8 @@ import model
 # what is input form?
 # objective?
 
-# music/anime/novel, ranking, 
-# either minimal supervised or all supervised case
+# music/anime/novel, ranking/sort, not necessarily nn methods
+# either minimal supervised or popularity (e.g. reddit news, tuishujun)
 
 
 
