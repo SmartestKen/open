@@ -2,7 +2,10 @@ import model
 
 # cross entropy and regression loss?
 # run_classifier.py
-# what is input form, objective
+# what is input form?
+# objective?
+
+# music/anime/novel
 
 
 
