@@ -5,7 +5,8 @@ import model
 # what is input form?
 # objective?
 
-# music/anime/novel
+# music/anime/novel, ranking, 
+# either minimal supervised or all supervised case
 
 
 
