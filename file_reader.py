@@ -5,6 +5,11 @@ if len(sys.argv) == 1:
 	
 # print first line, each line first few characters and last few
 with open(sys.argv[1]) as myfile:
-    head = [next(myfile) for x in range(200)]
-print(head)
+	head = []
+	for x in range(200):
+		line = next(myfile)
+		if len(line) < 60:
+			print(line, end='')
+		else:
+			print(line[:30] + "..." + line[-30:], end='')
 
