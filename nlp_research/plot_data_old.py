@@ -11,11 +11,6 @@ import plotly
 pd.options.plotting.backend = "plotly"
 
 
-session = aiohttp.ClientSession()
-
-
-
-
 
 
 

@@ -32,3 +32,7 @@ async def EOD_get_intraday_data(start, symbol_list):
 	# print(bars_list)
 	return bars_list
 	
+	
+bars_list = ["GSPCC.INDX"]
+# https://eodhistoricaldata.com/api/exchanges-list/?api_token=YOUR_API_TOKEN&fmt=json
+# bars = loop.run_until_complete(loop.create_task(EOD_plot(symbol_list, bars_list)))
