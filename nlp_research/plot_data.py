@@ -42,8 +42,7 @@ async def EOD_get_realtime_data(symbol_dict):
 		
 		end = min(i + 400, len(symbol_list))
 
-		
-		if slice_index != len(symbol_list) - 1:
+		if i != len(symbol_list) - 1:
 			url = "https://eodhistoricaldata.com/api/real-time/" + symbol_list[0] + "?api_token=" + EOD_KEY + "&fmt=json&s=" + ",".join(symbol_list[slice_index:slice_end])
 		else:
 			url = "https://eodhistoricaldata.com/api/real-time/" + symbol_list[0] + "?api_token=" + EOD_KEY + "&fmt=json"
@@ -52,9 +51,6 @@ async def EOD_get_realtime_data(symbol_dict):
 		for i in range(len(temp)):
 			temp[i]["name"] = symbol_dict[temp[i]["code"]]
 		bars_list += temp
-		
-		print(bars_list)
-	
 		
 	temp_df = pd.DataFrame(bars_list, index = list(range(len(bars_list))))
 	
