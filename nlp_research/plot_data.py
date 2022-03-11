@@ -34,7 +34,7 @@ async def EOD_get_data(start, symbol):
 	
 	
 symbol = "GSPC.INDX"
-bars_list = loop.run_until_complete(loop.create_task(EOD_get_intraday_data("2010-01-01", symbol)))
+bars_list = loop.run_until_complete(loop.create_task(EOD_get_data("2010-01-01", symbol)))
 # bars_list = loop.run_until_complete(loop.create_task(EOD_get_intraday_data("2018-01-01 00:00:00", "2022-01-01 00:00:00", symbol_list)))
-print(bars_list)
+print(bars_list[0])
 loop.run_until_complete(loop.create_task(session.close()))
