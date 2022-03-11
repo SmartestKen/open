@@ -30,7 +30,7 @@ async def generic_get(url, tempfile = "/tmp/data.html"):
 		else:
 			sys.exit(html)
 
-
+'''
 
 async def EOD_get_realtime_data(symbol_dict):
 
@@ -43,9 +43,9 @@ async def EOD_get_realtime_data(symbol_dict):
 		end = min(i + 400, len(symbol_list))
 
 		if i != len(symbol_list) - 1:
-			url = "https://eodhistoricaldata.com/api/real-time/" + symbol_list[0] + "?api_token=" + EOD_KEY + "&fmt=json&s=" + ",".join(symbol_list[slice_index:slice_end])
+			url = "https://eodhistoricaldata.com/api/real-time/" + symbol_list[i] + "?api_token=" + EOD_KEY + "&fmt=json&s=" + ",".join(symbol_list[i:end])
 		else:
-			url = "https://eodhistoricaldata.com/api/real-time/" + symbol_list[0] + "?api_token=" + EOD_KEY + "&fmt=json"
+			url = "https://eodhistoricaldata.com/api/real-time/" + symbol_list[i] + "?api_token=" + EOD_KEY + "&fmt=json"
 		html = await generic_get(url)
 		temp = json.loads(html)
 		for i in range(len(temp)):
@@ -55,6 +55,20 @@ async def EOD_get_realtime_data(symbol_dict):
 	temp_df = pd.DataFrame(bars_list, index = list(range(len(bars_list))))
 	
 	return temp_df[temp_df["change_p"] != "NA"]
+
+
+
+'''
+
+# return a dictionary with key = code and value = country + name
+async def EOD_get_indices_dict():
+	url = "https://eodhistoricaldata.com/api/exchange-symbol-list/INDX?api_token=" + EOD_KEY + "&fmt=json"
+	html = await generic_get(url)
+	indices_dict = dict()
+	for item in json.loads(html):
+		indices_dict[item['Code'] + ".INDX"] = item['Country'] + " " + item['Name']
+
+	return indices_dict
 
 
 async def EOD_get_intraday_data(start, symbol_list):
@@ -68,15 +82,7 @@ async def EOD_get_intraday_data(start, symbol_list):
 	# print(bars_list)
 	return bars_list
 
-# return a dictionary with key = code and value = country + name
-async def EOD_get_indices_dict():
-	url = "https://eodhistoricaldata.com/api/exchange-symbol-list/INDX?api_token=" + EOD_KEY + "&fmt=json"
-	html = await generic_get(url)
-	indices_dict = dict()
-	for item in json.loads(html):
-		indices_dict[item['Code'] + ".INDX"] = item['Country'] + " " + item['Name']
 
-	return indices_dict
 
 
 
