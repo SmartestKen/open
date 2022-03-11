@@ -25,7 +25,7 @@ async def generic_get(url, tempfile = "/tmp/data.html"):
 
 # expect start format '%Y-%m-%d %H:%M:%S'
 # start-end max 3600 days
-async def EOD_get_intraday_data(start, end, symbol_list):
+async def EOD_get_intraday_data(start, end, interval, symbol):
 	# convert to epoch
 	start = str(int(time.mktime(time.strptime(start, '%Y-%m-%d %H:%M:%S'))))
 	end = str(int(time.mktime(time.strptime(end, '%Y-%m-%d %H:%M:%S'))))
