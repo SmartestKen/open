@@ -129,7 +129,7 @@ async def EOD_plot(symbol_list, bars_list):
 	ax.show()
 
 		
-loop = asyncio.get_event_loop()
+
 # = ["000906.INDX", "GSPC.INDX", "BCOMCL.INDX"]
 import csv
 
