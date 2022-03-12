@@ -75,8 +75,8 @@ for date in news_dict:
 	if indices.get(date, None) != None:
 		bar = bars_list[indices[date]]
 		volatility = numpy.std([bar['open'], bar['close'], bar['high'], bar['low']])
-		if volatility > 50:
-			print(date, volatility)
+		if date in ["2020-05-12", "2020-05-15", "2020-05-18", "2020-06-01"]:
+			print(date, round(volatility,3))
 			print(news_dict[date])
 
 
