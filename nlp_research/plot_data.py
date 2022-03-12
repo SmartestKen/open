@@ -44,8 +44,9 @@ if len(sys.argv) == 1:
 with open(sys.argv[1]) as fp:
 	reader = csv.DictReader(fp, delimiter=",", quotechar='"')
 	
-	for index, line in enumerate(reader):
+	for line in enumerate(reader):
 		print(line)
+		break
 		
 	
 	
