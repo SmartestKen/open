@@ -53,6 +53,11 @@ symbol = "GSPC.INDX"
 bars_list = loop.run_until_complete(loop.create_task(EOD_get_data("2010-01-01", symbol)))
 # bars_list = loop.run_until_complete(loop.create_task(EOD_get_intraday_data("2018-01-01 00:00:00", "2022-01-01 00:00:00", symbol_list)))
 
+indices_dict = dict()
+for index, bar in enumerate(bars_list):
+	indices_dict
+
+
 for date in news_dict:
 	
 for babars_list[0])
