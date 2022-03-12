@@ -47,7 +47,7 @@ with open(sys.argv[1]) as fp:
 	
 	index = 0
 	for line in enumerate(reader):
-		if index > 10:
+		if index > 30000:
 			break
 		else:
 			index += 1
@@ -71,6 +71,9 @@ for index, bar in enumerate(bars_list):
 
 import numpy
 
+
+positive = 0
+negative = 0
 for date in news_dict:
 	if indices.get(date, None) != None:
 		bar = bars_list[indices[date]]
@@ -78,7 +81,11 @@ for date in news_dict:
 		if date in ["2020-05-12", "2020-05-15", "2020-05-18", "2020-06-01"]:
 			print(date, round(volatility,3))
 			print(news_dict[date])
-
+		if volatility > 10:
+			positive += 1
+		else:
+			negative += 1
+print(positive/(positive + negative))
 
 
 loop.run_until_complete(loop.create_task(session.close()))
