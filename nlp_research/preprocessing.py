@@ -1,5 +1,11 @@
 import model
 
+
+
+
+
+
+
 # cross entropy and regression loss?
 # run_classifier.py
 # what is input form?
