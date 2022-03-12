@@ -42,10 +42,11 @@ if len(sys.argv) == 1:
 	sys.exit("Need an argument of news data file")
 
 with open(sys.argv[1]) as fp:
-	reader = csv.DictReader(fp, delimiter=",", quotechar='"')
+	reader = csv.reader(fp, delimiter=",", quotechar='"')
 	
 	for line in enumerate(reader):
-		print(line)
+		print(type(line))
+		print(line['date'], line['headline'])
 		break
 		
 	
