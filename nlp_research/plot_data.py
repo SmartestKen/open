@@ -45,7 +45,13 @@ news_dict = dict()
 with open(sys.argv[1]) as fp:
 	reader = csv.DictReader(fp, delimiter=",", quotechar='"')
 	
+	index = 0
 	for line in enumerate(reader):
+		if index > 1000:
+			break
+		else:
+			index += 1
+		print(line[1]["date"])
 		news_dict[line[1]["date"].split()[0]] = news_dict.get(line[1]["date"].split()[0], "") + line[1]["headline"]
 
 # --------------------load time series data
@@ -62,11 +68,13 @@ for index, bar in enumerate(bars_list):
 	indices[bar['date']] = index
 
 
+import numpy
+
 for date in news_dict:
-	bar = bars_list[indices['date']]
-	volatility = numpy.std([bar['open'], bar['close'], bar['high'], bar['low']])
-	print(date, volatility)
-	break
+	if bars_list[indices[date]] != None:
+		bar = bars_list[indices[date]]
+		volatility = numpy.std([bar['open'], bar['close'], bar['high'], bar['low']])
+		print(date, volatility)
 
 
 
