@@ -41,15 +41,13 @@ import csv
 if len(sys.argv) == 1:
 	sys.exit("Need an argument of news data file")
 
+news_dict = dict()
 with open(sys.argv[1]) as fp:
 	reader = csv.DictReader(fp, delimiter=",", quotechar='"')
 	
 	for line in enumerate(reader):
-		print(line[1]["headline"], line[1]["date"])
-		break
-		
-	
-	
+		news_dict[line[1]["date"].split()[0]] = news_dict.get(line[1]["date"].split()[0], "") + line[1]["headline"]
+
 # --------------------load time series data
 symbol = "GSPC.INDX"
 bars_list = loop.run_until_complete(loop.create_task(EOD_get_data("2010-01-01", symbol)))
