@@ -38,7 +38,16 @@ async def EOD_get_data(start, symbol):
 # --------------------load news data
 import csv
 
-with open("/home/") as fp:
+if len(sys.argv) == 1:
+	sys.exit("Need an argument of news data file")
+
+with open(sys.argv[1]) as fp:
+	reader = csv.DictReader(fp, delimiter=",", quotechar='"')
+	
+	for index, line in enumerate(reader):
+		print(line)
+		
+	
 	
 # --------------------load time series data
 symbol = "GSPC.INDX"
