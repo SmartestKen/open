@@ -71,10 +71,12 @@ for index, bar in enumerate(bars_list):
 import numpy
 
 for date in news_dict:
-	if bars_list[indices[date]] != None:
+	if indices.get(date, None) != None:
 		bar = bars_list[indices[date]]
 		volatility = numpy.std([bar['open'], bar['close'], bar['high'], bar['low']])
 		print(date, volatility)
+		if volatility > 50:
+			print(news_dict[date])
 
 
 
