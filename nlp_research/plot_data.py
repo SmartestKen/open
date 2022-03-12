@@ -47,11 +47,13 @@ with open(sys.argv[1]) as fp:
 	
 	index = 0
 	for line in enumerate(reader):
-		if index > 10000:
+		if index > 10:
+			time.sleep(1000000)
 			break
 		else:
 			index += 1
-		print(line[1]["date"])
+		print(line[1]["headline"], line[1]["date"])
+		# print(line[1]["date"])
 		news_dict[line[1]["date"].split()[0]] = news_dict.get(line[1]["date"].split()[0], "") + "\n" + line[1]["headline"]
 
 # --------------------load time series data
