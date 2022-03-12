@@ -47,12 +47,12 @@ with open(sys.argv[1]) as fp:
 	
 	index = 0
 	for line in enumerate(reader):
-		if index > 1000:
+		if index > 10000:
 			break
 		else:
 			index += 1
 		print(line[1]["date"])
-		news_dict[line[1]["date"].split()[0]] = news_dict.get(line[1]["date"].split()[0], "") + line[1]["headline"]
+		news_dict[line[1]["date"].split()[0]] = news_dict.get(line[1]["date"].split()[0], "") + "\n" + line[1]["headline"]
 
 # --------------------load time series data
 symbol = "GSPC.INDX"
@@ -74,8 +74,8 @@ for date in news_dict:
 	if indices.get(date, None) != None:
 		bar = bars_list[indices[date]]
 		volatility = numpy.std([bar['open'], bar['close'], bar['high'], bar['low']])
-		print(date, volatility)
 		if volatility > 50:
+			print(date, volatility)
 			print(news_dict[date])
 
 
