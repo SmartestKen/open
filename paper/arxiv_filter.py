@@ -12,7 +12,7 @@ with open(json_load_path, "r") as f:
 	csv_data = []
 
 	
-	start = "1905"
+	start = "1801"
 	
 	
 	for line in f:
@@ -27,7 +27,7 @@ with open(json_load_path, "r") as f:
 			flag = [False]
 			for item in a["categories"].split(" "):
 				
-				if (item.startswith("cs.CL") or item.startswith("cs.IR")) and ("news" in a["title"].lower() or "news" in a["abstract"].lower()):
+				if (item.startswith("cs.CL") or item.startswith("cs.IR") or item.startswith("q-fin")) and ("news" in a["title"].lower() or "news" in a["abstract"].lower()):
 					flag[0] = True
 				
 				'''
