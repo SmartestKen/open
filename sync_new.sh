@@ -6,14 +6,6 @@ loop() {
     eval $(ssh-agent -s)
     ssh-add /home/ken/.ssh/id_rsa
     
-    if xrandr | grep 'HDMI1 connected' >/dev/null
-    then
-        xrandr --output HDMI1 --mode 2560x1440 --rate 75
-        xrandr --output eDP1 --off
-    else
-        xrandr --output eDP1 --mode 1920x1080 --rate 60
-        xrandr --output HDMI1 --off
-    fi
     # use the following to manually update preferences (e.g. when there is a new extension)
     # cp -u /home/ken/.config/BraveSoftware/Brave-Browser/Default/Preferences /home/ken/private/.config/BraveSoftware/Brave-Browser/Default/Preferences
     

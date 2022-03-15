@@ -116,13 +116,17 @@ XDG_SESSION_TYPE=x11 plank &
 geany -i &
 xfce4-terminal &
 
-if xrandr | grep "HDMI1 connected"
+if xrandr | grep "HDMI1 connected" >/dev/null
 then
+	xrandr --output HDMI1 --mode 2560x1440 --rate 75
+	xrandr --output eDP1 --off
 	max_width=2560
 	max_height=1440
 	target_width=1860
 	target_height=440
 else
+	xrandr --output eDP1 --mode 1920x1080 --rate 60
+    xrandr --output HDMI1 --off
 	max_width=1920
 	max_height=1080
 	target_width=1370
