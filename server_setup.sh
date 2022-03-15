@@ -40,15 +40,17 @@ SSHCMD
 
 # ---------- now upload local repo (note, we do not upload ssh keys here)
 printf "Upload local repo copy? (y/n)"; read temp
+
+while IFS= read -r repo 
+do
+	cd $repo
+	git remote add temp ssh://$sshtarget$repo
+	git push temp master
+	git remote remove temp
+done <<<"$repo_locations"
+	
 if [[ $temp == "y" ]]
 then 
-	while IFS= read -r repo 
-	do
-		cd $repo
-		git remote add temp ssh://$sshtarget$repo
-		git push temp master
-		git remote remove temp
-	done <<<"$repo_locations"
 fi
 
 # pacman -S --noconfirm gitea glibc sqlite
