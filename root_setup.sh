@@ -53,16 +53,11 @@ pacman -S efibootmgr --noconfirm
 efibootmgr -B -b 0000 -q
 # disble check and log, 
 efibootmgr -d /dev/$dname -p ${bid: -1} -c -L "arch" -l /vmlinuz-linux -u "cryptdevice=UUID=`blkid -s UUID -o value /dev/$dname$sid`:croot root=UUID=`blkid -s UUID -o value /dev/mapper/croot` rw initrd=\initramfs-linux.img vconsole.font=solar24x32 quiet"
-# snd_intel_dspcfg.dsp_driver=1
-# fsck.mode=skip quotacheck.mode=skip loglevel=0 vga=current systemd.log_level=0 systemd.log_target=null udev.log_level=0 
 
 # for manual testing
 # efibootmgr -d /dev/nvme0n1 -p 1 -c -L "arch" -l /vmlinuz-linux -u "cryptdevice=UUID=`blkid -s UUID -o value /dev/nvme0n1p2`:croot root=UUID=`blkid -s UUID -o value /dev/mapper/croot` rw initrd=\initramfs-linux.img vconsole.font=solar24x32 quiet"
 
 pacman -Rns efibootmgr --noconfirm
-
-
-
 printf "CHECKPOINT (BOOTABLE)?"; read
 
 
@@ -92,9 +87,6 @@ git clone --depth=1 https://aur.archlinux.org/brave-bin.git /home/ken/brave-bin
 cd /home/ken/brave-bin
 makepkg -sirc
 rm -rf /home/ken/brave-bin"
-
-
-
 printf "is everything ok?"; read
 
 
@@ -168,11 +160,7 @@ eval "$(pyenv init -)"' >>/home/ken/.bashrc
 
 
 systemctl enable dhcpcd
-echo "
-noarp" >>/etc/dhcpcd.conf
-echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=ken
-update_config=1" >/etc/wpa_supplicant/wpa_supplicant.conf
-
+echo "noarp" >>/etc/dhcpcd.conf
 
 systemctl disable systemd-journal-flush systemd-journald systemd-journal-catalog-update lvm2-monitor wpa_supplicant ldconfig
 systemctl mask systemd-journal-flush systemd-journald systemd-journal-catalog-update lvm2-monitor wpa_supplicant
