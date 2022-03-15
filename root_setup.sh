@@ -171,7 +171,8 @@ pacman -Scc --noconfirm
 
 
 # init
-curl https://raw.githubusercontent.com/SmartestKen/open/master/init.sh  --output /init.sh
+server='root@209.182.218.253'
+rsync $server:/home/ken/open/init.sh /init.sh
 chmod 744 /init.sh
 
 # After=network-online.target
@@ -188,23 +189,11 @@ RestartSec=2
 WantedBy=multi-user.target' >/etc/systemd/system/init.service
 systemctl enable init
 
-
-
-# everything later is about git, if not enough time, then stop here and start system
+# everything later is about git, if no enough time, then stop here and start system
 printf "CHECKPOINT (GENERIC DESKTOP)?"; read
 
 
-# only sync laptop or vbox use sync service
-# ssh key setup 
-# echo ... | openssl aes-256-cbc -a -salt
-
-retry="y"
-while [[ $retry == "y" ]]
-do
-	temp=`echo U2FsdGVkX1+njEe09K28Q2xgAw2yu3Vlm9YpDA6IL+LVTOwLEuidQ+sYmepGLTqQvz0GU9DiK5j1XD+xmrLQlw== | openssl aes-256-cbc -d -a`
-	echo $temp
-	printf "is everything ok (github)? Type y to retry "; read retry
-done
+# ------- ssh key and git repo setup
 
 su ken -c "
 mkdir /home/ken/.ssh
