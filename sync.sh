@@ -70,12 +70,11 @@ loop() {
     # use the following to manually update preferences (e.g. when there is a new extension)
     # cp -u /home/ken/.config/BraveSoftware/Brave-Browser/Default/Preferences /home/ken/private/.config/BraveSoftware/Brave-Browser/Default/Preferences
     
-    if ! ls /home/ken/clips >/dev/null 2>&1
+    
+    # assume the set server part is done in root_setup.sh
+    if [ -z "$(ls /home/ken/clips 2>&1)" ]
     then
-		mkdir -p /home/ken/clips
 		cd /home/ken/clips
-		git init
-		git remote add origin git@github.com:SmartestKen/clips.git
 		git fetch origin master
 		git reset --hard origin/master
 	fi
