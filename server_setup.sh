@@ -52,7 +52,9 @@ do
 	fi
 done <<<"$repo_locations"
 	
-
+# if "u", clean up and upload
+# if "d", rm -rf local except those config and download clean copy
+# else skip
 
 
 # pacman -S --noconfirm gitea glibc sqlite
