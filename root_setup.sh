@@ -213,7 +213,7 @@ repo_locations='/home/ken/open
 su ken -c "
 eval \$(ssh-agent)
 ssh-add /home/ken/.ssh/id_rsa
-# public key of github server is required to avoid fingerprint prompt
+# public key of server is required to avoid fingerprint prompt
 ssh-keyscan $server >/home/ken/.ssh/known_hosts
 
 while IFS= read -r repo
@@ -221,7 +221,7 @@ do
 	mkdir -p \$repo
 	cd \$repo
 	git init
-	git remote add origin ssh://\$sshtarget\$repo
+	git remote add origin ssh://$sshtarget\$repo
 	
 	if [[ \$repo == '/home/ken/private' ]]
 	then
