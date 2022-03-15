@@ -198,12 +198,12 @@ printf "CHECKPOINT (GENERIC DESKTOP)?"; read
 su ken -c "
 mkdir /home/ken/.ssh
 ssh-keygen -t rsa -b 4096 -f /home/ken/.ssh/id_rsa"
-curl -H "Authorization: token $temp" --data "{\"title\":\"Main\",\"key\":\"$(cat /home/ken/.ssh/id_rsa.pub)\"}" https://api.github.com/user/keys
+ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $server
 printf "is everything ok?"; read
 
 git config --system user.email no-reply@princeton.edu
 git config --system user.name ken
-printf "private encrypt and salt"; read temp1 temp2
+printf "private repo encrypt and salt"; read temp1 temp2
 # use ssh key to setup repo, any $() that stricitly require ken must escape $
 su ken -c "
 eval \$(ssh-agent)
