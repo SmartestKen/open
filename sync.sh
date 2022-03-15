@@ -80,7 +80,7 @@ loop() {
 	fi
     
     
-    index=`tail -c 2 /etc/hostname`
+    device=`cat /etc/hostname`
  
 	# daily update on .config
 	cur_date=`date -I`
@@ -89,11 +89,11 @@ loop() {
     do
 
         # sync now contains both up (push) and down, albeit in a different directory
-        sync_repo /home/ken/open laptop$index
+        sync_repo /home/ken/open $device
         
         temp_date=`date -I`
 		# file update from /home/ken/.config to /home/ken/private/.config
-		if [[ $index == 2 && $temp_date != $cur_date ]] 
+		if [[ $device == "laptop2" && $temp_date != $cur_date ]] 
 		then
 			while read -r file
 			do
@@ -112,8 +112,8 @@ loop() {
 			cur_date=$temp_date
 		fi
 
-        sync_repo /home/ken/private laptop$index
-        sync_repo /home/ken/clips laptop$index
+        sync_repo /home/ken/private $device
+        sync_repo /home/ken/clips $device
                 
         sleep 300
     done
