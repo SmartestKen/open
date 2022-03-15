@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 date -s "$(curl --head http://google.com 2>&1 | grep Date: | cut -d' ' -f3-6)Z"
 hwclock --systohc

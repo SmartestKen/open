@@ -53,7 +53,8 @@ nano /mnt/etc/fstab
 
 
 # ------------ get root_setup.sh from server and chroot
-rsync root@209.182.218.253:/home/ken/open/root_setup.sh /root_setup.sh
+server='root@209.182.218.253'
+rsync $server:/home/ken/open/root_setup.sh /root_setup.sh
 sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/root_setup.sh
 
 arch-chroot /mnt
