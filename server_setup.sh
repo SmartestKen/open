@@ -5,8 +5,6 @@ repo_locations="/home/ken/open
 /home/ken/private
 /home/ken/clips"
 
-ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $sshtarget
-
 # -T disable remote side tty, use -t if you need one
 # --------- server full update
 ssh-keyscan $server >>/home/ken/.ssh/known_hosts
@@ -35,32 +33,20 @@ done <<<"$repo_locations"
 SSHCMD
 
 # ---------- now upload local repo (note, we do not upload ssh keys here)
-printf "yes -> ssh key+repo upload, anything else -> just key"; read temp
-while IFS= read -r repo 
-do
-	cd $repo
-	git remote add temp ssh://$sshtarget$repo
-	git push temp master
-	git remote remove temp
-
-done <<<"$repo_locations"
-
-
+printf "Upload local repo copy? (y/n)"; read temp
+if [[ $temp == "y" ]]
+then 
+	ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $sshtarget
+	while IFS= read -r repo 
+	do
+		cd $repo
+		git remote add temp ssh://$sshtarget$repo
+		git push temp master
+		git remote remove temp
+	done <<<"$repo_locations"
+fi
 
 # pacman -S --noconfirm gitea glibc sqlite
-
-
-
-# useradd -d /home/ken -m ken
-# printf "Create userpasswd:"; read temp
-# printf "%s\n" $temp $temp | passwd ken
-
-
-
-
-# now each time a new laptop, simply send the pub keys to somewhere
-
-
 
 # curl https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh -O /acme.sh
 # source /acme.sh --install -m k5shao@ucsd.edu
