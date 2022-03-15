@@ -12,12 +12,12 @@ sync_repo() {
     then
 		echo "updating $1"
         # first add (but do not commit) to compare with origin/master, add a placemholder to prevent useless commit        
-        ignore_files=`find . -type f -size +75M -not -path '*/\.git/*'`
-        if [[ $ignore_files != "" ]]
-        then
-			sed 's|^\./||g' >"$1"/.git/info/exclude <<< "$ignore_files"
-			echo "$ignore_files" | xargs git rm --cached 2>/dev/null
-		fi
+        # ignore_files=`find . -type f -size +75M -not -path '*/\.git/*'`
+        # if [[ $ignore_files != "" ]]
+        # then
+			# sed 's|^\./||g' >"$1"/.git/info/exclude <<< "$ignore_files"
+			# echo "$ignore_files" | xargs git rm --cached 2>/dev/null
+		# fi
 		
         git add . -A --ignore-errors
         
@@ -88,9 +88,6 @@ loop() {
     while true
     do
 
-        # sync now contains both up (push) and down, albeit in a different directory
-        sync_repo /home/ken/open $device
-        
         temp_date=`date -I`
 		# file update from /home/ken/.config to /home/ken/private/.config
 		if [[ $device == "laptop2" && $temp_date != $cur_date ]] 
@@ -112,6 +109,9 @@ loop() {
 			cur_date=$temp_date
 		fi
 
+
+
+		sync_repo /home/ken/open $device
         sync_repo /home/ken/private $device
         sync_repo /home/ken/clips $device
                 
