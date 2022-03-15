@@ -62,10 +62,15 @@ then
 		mv /tmp/attributes .git/info/attributes 
 	
 
-	if [[ $temp == "y" ]]
-	then 
-		git push temp master
-	fi
+		if [[ $temp == "u" ]]
+		then 
+			git add .
+			git commit -m "$device"
+			git push -f origin master
+		else
+			git fetch origin master
+			git reset --hard origin/master
+		fi
 	done <<<"$repo_locations"
 fi
 	
