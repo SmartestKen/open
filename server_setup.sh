@@ -5,6 +5,11 @@ repo_locations="/home/ken/open
 /home/ken/private
 /home/ken/clips"
 
+printf "yes -> ssh key+repo upload, anything else -> just key"; read temp
+
+
+
+
 # -T disable remote side tty, use -t if you need one
 # --------- server full update
 ssh-keyscan $server >>/home/ken/.ssh/known_hosts
