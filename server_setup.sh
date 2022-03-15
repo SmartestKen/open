@@ -25,7 +25,8 @@ SSHCMD
 
 printf "Once server reboots successfully, press any key"; read
 
-# ----------- setup software and git repo
+# ---------- now upload local repo (note, we do not upload ssh keys here)
+printf "Upload repo/Download repo/do nothing? (u/d)"; read temp
 ssh -T $sshtarget << SSHCMD
 pacman -S git rsync --noconfirm
 
@@ -37,9 +38,6 @@ do
 	
 done <<<"$repo_locations"
 SSHCMD
-
-# ---------- now upload local repo (note, we do not upload ssh keys here)
-printf "Upload local repo copy? (y/n)"; read temp
 
 while IFS= read -r repo 
 do
