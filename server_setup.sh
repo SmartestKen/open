@@ -48,6 +48,8 @@ if [[ $temp == "u" || $temp == "d" ]]
 then
 	pkill sync.sh
 
+	# in both situation, clear everything in .git except those config,
+	# for upload, commit and push. for download, fetch and reset
 	while IFS= read -r repo 
 	do
 		cd $repo
@@ -73,11 +75,6 @@ then
 		fi
 	done <<<"$repo_locations"
 fi
-	
-# if "u", clean up and upload
-# if "d", rm -rf local except those config and download clean copy
-# else skip
-
 
 # pacman -S --noconfirm gitea glibc sqlite
 
