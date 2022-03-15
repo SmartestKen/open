@@ -32,40 +32,39 @@ printf "Once server reboots successfully, press any key"; read
 # ---------- now upload local repo (note, we do not upload ssh keys here)
 printf "Upload repo/Download repo/do nothing? (u/d)"; read temp
 
-while IFS= read -r repo 
-do
-	cd $repo
-	
+if [[ $temp == "u" || $temp == "d" ]]
+then
+	pkill sync.sh
 	if [[ $temp == "u" ]]
 	then
-		pkill sync.sh
+		ssh -T $sshtarget << SSHCMD
+			while IFS= read -r repo 
+			do
+				mkdir -p \$repo
+				cd \$repo
+				git --bare init
+				
+			done <<<"$repo_locations"
+SSHCMD	
+	fi
+		
+	while IFS= read -r repo 
+	do
+		cd $repo
+	
+	
 		git remote remove origin
 		git remote add origin ssh://$sshtarget$repo
-	
-	elif [[ $temp == "d" ]]
-	then
-	
+		
 	fi
 	
 
-	
-	
-	ssh -T $sshtarget << SSHCMD
-	while IFS= read -r repo 
-	do
-		mkdir -p \$repo
-		cd \$repo
-		git --bare init
-		
-	done <<<"$repo_locations"
-	SSHCMD
-	
-	
 	if [[ $temp == "y" ]]
 	then 
 		git push temp master
 	fi
-done <<<"$repo_locations"
+	done <<<"$repo_locations"
+fi
 	
 # if "u", clean up and upload
 # if "d", rm -rf local except those config and download clean copy

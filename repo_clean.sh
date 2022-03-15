@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 while IFS= read -r repo
 do
 	cd $repo
