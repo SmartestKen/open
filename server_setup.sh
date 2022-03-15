@@ -30,33 +30,36 @@ SSHCMD
 printf "Once server reboots successfully, press any key"; read
 
 # ---------- now upload local repo (note, we do not upload ssh keys here)
+
+# it is safe to reinitialize repo, do it to avoid complicated logic below
+ssh -T $sshtarget << SSHCMD
+while IFS= read -r repo 
+do
+	mkdir -p \$repo
+	cd \$repo
+	git --bare init
+	
+done <<<"$repo_locations"
+SSHCMD
+
 printf "Upload repo/Download repo/do nothing? (u/d)"; read temp
 
 if [[ $temp == "u" || $temp == "d" ]]
 then
 	pkill sync.sh
-	if [[ $temp == "u" ]]
-	then
-		ssh -T $sshtarget << SSHCMD
-			while IFS= read -r repo 
-			do
-				mkdir -p \$repo
-				cd \$repo
-				git --bare init
-				
-			done <<<"$repo_locations"
-SSHCMD	
-	fi
-		
+
 	while IFS= read -r repo 
 	do
 		cd $repo
-	
-	
 		git remote remove origin
 		git remote add origin ssh://$sshtarget$repo
 		
-	fi
+		mv .git/config /tmp/config
+		mv .git/info/attributes /tmp/attributes
+		rm -rf .git
+		git init
+		mv /tmp/config .git/config
+		mv /tmp/attributes .git/info/attributes 
 	
 
 	if [[ $temp == "y" ]]
