@@ -114,7 +114,6 @@ loop() {
 		fi
 
         sync_repo /home/ken/private laptop$index
-        
         sync_repo /home/ken/clips laptop$index
                 
         sleep 300

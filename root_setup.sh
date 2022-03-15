@@ -206,7 +206,8 @@ git config --system user.email no-reply@princeton.edu
 git config --system user.name ken
 printf "private repo encrypt and salt"; read temp1 temp2
 repo_locations='/home/ken/open
-/home/ken/private'
+/home/ken/private
+/home/ken/clips'
 
 # use ssh key to setup repo, any $() that stricitly require ken must escape $
 su ken -c "
@@ -232,9 +233,12 @@ do
 		
 		cp -r /home/ken/private/.config /home/ken/
 	fi 
-	
-	git fetch origin master
-	git reset --hard origin/master
+
+	if [[ \$repo != '/home/ken/clips' ]]
+	then	
+		git fetch origin master
+		git reset --hard origin/master
+	fi
 
 done <<<$repo_locations
 chmod 744 /home/ken/open/sync.sh"
