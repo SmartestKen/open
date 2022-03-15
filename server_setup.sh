@@ -5,6 +5,12 @@ repo_locations="/home/ken/open
 /home/ken/private
 /home/ken/clips"
 
+printf "Upload local ssh pub key? (y/n)"; read temp
+if [[ $temp == "y" ]]
+then 
+	ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $sshtarget
+fi
+
 # -T disable remote side tty, use -t if you need one
 # --------- server full update
 ssh-keyscan $server >>/home/ken/.ssh/known_hosts
@@ -36,7 +42,6 @@ SSHCMD
 printf "Upload local repo copy? (y/n)"; read temp
 if [[ $temp == "y" ]]
 then 
-	ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $sshtarget
 	while IFS= read -r repo 
 	do
 		cd $repo
