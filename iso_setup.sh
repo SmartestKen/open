@@ -52,6 +52,7 @@ genfstab -U /mnt >/mnt/etc/fstab
 nano /mnt/etc/fstab
 
 
+# ------------ get root_setup.sh from server and chroot
 curl https://raw.githubusercontent.com/SmartestKen/open/master/root_setup.sh --output /mnt/root_setup.sh
 sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/root_setup.sh
 
