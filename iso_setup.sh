@@ -35,15 +35,17 @@ umount /mnt
 umount /dev/mapper/croot
 cryptsetup luksClose croot
 
+# ------------ setup crypt mapper to root partition and format it to ext4
 cryptsetup -y luksFormat /dev/$dname$sid
 cryptsetup open /dev/$dname$sid croot
 mkfs.ext4 /dev/mapper/croot
-mount /dev/mapper/croot /mnt
 # mkfs.ext4 /dev/$dname$sid
 # mount /dev/$dname$sid /mnt
 printf "is everything ok?"; read
 
-
+# ------------ mount the root partition
+# ------------ install base package and setup fstab
+mount /dev/mapper/croot /mnt
 pacstrap /mnt/ base linux linux-firmware
 genfstab -U /mnt >/mnt/etc/fstab
 # use nano to change pass to 0 in /etc/fstab
@@ -52,10 +54,6 @@ nano /mnt/etc/fstab
 
 curl https://raw.githubusercontent.com/SmartestKen/open/master/root_setup.sh --output /mnt/root_setup.sh
 sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/root_setup.sh
-
-curl https://raw.githubusercontent.com/SmartestKen/open/master/pacman_syyu.sh --output /mnt/pacman_syyu.sh
-sed -i "s/dname=nvme0n1; bid=p1; sid=p2/dname=$dname; bid=$bid; sid=$sid/g" /mnt/pacman_syyu.sh
-
 
 arch-chroot /mnt
 # umount /mnt
