@@ -5,10 +5,7 @@ repo_locations="/home/ken/open
 /home/ken/private
 /home/ken/clips"
 
-printf "yes -> ssh key+repo upload, anything else -> just key"; read temp
-
-
-
+ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $sshtarget
 
 # -T disable remote side tty, use -t if you need one
 # --------- server full update
@@ -38,6 +35,7 @@ done <<<"$repo_locations"
 SSHCMD
 
 # ---------- now upload local repo (note, we do not upload ssh keys here)
+printf "yes -> ssh key+repo upload, anything else -> just key"; read temp
 while IFS= read -r repo 
 do
 	cd $repo
