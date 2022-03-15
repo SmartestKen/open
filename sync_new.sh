@@ -1,8 +1,5 @@
 #!/bin/bash 
 
-# same repo and branch ensures that whichever computer in use, we can get the latest data with no operations
-# but you always need to connect to some sort of server to fetch/push files. Hence github may be the most convenient to go (rather than setup a network drive yourself)
-
 sync_repo() {
     cd $1
 
@@ -81,6 +78,9 @@ loop() {
     
     
     device=`cat /etc/hostname`
+    repo_locations="/home/ken/open
+	/home/ken/private
+	/home/ken/clips"
  
 	# daily update on .config
 	cur_date=`date -I`
@@ -109,7 +109,11 @@ loop() {
 			cur_date=$temp_date
 		fi
 
-
+		while IFS= read -r repo
+		do
+		
+		
+		done <<<"$repo_locations"
 
 		sync_repo /home/ken/open $device
         sync_repo /home/ken/private $device
