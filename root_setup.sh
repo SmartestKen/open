@@ -217,24 +217,17 @@ ssh-keyscan $server >/home/ken/.ssh/known_hosts
 
 while IFS= read -r repo
 do
-	mkdir -p $repo
-	cd $repo
+	mkdir -p \$repo
+	cd \$repo
 	git init
-	git remote add origin ssh://$sshtarget$repo
-
+	git remote add origin ssh://\$sshtarget\$repo
+	
+	if 
+	
+	git fetch origin master
+	git reset --hard origin/master
 
 done <<<$repo_locations
-
-
-
-git@github.com:SmartestKen/open.git
-git fetch origin master
-git reset --hard origin/master
-
-
-cd /home/ken/private
-git init
-git remote add origin git@github.com:SmartestKen/private.git
 
 
 # https://gist.github.com/polonskiy/7e5d308ca6412765927a96bd74601a5e
