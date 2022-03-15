@@ -7,7 +7,7 @@ repo_locations="/home/ken/open
 
 # -T disable remote side tty, use -t if you need one
 # --------- server full update
-ssh-keyscan $server >/home/ken/.ssh/known_hosts
+ssh-keyscan $server >>/home/ken/.ssh/known_hosts
 ssh -T $sshtarget << SSHCMD
 
 pacman -Syy
