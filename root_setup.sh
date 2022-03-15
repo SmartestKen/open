@@ -205,6 +205,9 @@ printf "is everything ok?"; read
 git config --system user.email no-reply@princeton.edu
 git config --system user.name ken
 printf "private repo encrypt and salt"; read temp1 temp2
+repo_locations='/home/ken/open
+/home/ken/private'
+
 # use ssh key to setup repo, any $() that stricitly require ken must escape $
 su ken -c "
 eval \$(ssh-agent)
@@ -212,9 +215,16 @@ ssh-add /home/ken/.ssh/id_rsa
 # public key of github server is required to avoid fingerprint prompt
 ssh-keyscan $server >/home/ken/.ssh/known_hosts
 
-# for pushing ones, has to download right now so that sync can just push -f from then on. for fetched, leave it empty is fine
-# to avoid random issues (e.g run manual commands while git does not fully checked out yet), always fetch in root_setup rather than leave to sync itself.
-mkdir /home/ken/open /home/ken/private
+while IFS= read -r repo
+do
+	mkdir -p $repo
+	cd 
+
+
+done <<<$repo_locations
+
+
+
 cd /home/ken/open
 git init
 git remote add origin git@github.com:SmartestKen/open.git
