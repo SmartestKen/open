@@ -222,24 +222,21 @@ do
 	git init
 	git remote add origin ssh://\$sshtarget\$repo
 	
-	if 
+	if [[ \$repo == '/home/ken/private' ]]
+	then
+		# https://gist.github.com/polonskiy/7e5d308ca6412765927a96bd74601a5e
+		printf \"%s\n    %s\n    %s\n    %s\n%s\n    %s\n\" \"[filter \\\"openssl\\\"]\" \"clean = openssl aes-256-cbc -k $temp1 -S $temp2 2>/dev/null\" \"smudge = openssl aes-256-cbc -d -k $temp1 2>/dev/null\" \"required\" \"[diff \\\"openssl\\\"]\" \"textconv = openssl aes-256-cbc -d -k $temp1 -in \\\"\\\$1\\\" 2>/dev/null || cat\" >>/home/ken/private/.git/config
+		
+		chmod 600 /home/ken/private/.git/config
+		echo '* filter=openssl  diff=openssl' >/home/ken/private/.git/info/attributes
+		
+		cp -r /home/ken/private/.config /home/ken/
+	fi 
 	
 	git fetch origin master
 	git reset --hard origin/master
 
 done <<<$repo_locations
-
-
-# https://gist.github.com/polonskiy/7e5d308ca6412765927a96bd74601a5e
-printf \"%s\n    %s\n    %s\n    %s\n%s\n    %s\n\" \"[filter \\\"openssl\\\"]\" \"clean = openssl aes-256-cbc -k $temp1 -S $temp2 2>/dev/null\" \"smudge = openssl aes-256-cbc -d -k $temp1 2>/dev/null\" \"required\" \"[diff \\\"openssl\\\"]\" \"textconv = openssl aes-256-cbc -d -k $temp1 -in \\\"\\\$1\\\" 2>/dev/null || cat\" >>/home/ken/private/.git/config
-
-
-chmod 600 /home/ken/private/.git/config
-echo '* filter=openssl  diff=openssl' >/home/ken/private/.git/info/attributes
-git fetch origin master
-git reset --hard origin/master
-
-cp -r /home/ken/private/.config /home/ken/
 chmod 744 /home/ken/open/sync.sh"
 
 printf "CHECKPOINT (PERSONAL DEKSTOP)?"; read
