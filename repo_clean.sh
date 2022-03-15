@@ -1,10 +1,6 @@
 #!/bin/bash
 
-pkill sync.sh
-repo_locations="/home/ken/open
-/home/ken/private
-/home/ken/clips"
-device=`cat /etc/hostname`
+
 
 while IFS= read -r repo
 do

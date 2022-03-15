@@ -4,6 +4,7 @@ echo "$sshtarget"
 repo_locations="/home/ken/open
 /home/ken/private
 /home/ken/clips"
+device=`cat /etc/hostname`
 
 printf "Upload local ssh pub key? (y/n)"; read temp
 if [[ $temp == "y" ]]
@@ -20,6 +21,9 @@ pacman -Syy
 pacman -S archlinux-keyring --noconfirm
 pacman -Syyu --noconfirm
 
+# extra software
+pacman -S git rsync --noconfirm
+
 reboot
 SSHCMD
 
@@ -27,23 +31,36 @@ printf "Once server reboots successfully, press any key"; read
 
 # ---------- now upload local repo (note, we do not upload ssh keys here)
 printf "Upload repo/Download repo/do nothing? (u/d)"; read temp
-ssh -T $sshtarget << SSHCMD
-pacman -S git rsync --noconfirm
-
-while IFS= read -r repo 
-do
-	mkdir -p \$repo
-	cd \$repo
-	git --bare init
-	
-done <<<"$repo_locations"
-SSHCMD
 
 while IFS= read -r repo 
 do
 	cd $repo
-	git remote remove origin
-	git remote add origin ssh://$sshtarget$repo
+	
+	if [[ $temp == "u" ]]
+	then
+		pkill sync.sh
+		git remote remove origin
+		git remote add origin ssh://$sshtarget$repo
+	
+	elif [[ $temp == "d" ]]
+	then
+	
+	fi
+	
+
+	
+	
+	ssh -T $sshtarget << SSHCMD
+	while IFS= read -r repo 
+	do
+		mkdir -p \$repo
+		cd \$repo
+		git --bare init
+		
+	done <<<"$repo_locations"
+	SSHCMD
+	
+	
 	if [[ $temp == "y" ]]
 	then 
 		git push temp master
