@@ -171,8 +171,9 @@ pacman -Scc --noconfirm
 
 
 # init
-server='root@209.182.218.253'
-rsync $server:/home/ken/open/init.sh /init.sh
+server='209.182.218.253'
+sshtarget="root@$server"
+rsync $sshtarget:/home/ken/open/init.sh /init.sh
 chmod 744 /init.sh
 
 # After=network-online.target
@@ -198,7 +199,7 @@ printf "CHECKPOINT (GENERIC DESKTOP)?"; read
 su ken -c "
 mkdir /home/ken/.ssh
 ssh-keygen -t rsa -b 4096 -f /home/ken/.ssh/id_rsa"
-ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $server
+ssh-copy-id -i /home/ken/.ssh/id_rsa.pub $sshtarget
 printf "is everything ok?"; read
 
 git config --system user.email no-reply@princeton.edu
@@ -209,7 +210,7 @@ su ken -c "
 eval \$(ssh-agent)
 ssh-add /home/ken/.ssh/id_rsa
 # public key of github server is required to avoid fingerprint prompt
-ssh-keyscan github.com >/home/ken/.ssh/known_hosts
+ssh-keyscan $server >/home/ken/.ssh/known_hosts
 
 # for pushing ones, has to download right now so that sync can just push -f from then on. for fetched, leave it empty is fine
 # to avoid random issues (e.g run manual commands while git does not fully checked out yet), always fetch in root_setup rather than leave to sync itself.
