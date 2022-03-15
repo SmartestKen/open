@@ -70,18 +70,17 @@ loop() {
     # use the following to manually update preferences (e.g. when there is a new extension)
     # cp -u /home/ken/.config/BraveSoftware/Brave-Browser/Default/Preferences /home/ken/private/.config/BraveSoftware/Brave-Browser/Default/Preferences
     
-    if ! ls /home/ken/clips >/dev/null 2>&1
+    
+    # assume the set server part is done in root_setup.sh
+    if [ -z "$(ls /home/ken/clips 2>&1)" ]
     then
-		mkdir -p /home/ken/clips
 		cd /home/ken/clips
-		git init
-		git remote add origin git@github.com:SmartestKen/clips.git
 		git fetch origin master
 		git reset --hard origin/master
 	fi
     
     
-    index=`tail -c 2 /etc/hostname`
+    device=`cat /etc/hostname`
  
 	# daily update on .config
 	cur_date=`date -I`
@@ -90,11 +89,11 @@ loop() {
     do
 
         # sync now contains both up (push) and down, albeit in a different directory
-        sync_repo /home/ken/open laptop$index
+        sync_repo /home/ken/open $device
         
         temp_date=`date -I`
 		# file update from /home/ken/.config to /home/ken/private/.config
-		if [[ $index == 2 && $temp_date != $cur_date ]] 
+		if [[ $device == "laptop2" && $temp_date != $cur_date ]] 
 		then
 			while read -r file
 			do
@@ -113,9 +112,8 @@ loop() {
 			cur_date=$temp_date
 		fi
 
-        sync_repo /home/ken/private laptop$index
-        
-        sync_repo /home/ken/clips laptop$index
+        sync_repo /home/ken/private $device
+        sync_repo /home/ken/clips $device
                 
         sleep 300
     done

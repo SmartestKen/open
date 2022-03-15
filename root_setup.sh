@@ -129,7 +129,7 @@ else
 	target_height=350
 fi
 
-sleep 1
+sleep 2
 noteid=$(xdotool search --name untitled)
 
 xprop -id $noteid -format _NET_WM_STRUT_PARTIAL 32c -set _NET_WM_STRUT_PARTIAL 0,0,0,$target_height,0,0,0,0,0,0,0,$target_width
@@ -172,7 +172,7 @@ pacman -Scc --noconfirm
 
 # init
 server='209.182.218.253'
-sshtarget="root@$server"
+sshtarget="root@"$server
 rsync $sshtarget:/home/ken/open/init.sh /init.sh
 chmod 744 /init.sh
 

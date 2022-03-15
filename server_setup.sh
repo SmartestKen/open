@@ -1,10 +1,13 @@
-sshtarget='root@209.182.218.253'
+server="209.182.218.253"
+sshtarget='root@'$server
+echo "$sshtarget"
 repo_locations="/home/ken/open
 /home/ken/private
 /home/ken/clips"
 
 # -T disable remote side tty, use -t if you need one
 # --------- server full update
+ssh-keyscan $server >/home/ken/.ssh/known_hosts
 ssh -T $sshtarget << SSHCMD
 
 pacman -Syy
