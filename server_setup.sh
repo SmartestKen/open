@@ -37,7 +37,7 @@ do
 	git push temp master
 	git remote remove temp
 
-done <<<$repo_locations
+done <<<"$repo_locations"
 
 
 
