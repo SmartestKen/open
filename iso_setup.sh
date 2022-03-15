@@ -2,11 +2,13 @@
 
 # Ctrl+S to show advanced BIOS in Acer
 # setfont solar24x32
-# make sure the partitions you specify has been deleted through fdisk (option d) before running this script
 
-
+# ----------- update iso keyring (in case it is an old build)
 pacman -Syy
 pacman -S archlinux-keyring --noconfirm
+
+
+# ----------- create partitions
 
 lsblk
 printf "Enter device name, boot_idx, system_idx (both including suffix), g if want a new partition table"; read dname bid sid erase
@@ -25,13 +27,14 @@ echo w # Write changes
 ) | fdisk /dev/$dname -w always -W always
 
 
+# -------------- format boot partition into F32
+mkfs.fat -F32 /dev/$dname$bid
 
+# -------------- umount and close mapper in case this is not a fresh run
 umount /mnt
 umount /dev/mapper/croot
 cryptsetup luksClose croot
-mkfs.fat -F32 /dev/$dname$bid
 
-# cryptsetup benchmark if wish to try custom ones
 cryptsetup -y luksFormat /dev/$dname$sid
 cryptsetup open /dev/$dname$sid croot
 mkfs.ext4 /dev/mapper/croot
