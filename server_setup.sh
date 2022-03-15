@@ -26,7 +26,7 @@ do
 	cd \$repo
 	git --bare init
 	
-done <<<$repo_locations
+done <<<"$repo_locations"
 SSHCMD
 
 # ---------- now upload local repo (note, we do not upload ssh keys here)

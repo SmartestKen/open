@@ -240,7 +240,7 @@ do
 		git reset --hard origin/master
 	fi
 
-done <<<$repo_locations
+done <<<\"$repo_locations\"
 chmod 744 /home/ken/open/sync.sh"
 
 printf "CHECKPOINT (PERSONAL DEKSTOP)?"; read
