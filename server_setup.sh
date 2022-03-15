@@ -44,14 +44,16 @@ printf "Upload local repo copy? (y/n)"; read temp
 while IFS= read -r repo 
 do
 	cd $repo
-	git remote add temp ssh://$sshtarget$repo
-	git push temp master
-	git remote remove temp
+	git remote remove origin
+	git remote add origin ssh://$sshtarget$repo
+	if [[ $temp == "y" ]]
+	then 
+		git push temp master
+	fi
 done <<<"$repo_locations"
 	
-if [[ $temp == "y" ]]
-then 
-fi
+
+
 
 # pacman -S --noconfirm gitea glibc sqlite
 
